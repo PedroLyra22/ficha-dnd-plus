@@ -1,0 +1,73 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #2d1c12;
+    color: #f1e8dc;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: #3c2a1c;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 2px solid #8d2e2c;
+}
+
+h1, h2 {
+    color: #d0a16f;
+    font-weight: bold;
+    border-bottom: 1px solid #8d2e2c;
+    padding-bottom: 0.4rem;
+    margin-top: 2rem;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px #000;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #f0d1a0;
+}
+
+input, textarea, select {
+    padding: 0.4rem;
+    background-color: #4e3a28;
+    border: 1px solid #b86c49;
+    border-radius: 4px;
+    color: #f7f0e3;
+    font-size: 0.9rem;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #c07951;
+    background-color: #5b4326;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
