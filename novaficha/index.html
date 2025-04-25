@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criação de Personagem D&D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Formulário de Personagem</h1>
+<label>Nome do Personagem</label>
+<input type="text" id="nome">
+
+<label>Raça</label>
+<select id="raca"></select>
+
+<label>Classe</label>
+<select id="classe"></select>
+
+<label>Tendência</label>
+<select id="tendencia"></select>
+
+<button onclick="gerarFicha()">Gerar Ficha</button>
+
+<div class="ficha" id="fichaGerada"></div>
+
+<script>
+  const dados = {
+    "racas": [
+      {
+        "nome": "Humano",
+        "modificadores": { "forca": 1, "destreza": 1, "constituicao": 1, "inteligencia": 1, "sabedoria": 1, "carisma": 1 },
+        "idiomas": ["Comum", "Outro idioma à escolha"],
+        "tracos": [
+          "Talentoso: Recebe inspiração heróica ao finalizar um descanso longo.",
+          "Hábil: Ganha proficiência em uma perícia extra a sua escolha.",
+          "Versatilidade: Ganha um talento de origem extra a sua escolha. Habilidoso é recomendado.",
+        ]
+      },
+      {
+        "nome": "Elfo",
+        "modificadores": { "destreza": 2 },
+        "idiomas": ["Comum", "Élfico"],
+        "tracos": [
+          "Visão no Escuro: Você pode ver no escuro até 18 metros.",
+          "Aumento de Atributo: +2 em Destreza.",
+          "Fácil Movimento: Os elfos têm uma velocidade base de 9 metros.",
+          "Resistência à Magia: Você tem vantagem em testes de resistência contra magias.",
+        ]
+      },
+      {
+        "nome": "Anão",
+        "modificadores": { "destreza": 2 },
+        "idiomas": ["Comum", "Anão"],
+        "tracos": [
+          "Visão no Escuro: Possui visão no escuro com alcance de 120ft.",
+          "Resiência Anã: Você tem vantagem em testes de resistência contra veneno e resistência a dano venenoso.",
+          "Dureza Anã: Recebe 1 de vida a mais por nível.",
+          "Trabalho em Pedra: Como ação bônus, ativa sentidos sísmicos com alcance 60ft por 10 minutos. Deve estar em contato com qualquer tipo de pedra para fazer isso. Pode realizar essa ação um número de vezes igual ao bônus de proficiência, recuperando todos os usos após um descanso longo."
+        ]
+      },
+      {
+        "nome": "Tiefling",
+        "modificadores": { "carisma": 2, "inteligencia": 1 },
+        "idiomas": ["Comum", "Infernal"],
+        "tracos": [
+          "Visão no Escuro: Você pode ver no escuro até 18 metros.",
+          "Aumento de Atributo: +2 em Carisma, +1 em Inteligência.",
+          "Resistência ao Fogo: Você tem resistência ao dano de fogo.",
+          "Magias: Você conhece o truque *Thaumaturgy*, e pode aprender magias de fogo como *Burning Hands*."
+        ]
+      }
+    ],
+
+    "classes": [
+      {
+        "nome": "Guerreiro",
+        "dados_vida": "1d10 por nível",
+        "pericias": ["Atletismo", "Intimidação", "Percepção", "Sobrevivência"],
+        "habilidades": [
+          "Ação Extra: Você pode atacar duas vezes, em vez de uma, sempre que tomar a ação Atacar.",
+          "Second Wind: Uma vez por descanso curto ou longo, você pode usar uma ação bônus para recuperar 1d10 + seu nível de guerreiro em pontos de vida.",
+          "Defesa Superior: Você ganha bônus de defesa quando usar armadura pesada."
+        ],
+        "equipamentos_iniciais": [
+          "Uma espada longa ou uma maça",
+          "Uma armadura leve ou uma armadura pesada",
+          "Um escudo",
+          "Uma mochila com rações e corda"
+        ],
+        "magias": [],
+        "habilidades_que_avancam": [
+          "Mestre em Armas: No nível 5, você se torna proficiente em todas as armas."
+        ]
+      },
+      {
+        "nome": "Mago",
+        "dados_vida": "1d6 por nível",
+        "pericias": ["Arcanismo", "História", "Investigação", "Religião"],
+        "habilidades": [
+          "Magias: Os magos têm uma lista extensa de magias que podem aprender.",
+          "Arcane Recovery: Uma vez por descanso curto, você pode recuperar pontos de magia iguais a metade do seu nível de mago.",
+          "Círculo de Proteção: Ao conjurar uma magia de proteção, pode adicionar um bônus."
+        ],
+        "equipamentos_iniciais": [
+          "Uma vara mágica ou um cajado",
+          "Um livro de magias",
+          "Um saco de componentes para magias"
+        ],
+        "magias": [
+          {
+            "nome": "Mísseis Mágicos",
+            "nivel": 1,
+            "tipo": "Dano",
+            "descricao": "Cria 3 mísseis mágicos que atingem automaticamente alvos, causando 1d4+1 de dano de força cada."
+          },
+          {
+            "nome": "Bola de Fogo",
+            "nivel": 3,
+            "tipo": "Dano",
+            "descricao": "Cria uma explosão de fogo que causa 8d6 de dano de fogo em uma área de 6 metros de raio."
+          }
+        ],
+        "habilidades_que_avancam": [
+          "Magias Avançadas: No nível 10, o mago pode lançar magias de nível 6 e acima."
+        ]
+      },
+      {
+        "nome": "Ladino",
+        "dados_vida": "1d8 por nível",
+        "pericias": ["Acrobacia", "Furtividade", "Prestidigitação", "Intimidação"],
+        "habilidades": [
+          "Ataque Furtivo: Quando você ataca uma criatura que não tenha vantagem na defesa contra você, você pode causar dano extra.",
+          "Esquiva Sobrenatural: Você pode usar sua ação de bônus para desviar de ataques, reduzindo dano.",
+          "Evasão: Ao ser alvo de um ataque de área que exija um teste de resistência, você pode evitar todo o dano se tiver sucesso."
+        ],
+        "equipamentos_iniciais": [
+          "Duas adagas",
+          "Uma capa de couro",
+          "Ferramentas de ladrão",
+          "Uma mochila com utensílios"
+        ],
+        "magias": [],
+        "habilidades_que_avancam": [
+          "Ataque Duplo: A partir do nível 5, o ladino pode atacar duas vezes ao fazer a ação Atacar."
+        ]
+      }
+    ],
+
+    "tendencias": [
+      "Leal e bom",
+      "Neutro e bom",
+      "Caótico e bom",
+      "Leal e neutro",
+      "Neutro",
+      "Caótico e neutro",
+      "Leal e maligno",
+      "Neutro e maligno",
+      "Caótico e maligno"
+    ],
+
+    "pericias": [
+      "Acrobacia",
+      "Arcanismo",
+      "Atletismo",
+      "Atuação",
+      "Blefar",
+      "Furtividade",
+      "História",
+      "Intimidação",
+      "Intuição",
+      "Investigação",
+      "Lidar com Animais",
+      "Medicina",
+      "Natureza",
+      "Percepção",
+      "Persuasão",
+      "Prestidigitação",
+      "Religião",
+      "Sobrevivência"
+    ],
+
+    "ideais": [
+      "Liberdade",
+      "Justiça",
+      "Vingança",
+      "Honra",
+      "Sabedoria",
+      "Mistério"
+    ],
+
+    "vinculos": [
+      "Eu faço tudo por minha família.",
+      "Minha honra é minha vida.",
+      "Procuro redenção pelo meu passado.",
+      "Estou em busca de conhecimento perdido."
+    ],
+
+    "defeitos": [
+      "Eu sou impulsivo e me meto em confusão.",
+      "Eu me apego demais ao meu passado.",
+      "Tenho medo de falhar e de ser rejeitado.",
+      "Eu sou ganancioso e não me importo com os outros."
+    ],
+
+    "equipamentos_iniciais": {
+      "guerreiro": [
+        "Uma espada longa ou uma maça",
+        "Uma armadura leve ou uma armadura pesada",
+        "Um escudo",
+        "Uma mochila com rações e corda"
+      ],
+      "mago": [
+        "Uma vara mágica ou um cajado",
+        "Um livro de magias",
+        "Um saco de componentes para magias"
+      ],
+      "ladino": [
+        "Duas adagas",
+        "Uma capa de couro",
+        "Ferramentas de ladrão",
+        "Uma mochila com utensílios"
+      ]
+    },
+
+    "magias": [
+      {
+        "nome": "Mísseis Mágicos",
+        "nivel": 1,
+        "tipo": "Dano",
+        "descricao": "Cria 3 mísseis mágicos que atingem automaticamente alvos, causando 1d4+1 de dano de força cada."
+      },
+      {
+        "nome": "Bola de Fogo",
+        "nivel": 3,
+        "tipo": "Dano",
+        "descricao": "Cria uma explosão de fogo que causa 8d6 de dano de fogo em uma área de 6 metros de raio."
+      }
+    ],
+
+    "habilidades_raciais": [
+      {
+        "raca": "Elfo",
+        "habilidade": "Visão no Escuro",
+        "descricao": "Você pode ver na escuridão como se fosse luz fraca, até 18 metros."
+      },
+      {
+        "raca": "Anão",
+        "habilidade": "Resistência a Veneno",
+        "descricao": "Você tem vantagem em testes de resistência contra veneno e resistência a dano de veneno."
+      }
+    ],
+
+    "outros": {
+      "dinheiro": {
+        "ouro": 10,
+        "prata": 0,
+        "cobre": 0
+      },
+      "historia": "Seu personagem veio de uma pequena aldeia, onde aprendeu a arte da espada com seu pai."
+    }
+  }
+
+
+  window.onload = () => {
+    dados.racas.forEach(r => {
+      document.getElementById('raca').innerHTML += `<option value="${r.nome}">${r.nome}</option>`;
+    });
+    dados.classes.forEach(c => {
+      document.getElementById('classe').innerHTML += `<option value="${c.nome}">${c.nome}</option>`;
+    });
+    dados.tendencias.forEach(t => {
+      document.getElementById('tendencia').innerHTML += `<option>${t}</option>`;
+    });
+  }
+
+  function gerarFicha() {
+    const nome = document.getElementById("nome").value;
+    const racaSelecionada = document.getElementById("raca").value;
+    const classeSelecionada = document.getElementById("classe").value;
+    const tendencia = document.getElementById("tendencia").value;
+
+    const raca = dados.racas.find(r => r.nome === racaSelecionada);
+    const classe = dados.classes.find(c => c.nome === classeSelecionada);
+
+    const ficha = `
+        <h2>${nome}</h2>
+        <p><strong>Raça:</strong> ${raca.nome}</p>
+        <p><strong>Classe:</strong> ${classe.nome}</p>
+        <p><strong>Tendência:</strong> ${tendencia}</p>
+
+        <h3>Atributos Bônus</h3>
+        <ul>${Object.entries(raca.modificadores).map(([atr, val]) => `<li>${atr}: +${val}</li>`).join('')}</ul>
+
+        <h3>Idiomas</h3>
+        <ul>${raca.idiomas.map(id => `<li>${id}</li>`).join('')}</ul>
+
+        <h3>Traços Raciais</h3>
+        <ul>${raca.tracos.map(traco => `<li>${traco}</li>`).join('')}</ul>
+
+        <h3>Perícias da Classe</h3>
+        <ul>${classe.pericias.map(p => `<li>${p}</li>`).join('')}</ul>
+
+        <h3>Habilidades Iniciais</h3>
+        <ul>${classe.habilidades.map(h => `<li>${h}</li>`).join('')}</ul>
+
+        <h3>Equipamentos Iniciais</h3>
+        <ul>${classe.equipamentos_iniciais.map(eq => `<li>${eq}</li>`).join('')}</ul>
+      `;
+    document.getElementById("fichaGerada").innerHTML = ficha;
+  }
+</script>
+</body>
+</html>
