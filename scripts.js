@@ -175,10 +175,21 @@ const ficha= {
     idiomas: []
 }
 
-salvarFicha(ficha)
+//salvarFicha(ficha)
 
-//obterFicha("ficha_001", (ficha) => {
-    //console.log("Ficha carregada:", ficha);
-//});
+obterFicha("ficha_001", (ficha) => {
+    console.log("Ficha carregada:", ficha);
+});
 
 //atualizarCampo("ficha_001", "pontos_de_vida.atual", 15);
+
+function salvarPrimeiraTela(){
+    let nome_personagem = document.getElementById("nome_personagem").value
+    let nome_jogador = document.getElementById("nome_jogador").value
+
+    salvarFicha(ficha)
+
+    atualizarCampo("ficha_001", "nome_personagem", nome_personagem)
+    atualizarCampo("ficha_001", "nome_jogador", nome_jogador)
+
+}
