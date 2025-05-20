@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+<form>
+  <label for="nome_personagem">Nome do Personagem:</label>
+  <input type="text" id="nome_personagem" name="nome_personagem">
+  <br>
+  <label for="nome_jogador">Nome do Jogador:</label>
+  <input type="text" id="nome_jogador" name="nome_jogador">
+  <br>
+  <label for="foto_personagem">Subir imagem do personagem:</label>
+  <input type="file" id="foto_personagem" name="foto_personagem">
+  <br>
+  <label for="avanco_de_nivel">Escolha o tipo de avanço de nível:</label>
+  <select id="avanco_de_nivel">
+    <option value="marco">Por Marco</option>
+    <option value="xp">Por XP</option>
+  </select>
+  <br>
+  <label for="aumento_de_vida">Escolha o tipo de aumento de vida:</label>
+  <select id="aumento_de_vida">
+    <option value="media">Média</option>
+    <option value="rolagem">Rolagem</option>
+    <option value="livre">Livre</option>
+  </select>
+  <br>
+  <button type="submit" onclick="salvarPrimeiraTela()">Enviar</button>
+</form>
+<script src = 'scripts.js'></script>
+</body>
+</html>
