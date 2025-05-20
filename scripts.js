@@ -64,6 +64,10 @@ function obterFicha(id, callback) {
 
 const ficha= {
     id: "ficha_001",
+    configuracoes: {
+      avanco_de_nivel:"",
+      aumento_de_vida:"",
+    },
     nome_personagem: "",
     nome_jogador: "",
     pontos_de_vida: {
@@ -186,10 +190,16 @@ obterFicha("ficha_001", (ficha) => {
 function salvarPrimeiraTela(){
     let nome_personagem = document.getElementById("nome_personagem").value
     let nome_jogador = document.getElementById("nome_jogador").value
+    // falta da imagem
+    let avanco_de_nivel = document.getElementById("avanco_de_nivel").value
+    let aumento_de_vida = document.getElementById("aumento_de_vida").value
 
     salvarFicha(ficha)
 
     atualizarCampo("ficha_001", "nome_personagem", nome_personagem)
     atualizarCampo("ficha_001", "nome_jogador", nome_jogador)
+    //imagem
+    atualizarCampo("ficha_001", "configuracoes.avanco_de_nivel", avanco_de_nivel)
+    atualizarCampo("ficha_001", "configuracoes.aumento_de_vida", aumento_de_vida)
 
 }
