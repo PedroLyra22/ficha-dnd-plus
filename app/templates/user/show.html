@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de {{ user.nome }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container mt-5">
 
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="mb-0">Perfil de {{ user.nome }}</h1>
+            <a href="{{ url_for('main.index_user') }}" class="btn btn-secondary">Voltar para a Lista</a>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                Informações Básicas
+            </div>
+            <div class="card-body">
+                <p><strong>ID:</strong> {{ user.id }}</p>
+                <p><strong>Nome:</strong> {{ user.nome }}</p>
+                <p><strong>E-mail:</strong> {{ user.email }}</p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Fichas de RPG</h2>
+            <a href="#" class="btn btn-primary">Adicionar Nova Ficha</a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted">Ainda não há fichas de RPG cadastradas para este usuário.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

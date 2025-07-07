@@ -76,3 +76,8 @@ def update_user(user_id):
         return redirect(url_for('main.index_user'))
 
     return render_template('user/update.html', user=user)
+
+@bp.route('/users/<int:user_id>')
+def show_user(user_id):
+    user = User.query.get_or_404(user_id)
+    return render_template('user/show.html', user=user)

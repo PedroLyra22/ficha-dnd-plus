@@ -42,12 +42,14 @@
                         <a href="{{ url_for('main.update_user', user_id=user.id) }}" class="btn btn-warning btn-sm mr-2">
                             Editar
                         </a>
-
                         <form action="{{ url_for('main.delete_user', user_id=user.id) }}" method="POST"
                               onsubmit="return confirm('Você tem certeza que deseja apagar este usuário? Esta ação não pode ser desfeita.');"
                               style="display: inline;">
                             <button type="submit" class="btn btn-danger btn-sm">Apagar</button>
                         </form>
+                        <a href="{{ url_for('main.show_user', user_id=user.id) }}" class="btn btn-info btn-sm" title="Visualizar Detalhes">
+                            Detalhes
+                        </a>
                     </td>
                 </tr>
                 {% else %}
