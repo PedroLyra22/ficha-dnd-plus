@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Usuários Cadastrados</h1>
+            <a href="{{ url_for('main.create_user') }}" class="btn btn-success">Novo Usuário</a>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col" class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.nome }}</td>
+                    <td>{{ user.email }}</td>
+                    <td class="text-center">
+                        <form action="{{ url_for('main.delete_user', user_id=user.id) }}" method="POST"
+                              onsubmit="return confirm('Você tem certeza que deseja apagar este usuário?');"
+                              style="display: inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Apagar
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">Nenhum usuário cadastrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('main.index') }}" class="btn btn-secondary mt-3">Voltar para a Home</a>
+    </div>
 </body>
 </html>

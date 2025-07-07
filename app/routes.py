@@ -39,5 +39,14 @@ def create_user():
         db.session.add(new_user)
         db.session.commit()
         flash('Usuário criado com sucesso!', 'success')
-        return 'full'
+        return redirect(url_for('main.index_user'))
     return render_template('user/create.html')
+
+@bp.route('/users/delete/<int:user_id>', methods=['POST'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    user_name = user.nome
+    db.session.delete(user)
+    db.session.commit()
+    flash(f'Usuário "{user_name}" foi apagado com sucesso!', 'success')
+    return redirect(url_for('main.index_user'))
