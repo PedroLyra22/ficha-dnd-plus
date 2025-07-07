@@ -3,6 +3,8 @@ import re
 import uuid
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, send_from_directory
+
+from app import db
 from app.models import User
 
 bp = Blueprint('main', __name__)
@@ -16,3 +18,26 @@ def index():
 def index_user():
     users = User.query.all()
     return render_template('user/index.html', users=users)
+
+@bp.route('/users/new', methods=['GET', 'POST'])
+def create_user():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+
+
+        if not nome or not email:
+            flash('Nome e e-mail são obrigatórios!', 'danger')
+            return render_template('user/create.html', nome=nome, email=email)
+
+        existing_user = User.query.filter_by(email=email).first()
+        if existing_user:
+            flash('Este e-mail já está cadastrado.', 'danger')
+            return render_template('user/create.html', nome=nome, email=email)
+
+        new_user = User(nome=nome, email=email)
+        db.session.add(new_user)
+        db.session.commit()
+        flash('Usuário criado com sucesso!', 'success')
+        return 'full'
+    return render_template('user/create.html')
