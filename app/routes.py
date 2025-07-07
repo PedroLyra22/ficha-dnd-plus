@@ -50,3 +50,29 @@ def delete_user(user_id):
     db.session.commit()
     flash(f'Usuário "{user_name}" foi apagado com sucesso!', 'success')
     return redirect(url_for('main.index_user'))
+
+@bp.route('/users/update/<int:user_id>', methods=['GET', 'POST'])
+def update_user(user_id):
+    user = User.query.get_or_404(user_id)
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+
+        if not nome or not email:
+            flash('Nome e e-mail são obrigatórios!', 'danger')
+            return render_template('user/update.html', user=user)
+
+        existing_user = User.query.filter(User.email == email, User.id != user_id).first()
+        if existing_user:
+            flash('Este e-mail já está cadastrado em outra conta.', 'danger')
+            return render_template('user/update.html', user=user)
+
+        user.nome = nome
+        user.email = email
+
+        db.session.commit()
+
+        flash('Usuário atualizado com sucesso!', 'success')
+        return redirect(url_for('main.index_user'))
+
+    return render_template('user/update.html', user=user)
