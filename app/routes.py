@@ -5,7 +5,7 @@ import uuid
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, send_from_directory
 
 from app import db
-from app.models import User
+from app.models import User, SheetConfig, AdvancementType
 
 bp = Blueprint('main', __name__)
 
@@ -81,3 +81,23 @@ def update_user(user_id):
 def show_user(user_id):
     user = User.query.get_or_404(user_id)
     return render_template('user/show.html', user=user)
+
+@bp.route('/config_sheet/new', methods=['GET', 'POST'])
+def create_config_sheet():
+    if request.method == 'POST':
+        homebrew = 'homebrew' in request.form
+        expanded_rules = 'expanded_rules' in request.form
+        dice_rolling = 'dice_rolling' in request.form
+
+        new_config = SheetConfig(
+            homebrew=homebrew,
+            expanded_rules=expanded_rules,
+            dice_rolling=dice_rolling,
+            advancement_type=AdvancementType(request.form.get('advancement_type'))
+        )
+        db.session.add(new_config)
+        db.session.commit()
+        flash('Configuração criada com sucesso!', 'success')
+        return redirect(url_for('index'))
+
+    return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType)
