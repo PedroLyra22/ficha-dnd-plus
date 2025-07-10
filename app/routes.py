@@ -88,13 +88,19 @@ def create_config_sheet():
         homebrew = 'homebrew' in request.form
         expanded_rules = 'expanded_rules' in request.form
         dice_rolling = 'dice_rolling' in request.form
+        feat_prerequisites = 'feat_prerequisites' in request.form
+        multiclass_prerequisites = 'multiclass_prerequisites' in request.form
+        mark_level_scaled_spells = 'mark_level_scaled_spells' in request.form
 
         new_config = SheetConfig(
             homebrew=homebrew,
             expanded_rules=expanded_rules,
             dice_rolling=dice_rolling,
             advancement_type=AdvancementType(request.form.get('advancement_type')),
-            hit_point_type=HitPointType(request.form.get('hit_point_type'))
+            hit_point_type=HitPointType(request.form.get('hit_point_type')),
+            feat_prerequisites=feat_prerequisites,
+            multiclass_prerequisites=multiclass_prerequisites,
+            mark_level_scaled_spells=mark_level_scaled_spells
         )
         db.session.add(new_config)
         db.session.commit()
