@@ -16,8 +16,12 @@ class CharacterSheet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
 class AdvancementType(enum.Enum):
-    MILESTONE = 'Milestone'
-    EXPERIENCE = 'XP'
+    MILESTONE = 'MILESTONE'
+    XP = 'XP'
+
+class HitPointType(enum.Enum):
+    Fixed = 'FIXED'
+    MANUAL = 'MANUAL'
 
 class SheetConfig(db.Model):
     __tablename__ = 'sheet_configs'
@@ -26,3 +30,5 @@ class SheetConfig(db.Model):
     expanded_rules = db.Column(db.Boolean, nullable=False, default=False)
     dice_rolling = db.Column(db.Boolean, nullable=False, default=False)
     advancement_type = db.Column(db.Enum(AdvancementType), nullable=False, default=AdvancementType.MILESTONE)
+    hit_point_type = db.Column(db.Enum(HitPointType), nullable=False, default=HitPointType.MANUAL)
+

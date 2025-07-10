@@ -10,7 +10,7 @@
     <main class="container mt-4">
         <h1>Nova Configuração</h1>
 
-        <form method="POST" action="{{ url_for('create_config') }}">
+        <form method="POST" action="{{ url_for('main.create_config_sheet') }}">
             <div class="card">
                 <div class="card-body">
                     <div class="mb-3">
@@ -33,7 +33,6 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="mb-3">
                         <label for="advancement_type" class="form-label">Tipo de Avanço de Personagem</label>
                         <select class="form-select" id="advancement_type" name="advancement_type">
@@ -44,9 +43,19 @@
                             {% endfor %}
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="hit_point_type" class="form-label">Tipo de Aumento de Vida</label>
+                        <select class="form-select" id="hit_point_type" name="hit_point_type">
+                            {% for type in hit_point_types %}
+                                <option value="{{ type.name }}" {% if type.name == 'MANUAL' %}selected{% endif %}>
+                                    {{ type.value }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ url_for('list_configs') }}" class="btn btn-secondary">Cancelar</a>
+                    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>

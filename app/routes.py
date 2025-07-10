@@ -5,7 +5,7 @@ import uuid
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, send_from_directory
 
 from app import db
-from app.models import User, SheetConfig, AdvancementType
+from app.models import User, SheetConfig, AdvancementType, HitPointType
 
 bp = Blueprint('main', __name__)
 
@@ -93,11 +93,12 @@ def create_config_sheet():
             homebrew=homebrew,
             expanded_rules=expanded_rules,
             dice_rolling=dice_rolling,
-            advancement_type=AdvancementType(request.form.get('advancement_type'))
+            advancement_type=AdvancementType(request.form.get('advancement_type')),
+            hit_point_type=HitPointType(request.form.get('hit_point_type'))
         )
         db.session.add(new_config)
         db.session.commit()
         flash('Configuração criada com sucesso!', 'success')
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
-    return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType)
+    return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType)
