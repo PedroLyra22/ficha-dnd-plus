@@ -11,10 +11,6 @@ class User(db.Model):
     def repr(self):
         return f"User('{self.nome}', '{self.email}')"
 
-class CharacterSheet(db.Model):
-    __tablename__ = 'character_sheets'
-    id = db.Column(db.Integer, primary_key=True)
-
 class AdvancementType(enum.Enum):
     MILESTONE = 'MILESTONE'
     XP = 'XP'
@@ -35,3 +31,9 @@ class SheetConfig(db.Model):
     multiclass_prerequisites = db.Column(db.Boolean, nullable=False, default=False)
     mark_level_scaled_spells = db.Column(db.Boolean, nullable=False, default=False)
 
+class CharacterSheet(db.Model):
+    __tablename__ = 'character_sheet'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    image = db.Column(db.Text)
+    mimetype = db.Column(db.String(50))
