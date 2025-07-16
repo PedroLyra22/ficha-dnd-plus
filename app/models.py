@@ -16,11 +16,11 @@ class AdvancementType(enum.Enum):
     XP = 'XP'
 
 class HitPointType(enum.Enum):
-    Fixed = 'FIXED'
+    FIXO = 'FIXO'
     MANUAL = 'MANUAL'
 
-class SheetConfig(db.Model):
-    __tablename__ = 'sheet_configs'
+class ConfigSheet(db.Model):
+    __tablename__ = 'config_sheets'
     id = db.Column(db.Integer, primary_key=True)
     homebrew = db.Column(db.Boolean, nullable=False, default=False)
     expanded_rules = db.Column(db.Boolean, nullable=False, default=False)
@@ -32,7 +32,7 @@ class SheetConfig(db.Model):
     mark_level_scaled_spells = db.Column(db.Boolean, nullable=False, default=False)
 
 class CharacterSheet(db.Model):
-    __tablename__ = 'character_sheet'
+    __tablename__ = 'character_sheets'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.Text)
