@@ -37,3 +37,32 @@ class CharacterSheet(db.Model):
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.Text)
     mimetype = db.Column(db.String(50))
+
+class ClassType(db.Model):
+    __tablename__ = 'class_types'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    icon = db.Column(db.String)
+    description = db.Column(db.Text)
+    primary_ability = db.Column(db.String)
+    hit_point_die = db.Column(db.String)
+    saving_throw_proficiencies = db.Column(db.String)
+    skill_proficiencies = db.Column(db.Text)
+    weapon_proficiencies = db.Column(db.String)
+    tool_proficiencies = db.Column(db.String)
+    armor_training = db.Column(db.String)
+    starting_equipment = db.Column(db.Text)
+
+class SubclassType(db.Model):
+    __tablename__ = 'subclass_types'
+    id = db.Column(db.Integer, primary_key=True)
+    option = db.Column(db.Text)
+
+class ClassFeature(db.Model):
+    __tablename__ = 'class_features'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text)
+    level = db.Column(db.Text)
+    description = db.Column(db.Text)
+
+

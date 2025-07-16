@@ -112,3 +112,4 @@ def create_config_sheet():
 @bp.route('character_sheets/new', methods=['GET', 'POST'])
 def create_character_sheet():
     if request.method == 'POST':
+
