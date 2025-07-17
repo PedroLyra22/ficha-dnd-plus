@@ -23,6 +23,19 @@ classes_data = [
         "starting_equipment": "Um machado grande ou qualquer arma marcial corpo a corpo, um machado de mão ou qualquer arma simples, um pacote de explorador e quatro azagaias."
     },
     {
+        "name": "Mago",
+        "icon": "fas fa-book-sparkles",
+        "description": "Um usuário de magia erudito capaz de manipular as estruturas da realidade.",
+        "primary_ability": "Inteligência",
+        "hit_point_die": "d6",
+        "saving_throw_proficiencies": "Inteligência, Sabedoria",
+        "skill_proficiencies": "Escolha duas entre: Arcanismo, História, Investigação, Medicina, Intuição",
+        "weapon_proficiencies": "Adagas, dardos, fundas, cajados, bestas leves",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Nenhuma",
+        "starting_equipment": "Um cajado ou uma adaga, um grimório, um pacote de estudioso ou um pacote de explorador."
+    },
+    {
         "name": "Ladino",
         "icon": "fas fa-dagger",
         "description": "Um batedor, ladrão ou espião que prospera nas sombras.",

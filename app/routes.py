@@ -5,7 +5,8 @@ import uuid
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, send_from_directory
 
 from app import db
-from app.models import User, AdvancementType, HitPointType, ConfigSheet
+from app.forms import CharacterClassForm
+from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType
 
 bp = Blueprint('main', __name__)
 
@@ -109,5 +110,17 @@ def create_config_sheet():
 
     return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType)
 
+@bp.route('/select_class', methods=['GET', 'POST'])
+def select_class():
+    form = CharacterClassForm()
+
+    form.character_class.choices = [(c.id, c.name) for c in ClassType.query.order_by(ClassType.name).all()]
+
+    if form.validate_on_submit():
+        selected_class_id = form.character_class.data
+        selected_class = ClassType.query.get(selected_class_id)
+        return f'<h1>Você selecionou: {selected_class.name}</h1>'
+
+    return render_template('select_class_template.html', title='Selecionar Classe', form=form)
 
 

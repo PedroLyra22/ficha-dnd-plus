@@ -41,7 +41,7 @@ class CharacterSheet(db.Model):
 class ClassType(db.Model):
     __tablename__ = 'class_types'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    name = db.Column(db.String, unique=True, nullable=False)
     icon = db.Column(db.String)
     description = db.Column(db.Text)
     primary_ability = db.Column(db.String)
