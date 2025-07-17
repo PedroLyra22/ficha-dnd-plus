@@ -4,6 +4,7 @@ from config import Config
 
 db = SQLAlchemy()
 
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -12,7 +13,6 @@ def create_app(config_class=Config):
 
     from app.routes import bp as main_blueprint
     app.register_blueprint(main_blueprint)
-
 
     with app.app_context():
         from . import models

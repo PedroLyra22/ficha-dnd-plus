@@ -109,7 +109,5 @@ def create_config_sheet():
 
     return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType)
 
-@bp.route('character_sheets/new', methods=['GET', 'POST'])
-def create_character_sheet():
-    if request.method == 'POST':
+
 
