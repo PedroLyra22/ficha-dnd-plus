@@ -20,7 +20,7 @@ classes_data = [
         "weapon_proficiencies": "Armas simples, armas marciais",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Armaduras leves, armaduras médias, escudos",
-        "starting_equipment": "Um machado grande ou qualquer arma marcial corpo a corpo, um machado de mão ou qualquer arma simples, um pacote de explorador e quatro azagaias."
+        "starting_equipment": "Machado grande, 4 machados, pacote de explorador e 15 PO ou 75 PO."
     },
     {
         "name": "Mago",
@@ -33,7 +33,7 @@ classes_data = [
         "weapon_proficiencies": "Adagas, dardos, fundas, cajados, bestas leves",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Nenhuma",
-        "starting_equipment": "Um cajado ou uma adaga, um grimório, um pacote de estudioso ou um pacote de explorador."
+        "starting_equipment": "Cajado ou uma adaga, grimório, pacote de estudioso ou pacote de explorador."
     },
     {
         "name": "Ladino",
@@ -46,8 +46,61 @@ classes_data = [
         "weapon_proficiencies": "Armas simples, bestas de mão, espadas longas, rapieiras, espadas curtas",
         "tool_proficiencies": "Ferramentas de ladrão",
         "armor_training": "Armaduras leves",
-        "starting_equipment": "Uma rapieira ou uma espada curta, um arco curto e aljava com 20 flechas ou uma espada curta, um pacote de assaltante, um pacote de masmorra ou um pacote de explorador, armadura de couro, duas adagas e ferramentas de ladrão."
+        "starting_equipment": "Rapieira ou espada curta, arco curto e aljava com 20 flechas ou uma espada curta, pacote de ladino, pacote de masmorra ou  pacote de explorador, armadura de couro, duas adagas e ferramentas de ladrão."
+    },
+    {
+        "name": "Bardo",
+        "icon": "fas fa-harp",
+        "description": "",
+        "primary_ability": "Carisma",
+        "hit_point_die": "d8",
+        "saving_throw_proficiencies": "Destreza, Carisma",
+        "skill_proficiencies": "Escolha quaisquer 3 perícias",
+        "weapon_proficiencies": "Armas simples",
+        "tool_proficiencies": "Escolha 3 instrumentos musicais",
+        "armor_training": "Armaduras leves",
+        "starting_equipament": "Armadura de couro, 2 cdagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO"
+    },
+    {
+        "name": "Clérigo",
+        "icon": "fas fa-morningstar",
+        "description": "",
+        "primary_ability": "Sabedoria",
+        "hit_point_die": "d8",
+        "saving_throw_proficiencies": "Sabedoria, Carisma",
+        "skill_proficiencies": "Escolha duas entre: História, Intuição, Medicina, Persuasão, Religião",
+        "weapon_proficiencies": "Armas simples",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Armaduras leves, armaduras médias, escudos",
+        "starting_equipament": "Camisão de malha, escudo, maça, símbolo sagrado, pacote de sacerdote e 7 PO; ou 110 PO"
+    },
+    {
+        "name": "Druida",
+        "icon": "fas fa-bear",
+        "description": "",
+        "primary_ability": "Sabedoria",
+        "hit_point_die": "d8",
+        "saving_throw_proficiencies": "Inteligência, Sabedoria",
+        "skill_proficiencies": "Escolha duas entre: Arcanismo, Lidar com Animais, Intuição, Medicina, Natureza, Persuasão, Religião, Sobrevivência",
+        "weapon_proficiencies": "Armas simples",
+        "tool_proficiencies": "Kit de herbalismo",
+        "armor_training": "Armaduras leves, escudos",
+        "starting_equipament": "Armadura de couro, escudo, foice, foco druídico(cajado), pacote de explorador, kit de herbalismo e 9 PO; ou 50 PO"
+    },
+    {
+        "name": "Guerreiro",
+        "icon": "fas fa-sword",
+        "description": "",
+        "primary_ability": "Força ou Destreza",
+        "hit_point_die": "d10",
+        "saving_throw_proficiencies": "Força, Constituição",
+        "skill_proficiencies": "Escolha duas entre: Acrobacia, Lidar com Animais, Atletismo, História, Intuição, Intimidação, Persuasão, Percepção, Sobrevivência",
+        "weapon_proficiencies": "Armas simples, armas marciais",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
+        "starting_equipament": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO"
     }
+
 ]
 
 
