@@ -51,7 +51,7 @@ classes_data = [
     {
         "name": "Bardo",
         "icon": "fas fa-harp",
-        "description": "",
+        "description": "Cantor",
         "primary_ability": "Carisma",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Destreza, Carisma",
@@ -59,7 +59,7 @@ classes_data = [
         "weapon_proficiencies": "Armas simples",
         "tool_proficiencies": "Escolha 3 instrumentos musicais",
         "armor_training": "Armaduras leves",
-        "starting_equipament": "Armadura de couro, 2 cdagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO"
+        "starting_equipment": "Armadura de couro, 2 cdagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO"
     },
     {
         "name": "Clérigo",
@@ -72,7 +72,7 @@ classes_data = [
         "weapon_proficiencies": "Armas simples",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Armaduras leves, armaduras médias, escudos",
-        "starting_equipament": "Camisão de malha, escudo, maça, símbolo sagrado, pacote de sacerdote e 7 PO; ou 110 PO"
+        "starting_equipment": "Camisão de malha, escudo, maça, símbolo sagrado, pacote de sacerdote e 7 PO; ou 110 PO"
     },
     {
         "name": "Druida",
@@ -85,7 +85,7 @@ classes_data = [
         "weapon_proficiencies": "Armas simples",
         "tool_proficiencies": "Kit de herbalismo",
         "armor_training": "Armaduras leves, escudos",
-        "starting_equipament": "Armadura de couro, escudo, foice, foco druídico(cajado), pacote de explorador, kit de herbalismo e 9 PO; ou 50 PO"
+        "starting_equipment": "Armadura de couro, escudo, foice, foco druídico(cajado), pacote de explorador, kit de herbalismo e 9 PO; ou 50 PO"
     },
     {
         "name": "Guerreiro",
@@ -98,7 +98,20 @@ classes_data = [
         "weapon_proficiencies": "Armas simples, armas marciais",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
-        "starting_equipament": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO"
+        "starting_equipment": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO"
+    },
+    {
+        "name": "Monge",
+        "icon": "fas fa-fist",
+        "description": "",
+        "primary_ability": "Destreza ou Sabedoria",
+        "hit_point_die": "d8",
+        "saving_throw_proficiencies": "Força, Constituição",
+        "skill_proficiencies": "Escolha duas entre: Acrobacia, Atletismo, História, Intuição, Religião, Furtividade",
+        "weapon_proficiencies": "Armas simples, armas marciais com propriedade leve",
+        "tool_proficiencies": "Escolha uma entre: Ferramenta de artesão ou instrumento musical",
+        "armor_training": "Nenhuma",
+        "starting_equipment": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO"
     }
 
 ]
