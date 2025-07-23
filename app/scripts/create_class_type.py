@@ -132,12 +132,12 @@ classes_data = [
         "description": "",
         "primary_ability": "Destreza e Sabedoria",
         "hit_point_die": "d10",
-        "saving_throw_proficiencies": "Sabedoria, Carisma",
-        "skill_proficiencies": "Escolha duas entre: Atletismo, Intuição, Intimidação, Medicina, Persuasão, Religião",
+        "saving_throw_proficiencies": "Força, Destreza",
+        "skill_proficiencies": "Escolha três entre: Lidar com Animais, Atletismo, Intuição, Investigação, Natureza, Percepção, Furtividade, Sobrevivência",
         "weapon_proficiencies": "Armas simples, armas marciais",
         "tool_proficiencies": "Nenhuma",
-        "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
-        "starting_equipment": "Camisão de malha, escudo, espada grande, 6 javelins, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO"
+        "armor_training": "Armaduras leves, armaduras médias, escudos",
+        "starting_equipment": "Armadura de couro batido, cimitarra, espada curta, arco longo, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO"
     }
 
 

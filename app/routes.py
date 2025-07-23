@@ -2,7 +2,8 @@ import os
 import re
 import uuid
 
-from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, send_from_directory
+from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, jsonify, \
+    send_from_directory, abort
 
 from app import db
 from app.forms import CharacterClassForm
@@ -93,20 +94,24 @@ def create_config_sheet():
         multiclass_prerequisites = 'multiclass_prerequisites' in request.form
         mark_level_scaled_spells = 'mark_level_scaled_spells' in request.form
 
+        advancement_type = AdvancementType(request.form.get('advancement_type'))
+        hit_point_type = HitPointType(request.form.get('hit_point_type'))
+
         new_config = ConfigSheet(
             homebrew=homebrew,
             expanded_rules=expanded_rules,
             dice_rolling=dice_rolling,
-            advancement_type=AdvancementType(request.form.get('advancement_type')),
-            hit_point_type=HitPointType(request.form.get('hit_point_type')),
+            advancement_type=advancement_type,
+            hit_point_type=hit_point_type,
             feat_prerequisites=feat_prerequisites,
             multiclass_prerequisites=multiclass_prerequisites,
             mark_level_scaled_spells=mark_level_scaled_spells
         )
         db.session.add(new_config)
         db.session.commit()
+
         flash('Configuração criada com sucesso!', 'success')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.create_character_sheet', config_sheet_id=new_config.id))
 
     return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType)
 
@@ -123,26 +128,38 @@ def select_class():
 
     return render_template('select_class_template.html', title='Selecionar Classe', form=form)
 
+
 @bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
 def create_character_sheet(config_sheet_id):
+    config_sheet = ConfigSheet.query.get(config_sheet_id)
+    if config_sheet is None:
+        abort(404)
+
     class_types = ClassType.query.order_by(ClassType.name).all()
 
     if request.method == 'POST':
         character_name = request.form.get('character_name')
         class_type_id = request.form.get('class_type_id')
 
+        if not character_name or not class_type_id:
+            return render_template('character_sheet/new.html',
+                                   class_types=class_types,
+                                   config_sheet=config_sheet)
+
+        selected_class_type_id = int(class_type_id)
+
         new_character = CharacterSheet(
             name = character_name,
             config_sheet_id = config_sheet_id,
-            class_type_id = class_type_id
+            class_type_id = selected_class_type_id
         )
 
         db.session.add(new_character)
         db.session.commit()
         return redirect(url_for('main.index'))
 
-    return render_template('character_sheet/new.html', class_types = class_types)
-
-
+    return render_template('character_sheet/new.html',
+                           class_types = class_types,
+                           config_sheet = config_sheet)
 
 
