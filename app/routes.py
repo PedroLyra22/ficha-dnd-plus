@@ -6,7 +6,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 
 from app import db
 from app.forms import CharacterClassForm
-from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType
+from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType, CharacterSheet
 
 bp = Blueprint('main', __name__)
 
@@ -125,11 +125,23 @@ def select_class():
 
 @bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
 def create_character_sheet(config_sheet_id):
-    config_sheet = ConfigSheet.query.get_or_404(config_sheet_id)
+    class_types = ClassType.query.order_by(ClassType.name).all()
+
     if request.method == 'POST':
+        character_name = request.form.get('character_name')
+        class_type_id = request.form.get('class_type_id')
 
+        new_character = CharacterSheet(
+            name = character_name,
+            config_sheet_id = config_sheet_id,
+            class_type_id = class_type_id
+        )
 
+        db.session.add(new_character)
+        db.session.commit()
+        return redirect(url_for('main.index'))
 
+    return render_template('character_sheet/new.html', class_types = class_types)
 
 
 

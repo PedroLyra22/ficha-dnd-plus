@@ -76,7 +76,7 @@ classes_data = [
     },
     {
         "name": "Druida",
-        "icon": "fas fa-bear",
+        "icon": "fas fa-bear-paw",
         "description": "",
         "primary_ability": "Sabedoria",
         "hit_point_die": "d8",
@@ -111,8 +111,35 @@ classes_data = [
         "weapon_proficiencies": "Armas simples, armas marciais com propriedade leve",
         "tool_proficiencies": "Escolha uma entre: Ferramenta de artesão ou instrumento musical",
         "armor_training": "Nenhuma",
-        "starting_equipment": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO"
+        "starting_equipment": "Lança, 5 adagas, ferramenta de artesão ou instrumento musical, pacote de explorador e 11 PO; ou 50 PO"
+    },
+    {
+        "name": "Paladino",
+        "icon": "fas fa-shield",
+        "description": "",
+        "primary_ability": "Força e Carisma",
+        "hit_point_die": "d10",
+        "saving_throw_proficiencies": "Sabedoria, Carisma",
+        "skill_proficiencies": "Escolha duas entre: Atletismo, Intuição, Intimidação, Medicina, Persuasão, Religião",
+        "weapon_proficiencies": "Armas simples, armas marciais",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
+        "starting_equipment": "Camisão de malha, escudo, espada grande, 6 javelins, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO"
+    },
+    {
+        "name": "Caçador",
+        "icon": "fas fa-arrow",
+        "description": "",
+        "primary_ability": "Destreza e Sabedoria",
+        "hit_point_die": "d10",
+        "saving_throw_proficiencies": "Sabedoria, Carisma",
+        "skill_proficiencies": "Escolha duas entre: Atletismo, Intuição, Intimidação, Medicina, Persuasão, Religião",
+        "weapon_proficiencies": "Armas simples, armas marciais",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
+        "starting_equipment": "Camisão de malha, escudo, espada grande, 6 javelins, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO"
     }
+
 
 ]
 

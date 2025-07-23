@@ -52,6 +52,10 @@ class CharacterSheet(db.Model):
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.Text)
     mimetype = db.Column(db.String(50))
+    config_sheet_id = db.Column(db.Integer, db.ForeignKey('config_sheets.id'), nullable=False)
+    class_type_id = db.Column(db.Integer, db.ForeignKey('class_types.id'), nullable=False)
+    config_sheet = db.relationship('ConfigSheet', backref='character_sheets', lazy=True)
+    class_type = db.relationship('ClassType', backref='character_sheets', lazy=True)
 
 class SubclassType(db.Model):
     __tablename__ = 'subclass_types'
