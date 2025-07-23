@@ -123,4 +123,14 @@ def select_class():
 
     return render_template('select_class_template.html', title='Selecionar Classe', form=form)
 
+@bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
+def create_character_sheet(config_sheet_id):
+    config_sheet = ConfigSheet.query.get_or_404(config_sheet_id)
+    if request.method == 'POST':
+
+
+
+
+
+
 

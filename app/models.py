@@ -31,13 +31,6 @@ class ConfigSheet(db.Model):
     multiclass_prerequisites = db.Column(db.Boolean, nullable=False, default=False)
     mark_level_scaled_spells = db.Column(db.Boolean, nullable=False, default=False)
 
-class CharacterSheet(db.Model):
-    __tablename__ = 'character_sheets'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
-    image = db.Column(db.Text)
-    mimetype = db.Column(db.String(50))
-
 class ClassType(db.Model):
     __tablename__ = 'class_types'
     id = db.Column(db.Integer, primary_key=True)
@@ -52,6 +45,13 @@ class ClassType(db.Model):
     tool_proficiencies = db.Column(db.String)
     armor_training = db.Column(db.String)
     starting_equipment = db.Column(db.Text)
+
+class CharacterSheet(db.Model):
+    __tablename__ = 'character_sheets'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    image = db.Column(db.Text)
+    mimetype = db.Column(db.String(50))
 
 class SubclassType(db.Model):
     __tablename__ = 'subclass_types'
