@@ -24,16 +24,16 @@ classes_data = [
     },
     {
         "name": "Mago",
-        "icon": "fas fa-book-sparkles",
+        "icon": "fas fa-book",
         "description": "Um usuário de magia erudito capaz de manipular as estruturas da realidade.",
         "primary_ability": "Inteligência",
         "hit_point_die": "d6",
         "saving_throw_proficiencies": "Inteligência, Sabedoria",
-        "skill_proficiencies": "Escolha duas entre: Arcanismo, História, Investigação, Medicina, Intuição",
-        "weapon_proficiencies": "Adagas, dardos, fundas, cajados, bestas leves",
+        "skill_proficiencies": "Escolha duas entre: Arcanismo, História, Intuição, Investigação, Medicina, Natureza, Religião",
+        "weapon_proficiencies": "Armas simples",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Nenhuma",
-        "starting_equipment": "Cajado ou uma adaga, grimório, pacote de estudioso ou pacote de explorador."
+        "starting_equipment": "2 adagas, foco arcano(cajado), robe, livro de magias, pacote de estudioso e 5 PO ou 55 PO"
     },
     {
         "name": "Ladino",
@@ -42,11 +42,11 @@ classes_data = [
         "primary_ability": "Destreza",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Destreza, Inteligência",
-        "skill_proficiencies": "Escolha quatro entre: Acrobacia, Atletismo, Enganação, Intuição, Intimidação, Investigação, Percepção, Performance, Persuasão, Prestidigitação, Furtividade",
-        "weapon_proficiencies": "Armas simples, bestas de mão, espadas longas, rapieiras, espadas curtas",
+        "skill_proficiencies": "Escolha quatro entre: Acrobacia, Atletismo, Enganação, Intuição, Intimidação, Investigação, Percepção, Persuasão, Prestidigitação, Furtividade",
+        "weapon_proficiencies": "Armas simples, armas marciais com propriedades sofisticada ou leve",
         "tool_proficiencies": "Ferramentas de ladrão",
         "armor_training": "Armaduras leves",
-        "starting_equipment": "Rapieira ou espada curta, arco curto e aljava com 20 flechas ou uma espada curta, pacote de ladino, pacote de masmorra ou  pacote de explorador, armadura de couro, duas adagas e ferramentas de ladrão."
+        "starting_equipment": "Armadura de couro, 2 adagas, espada curta, arco curto, aljava com 20 flechas, ferramentas de ladrão, pacote de ladino e 8 PO ou 100 PO"
     },
     {
         "name": "Bardo",
@@ -137,10 +137,34 @@ classes_data = [
         "weapon_proficiencies": "Armas simples, armas marciais",
         "tool_proficiencies": "Nenhuma",
         "armor_training": "Armaduras leves, armaduras médias, escudos",
-        "starting_equipment": "Armadura de couro batido, cimitarra, espada curta, arco longo, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO"
+        "starting_equipment": "Armadura de couro batido, cimitarra, espada curta, arco longo, aljava com 20 flechas, foco druídico(flecha de visco), pacote de explorador e 7 PO ou 150 PO"
+    },
+    {
+        "name": "Feiticeiro",
+        "icon": "fas fa-fire",
+        "description": "",
+        "primary_ability": "Carisma",
+        "hit_point_die": "d6",
+        "saving_throw_proficiencies": "Constituição, Carisma",
+        "skill_proficiencies": "Escolha duas entre: Arcanismo, Enganação, Intuição, Intimidação, Persuasão, Religião",
+        "weapon_proficiencies": "Armas simples",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Nenhuma",
+        "starting_equipment": "Lança, 2 adagas, foco arcano(cristal), pacote de masmorra e 28 PO ou 50 PO"
+    },
+    {
+        "name": "Bruxo",
+        "icon": "fas fa-eye",
+        "description": "",
+        "primary_ability": "Carisma",
+        "hit_point_die": "d8",
+        "saving_throw_proficiencies": "Sabedoria, Carisma",
+        "skill_proficiencies": "Escolha duas entre: Arcanismo, Enganação, História, Intimidação, Investigaçãon, Natureza, Religião",
+        "weapon_proficiencies": "Armas simples",
+        "tool_proficiencies": "Nenhuma",
+        "armor_training": "Armaduras leves",
+        "starting_equipment": "Armadura de couro, foice, 2 adagas, foco arcano(orbe), livro(ocultismo), pacote de estudioso e 15 PO ou 100 PO"
     }
-
-
 ]
 
 
