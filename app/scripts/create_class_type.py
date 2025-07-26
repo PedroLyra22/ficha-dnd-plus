@@ -24,7 +24,7 @@ classes_data = [
     },
     {
         "name": "Mago",
-        "icon": "fas fa-book",
+        "icon": "app/static/img/class_icons/icon-wizard.png",
         "description": "Um usuário de magia erudito capaz de manipular as estruturas da realidade.",
         "primary_ability": "Inteligência",
         "hit_point_die": "d6",
@@ -37,7 +37,7 @@ classes_data = [
     },
     {
         "name": "Ladino",
-        "icon": "fas fa-dagger",
+        "icon": "app/static/img/class_icons/icon-rogue.png",
         "description": "Um batedor, ladrão ou espião que prospera nas sombras.",
         "primary_ability": "Destreza",
         "hit_point_die": "d8",
@@ -50,7 +50,7 @@ classes_data = [
     },
     {
         "name": "Bardo",
-        "icon": "fas fa-harp",
+        "icon": "app/static/img/class_icons/icon-bard.png",
         "description": "Cantor",
         "primary_ability": "Carisma",
         "hit_point_die": "d8",
@@ -63,7 +63,7 @@ classes_data = [
     },
     {
         "name": "Clérigo",
-        "icon": "fas fa-morningstar",
+        "icon": "app/static/img/class_icons/icon-cleric.png",
         "description": "",
         "primary_ability": "Sabedoria",
         "hit_point_die": "d8",
@@ -76,7 +76,7 @@ classes_data = [
     },
     {
         "name": "Druida",
-        "icon": "fas fa-bear-paw",
+        "icon": "app/static/img/class_icons/icon-druid.png",
         "description": "",
         "primary_ability": "Sabedoria",
         "hit_point_die": "d8",
@@ -89,7 +89,7 @@ classes_data = [
     },
     {
         "name": "Guerreiro",
-        "icon": "fas fa-sword",
+        "icon": "app/static/img/class_icons/icon-figther.png",
         "description": "",
         "primary_ability": "Força ou Destreza",
         "hit_point_die": "d10",
@@ -102,7 +102,7 @@ classes_data = [
     },
     {
         "name": "Monge",
-        "icon": "fas fa-fist",
+        "icon": "app/static/img/class_icons/icon-monk.png",
         "description": "",
         "primary_ability": "Destreza ou Sabedoria",
         "hit_point_die": "d8",
@@ -115,7 +115,7 @@ classes_data = [
     },
     {
         "name": "Paladino",
-        "icon": "fas fa-shield",
+        "icon": "app/static/img/class_icons/icon-paladin.png",
         "description": "",
         "primary_ability": "Força e Carisma",
         "hit_point_die": "d10",
@@ -128,7 +128,7 @@ classes_data = [
     },
     {
         "name": "Caçador",
-        "icon": "fas fa-arrow",
+        "icon": "app/static/img/class_icons/icon-ranger.png",
         "description": "",
         "primary_ability": "Destreza e Sabedoria",
         "hit_point_die": "d10",
@@ -141,7 +141,7 @@ classes_data = [
     },
     {
         "name": "Feiticeiro",
-        "icon": "fas fa-fire",
+        "icon": "app/static/img/class_icons/icon-sorcerer.png",
         "description": "",
         "primary_ability": "Carisma",
         "hit_point_die": "d6",
@@ -154,7 +154,7 @@ classes_data = [
     },
     {
         "name": "Bruxo",
-        "icon": "fas fa-eye",
+        "icon": "app/static/img/class_icons/icon-warlock.png",
         "description": "",
         "primary_ability": "Carisma",
         "hit_point_die": "d8",
