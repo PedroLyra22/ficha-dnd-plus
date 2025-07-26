@@ -80,12 +80,12 @@ class CharacterSheetAttribute(db.Model):
     __tablename__ = 'character_sheet_attributes'
 
     id = db.Column(db.Integer, primary_key=True)
-    strength = db.Column(db.Integer, nullable=False)
-    dexterity = db.Column(db.Integer, nullable=False)
-    constitution = db.Column(db.Integer, nullable=False)
-    intelligence = db.Column(db.Integer, nullable=False)
-    wisdom = db.Column(db.Integer, nullable=False)
-    charisma = db.Column(db.Integer, nullable=False)
+    strength = db.Column(db.Integer, nullable=False, default=10)
+    dexterity = db.Column(db.Integer, nullable=False, default=10)
+    constitution = db.Column(db.Integer, nullable=False, default=10)
+    intelligence = db.Column(db.Integer, nullable=False, default=10)
+    wisdom = db.Column(db.Integer, nullable=False, default=10)
+    charisma = db.Column(db.Integer, nullable=False, default=10)
     character_sheet_id = db.Column(db.Integer, db.ForeignKey('character_sheets.id'), unique=True, nullable=False)
 
 
