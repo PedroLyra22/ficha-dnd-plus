@@ -1,4 +1,7 @@
 import enum
+from email.policy import default
+
+from sqlalchemy import CheckConstraint
 
 from . import db
 
@@ -52,10 +55,14 @@ class CharacterSheet(db.Model):
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.Text)
     mimetype = db.Column(db.String(50))
+    level = db.Column(db.Integer, nullable=False)
+    proficiency_bonus = db.Column(db.Integer, default=2)
     config_sheet_id = db.Column(db.Integer, db.ForeignKey('config_sheets.id'), nullable=False)
     class_type_id = db.Column(db.Integer, db.ForeignKey('class_types.id'), nullable=False)
     config_sheet = db.relationship('ConfigSheet', backref='character_sheets', lazy=True)
     class_type = db.relationship('ClassType', backref='character_sheets', lazy=True)
+    attributes = db.relationship('CharacterSheetAttribute', backref='character_sheet', uselist=False)
+    skills = db.relationship('CharacterSheetSkill', backref='character_sheet_skill', uselist=False)
 
 class SubclassType(db.Model):
     __tablename__ = 'subclass_types'
@@ -69,4 +76,39 @@ class ClassFeature(db.Model):
     level = db.Column(db.Text)
     description = db.Column(db.Text)
 
+class CharacterSheetAttribute(db.Model):
+    __tablename__ = 'character_sheet_attributes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    strength = db.Column(db.Integer, nullable=False)
+    dexterity = db.Column(db.Integer, nullable=False)
+    constitution = db.Column(db.Integer, nullable=False)
+    intelligence = db.Column(db.Integer, nullable=False)
+    wisdom = db.Column(db.Integer, nullable=False)
+    charisma = db.Column(db.Integer, nullable=False)
+    character_sheet_id = db.Column(db.Integer, db.ForeignKey('character_sheets.id'), unique=True, nullable=False)
+
+
+class CharacterSheetSkill(db.Model):
+    __tablename__ = 'character_sheet_skills'
+    id = db.Column(db.Integer, primary_key=True)
+    character_sheet_id = db.Column(db.Integer, db.ForeignKey('character_sheets.id'), unique=True, nullable=False)
+    acrobatics = db.Column(db.Integer, default=0)
+    animal_handling = db.Column(db.Integer, default=0)
+    arcana = db.Column(db.Integer, default=0)
+    athletics = db.Column(db.Integer, default=0)
+    deception = db.Column(db.Integer, default=0)
+    history = db.Column(db.Integer, default=0)
+    insight = db.Column(db.Integer, default=0)
+    intimidation = db.Column(db.Integer, default=0)
+    investigation = db.Column(db.Integer, default=0)
+    medicine = db.Column(db.Integer, default=0)
+    nature = db.Column(db.Integer, default=0)
+    perception = db.Column(db.Integer, default=0)
+    performance = db.Column(db.Integer, default=0)
+    persuasion = db.Column(db.Integer, default=0)
+    religion = db.Column(db.Integer, default=0)
+    sleight_of_hand = db.Column(db.Integer, default=0)
+    stealth = db.Column(db.Integer, default=0)
+    survival = db.Column(db.Integer, default=0)
 
