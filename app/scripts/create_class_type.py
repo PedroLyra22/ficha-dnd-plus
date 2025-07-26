@@ -11,7 +11,7 @@ app = create_app()
 classes_data = [
     {
         "name": "Bárbaro",
-        "icon": "fas fa-axe",
+        "icon": "app/static/img/class_icons/icon-barbarian.png",
         "description": "Um guerreiro feroz de origem primitiva que pode entrar em fúria em combate.",
         "primary_ability": "Força",
         "hit_point_die": "d12",
