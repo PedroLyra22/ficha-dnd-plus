@@ -27,10 +27,48 @@
                     </select>
                 </div>
 
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="level" class="form-label">Nível</label>
+                        <input type="number" class="form-control" id="level" name="level" value="1" required min="1" max="20">
+                    </div>
+                </div>
+
+                <div hidden>
+               <h5 class="mt-4">Atributos</h5>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="strength" class="form-label">Força</label>
+                        <input type="number" class="form-control" id="strength" name="strength" value="8" min="0" max="40">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="dexterity" class="form-label">Destreza</label>
+                        <input type="number" class="form-control" id="dexterity" name="dexterity" value="8" min="0" max="40">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="constitution" class="form-label">Constituição</label>
+                        <input type="number" class="form-control" id="constitution" name="constitution" value="8" min="0" max="40">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="intelligence" class="form-label">Inteligência</label>
+                        <input type="number" class="form-control" id="intelligence" name="intelligence" value="8" min="0" max="40">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="wisdom" class="form-label">Sabedoria</label>
+                        <input type="number" class="form-control" id="wisdom" name="wisdom" value="8" min="0" max="40">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="charisma" class="form-label">Carisma</label>
+                        <input type="number" class="form-control" id="charisma" name="charisma" value="8" min="0" max="40">
+                    </div>
+                </div>
+                </div>
+
                 {% if config_sheet %}
                 <div class="mb-4 p-3 border rounded bg-light">
                     <h5>Configurações Selecionadas da Ficha</h5>
-                    <p class="mb-1">**ID da Config:** {{ config_sheet.id }}</p>
                     <p class="mb-1">**Homebrew:** {{ 'Sim' if config_sheet.homebrew else 'Não' }}</p>
                     <p class="mb-1">**Regras Expandidas:** {{ 'Sim' if config_sheet.expanded_rules else 'Não' }}</p>
                     <p class="mb-1">**Rolagem de Dados:** {{ 'Sim' if config_sheet.dice_rolling else 'Não' }}</p>

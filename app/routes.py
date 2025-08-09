@@ -7,7 +7,8 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 
 from app import db
 from app.forms import CharacterClassForm
-from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType, CharacterSheet
+from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType, CharacterSheet, \
+    CharacterSheetAttribute, CharacterSheetSkill
 
 bp = Blueprint('main', __name__)
 
@@ -119,7 +120,15 @@ def create_config_sheet():
 def select_class():
     form = CharacterClassForm()
 
-    form.character_class.choices = [(c.id, c.name) for c in ClassType.query.order_by(ClassType.name).all()]
+    ordem_prioritaria = ["Bárbaro", "Bardo"]
+
+    todas_as_classes = ClassType.query.all()
+    classes_ordenadas = sorted(todas_as_classes, key=lambda c: (
+        ordem_prioritaria.index(c.name) if c.name in ordem_prioritaria else float('inf'),
+        c.name
+    ))
+
+    form.character_class.choices = [(c.id, c.name) for c in classes_ordenadas]
 
     if form.validate_on_submit():
         selected_class_id = form.character_class.data
@@ -131,35 +140,43 @@ def select_class():
 
 @bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
 def create_character_sheet(config_sheet_id):
-    config_sheet = ConfigSheet.query.get(config_sheet_id)
-    if config_sheet is None:
-        abort(404)
-
+    config_sheet = ConfigSheet.query.get_or_404(config_sheet_id)
     class_types = ClassType.query.order_by(ClassType.name).all()
 
     if request.method == 'POST':
         character_name = request.form.get('character_name')
         class_type_id = request.form.get('class_type_id')
-
-        if not character_name or not class_type_id:
-            return render_template('character_sheet/new.html',
-                                   class_types=class_types,
-                                   config_sheet=config_sheet)
-
-        selected_class_type_id = int(class_type_id)
+        level = request.form.get('level', 1, type=int)
 
         new_character = CharacterSheet(
-            name = character_name,
-            config_sheet_id = config_sheet_id,
-            class_type_id = selected_class_type_id
+            name=character_name,
+            level=level,
+            config_sheet_id=config_sheet.id,
+            class_type_id=class_type_id,
+            user_id=1
         )
-
         db.session.add(new_character)
         db.session.commit()
+
+        new_attributes = CharacterSheetAttribute(
+            character_sheet_id=new_character.id,
+            strength=request.form.get('strength', 10, type=int),
+            dexterity=request.form.get('dexterity', 10, type=int),
+            constitution=request.form.get('constitution', 10, type=int),
+            intelligence=request.form.get('intelligence', 10, type=int),
+            wisdom=request.form.get('wisdom', 10, type=int),
+            charisma=request.form.get('charisma', 10, type=int)
+        )
+        db.session.add(new_attributes)
+
+        new_skills = CharacterSheetSkill(character_sheet_id=new_character.id)
+        db.session.add(new_skills)
+
+        db.session.commit()
+
+        flash('Ficha de personagem criada com sucesso!', 'success')
         return redirect(url_for('main.index'))
 
     return render_template('character_sheet/new.html',
-                           class_types = class_types,
-                           config_sheet = config_sheet)
-
-
+                           class_types=class_types,
+                           config_sheet=config_sheet)

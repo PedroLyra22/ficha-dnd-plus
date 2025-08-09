@@ -51,7 +51,7 @@ classes_data = [
     {
         "name": "Bardo",
         "icon": "app/static/img/class_icons/icon-bard.png",
-        "description": "Cantor",
+        "description": "Bardos são especialistas em inspirar os outros, acalmar mágoas, desanimar inimigos e criar ilusões.",
         "primary_ability": "Carisma",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Destreza, Carisma",
@@ -64,7 +64,7 @@ classes_data = [
     {
         "name": "Clérigo",
         "icon": "app/static/img/class_icons/icon-cleric.png",
-        "description": "",
+        "description": "Os clérigos podem recorrer à magia divina dos planos exteriores e canalizá-la para fortalecer pessoas e combater inimigos.",
         "primary_ability": "Sabedoria",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Sabedoria, Carisma",
@@ -77,7 +77,7 @@ classes_data = [
     {
         "name": "Druida",
         "icon": "app/static/img/class_icons/icon-druid.png",
-        "description": "",
+        "description": "Os druidas invocam as forças da natureza, utilizando magia para curar, transformar-se em animais e exercer destruição elemental.",
         "primary_ability": "Sabedoria",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Inteligência, Sabedoria",
@@ -90,7 +90,7 @@ classes_data = [
     {
         "name": "Guerreiro",
         "icon": "app/static/img/class_icons/icon-figther.png",
-        "description": "",
+        "description": "Todos os guerreiros compartilham uma habilidade inigualável com armas e armaduras, e estão bem familiarizados com a morte, tanto enfrentando-a quanto desafiando-a.",
         "primary_ability": "Força ou Destreza",
         "hit_point_die": "d10",
         "saving_throw_proficiencies": "Força, Constituição",
@@ -103,7 +103,7 @@ classes_data = [
     {
         "name": "Monge",
         "icon": "app/static/img/class_icons/icon-monk.png",
-        "description": "",
+        "description": "Os monges concentram seu poder interior para criar efeitos extraordinários, até mesmo sobrenaturais.",
         "primary_ability": "Destreza ou Sabedoria",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Força, Constituição",
@@ -116,7 +116,7 @@ classes_data = [
     {
         "name": "Paladino",
         "icon": "app/static/img/class_icons/icon-paladin.png",
-        "description": "",
+        "description": "Paladinos vivem na linha de frente da luta cósmica, unidos por seus juramentos contra as forças da aniquilação.",
         "primary_ability": "Força e Carisma",
         "hit_point_die": "d10",
         "saving_throw_proficiencies": "Sabedoria, Carisma",
@@ -129,7 +129,7 @@ classes_data = [
     {
         "name": "Caçador",
         "icon": "app/static/img/class_icons/icon-ranger.png",
-        "description": "",
+        "description": "Os caçadores são afiados com foco mortal e controlam poderes primitivos para proteger o mundo da devastação de monstros e tiranos.",
         "primary_ability": "Destreza e Sabedoria",
         "hit_point_die": "d10",
         "saving_throw_proficiencies": "Força, Destreza",
@@ -142,7 +142,7 @@ classes_data = [
     {
         "name": "Feiticeiro",
         "icon": "app/static/img/class_icons/icon-sorcerer.png",
-        "description": "",
+        "description": "Os feiticeiros aproveitam e canalizam o poder bruto e turbulento da magia inata que está gravada em seu próprio ser.",
         "primary_ability": "Carisma",
         "hit_point_die": "d6",
         "saving_throw_proficiencies": "Constituição, Carisma",
@@ -155,7 +155,7 @@ classes_data = [
     {
         "name": "Bruxo",
         "icon": "app/static/img/class_icons/icon-warlock.png",
-        "description": "",
+        "description": "Os bruxos buscam o conhecimento escondido na estrutura do multiverso, juntando segredos arcanos para reforçar seu próprio poder.",
         "primary_ability": "Carisma",
         "hit_point_die": "d8",
         "saving_throw_proficiencies": "Sabedoria, Carisma",
