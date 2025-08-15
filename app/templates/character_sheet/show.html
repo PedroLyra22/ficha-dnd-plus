@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Ficha de {{ sheet.character_name or 'Personagem' }}{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/character_sheet.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="sheet-container">
+    <header class="sheet-header">
+        <h1>{{ sheet.character_name }}</h1>
+        <div class="char-info-summary">
+            <span>{{ sheet.character_class }} | Nível {{ sheet.level }}</span>
+            <span>{{ sheet.race }}</span>
+            <span>{{ sheet.alignment }}</span>
+        </div>
+    </header>
+
+    <main class="sheet-body">
+        <section class="attributes-section">
+            <div class="attr-box">
+                <label>Força</label>
+                <div class="attr-score">{{ sheet.attributes.strength }}</div>
+                <div class="attr-modifier">+{{ ((sheet.strength - 10) / 2) | int }}</div>
+            </div>
+            <div class="attr-box">
+                <label>Destreza</label>
+                <div class="attr-score">{{ sheet.dexterity }}</div>
+                <div class="attr-modifier">+{{ ((sheet.dexterity - 10) / 2) | int }}</div>
+            </div>
+            <div class="attr-box">
+                <label>Constituição</label>
+                <div class="attr-score">{{ sheet.constitution }}</div>
+                <div class="attr-modifier">+{{ ((sheet.constitution - 10) / 2) | int }}</div>
+            </div>
+            <div class="attr-box">
+                <label>Inteligência</label>
+                <div class="attr-score">{{ sheet.intelligence }}</div>
+                <div class="attr-modifier">+{{ ((sheet.intelligence - 10) / 2) | int }}</div>
+            </div>
+            <div class="attr-box">
+                <label>Sabedoria</label>
+                <div class="attr-score">{{ sheet.wisdom }}</div>
+                <div class="attr-modifier">+{{ ((sheet.wisdom - 10) / 2) | int }}</div>
+            </div>
+            <div class="attr-box">
+                <label>Carisma</label>
+                <div class="attr-score">{{ sheet.charisma }}</div>
+                <div class="attr-modifier">+{{ ((sheet.charisma - 10) / 2) | int }}</div>
+            </div>
+        </section>
+
+        <section class="combat-info">
+            <div class="info-box armor-class">
+                <label>Classe de Armadura</label>
+                <span>{{ 10 + ((sheet.dexterity - 10) / 2) | int }}</span>
+            </div>
+            <div class="info-box hit-points">
+                <label>Pontos de Vida</label>
+                <span>{{ sheet.hit_points }}</span>
+            </div>
+            <div class="info-box speed">
+                <label>Velocidade</label>
+                <span>9m</span>
+            </div>
+        </section>
+
+        <section class="features-traits">
+            <h3>Características & Talentos</h3>
+            <textarea readonly>{{ sheet.features_traits }}</textarea>
+        </section>
+    </main>
+</div>
+{% endblock %}

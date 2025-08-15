@@ -26,13 +26,39 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Fichas de RPG</h2>
-            <a href="/config_sheets/new" class="btn btn-primary">Adicionar Nova Ficha</a>
+            <h2>Fichas de Personagem</h2>
+            <a href="{{ url_for('main.create_config_sheet') }}" class="btn btn-primary">Adicionar Nova Ficha</a>
         </div>
 
         <div class="card">
             <div class="card-body">
-                <p class="text-muted">Ainda não há fichas de RPG cadastradas para este usuário.</p>
+                {% if character_sheets %}
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome do Personagem</th>
+                                <th>Classe</th>
+                                <th>Nível</th>
+                                <th class="text-right">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for sheet in character_sheets %}
+                                <tr>
+                                    <td>{{ sheet.name }}</td>
+                                    <td>{{ sheet.class_type.name if sheet.class_type else 'N/A' }}</td>
+                                    <td>{{ sheet.level }}</td>
+                                    <td class="text-right">
+                                        <a href="{{ url_for('main.show_character_sheet', sheet_id=sheet.id) }}" class="btn btn-info btn-sm">Visualizar</a>
+                                        <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="text-muted">Ainda não há fichas de personagem cadastradas para este usuário.</p>
+                {% endif %}
             </div>
         </div>
 

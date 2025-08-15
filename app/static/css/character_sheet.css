@@ -1,0 +1,114 @@
+.sheet-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 2px solid #8B4513;
+    background-color: #FDF5E6;
+    font-family: 'Georgia', serif;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.sheet-header {
+    text-align: center;
+    border-bottom: 3px double #8B4513;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.sheet-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #5D4037;
+    margin: 0;
+}
+
+.char-info-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.sheet-body {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.attributes-section {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.attr-box {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #C8B5A6;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.attr-box label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #8B4513;
+    text-transform: uppercase;
+}
+
+.attr-score {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.attr-modifier {
+    font-size: 1.2rem;
+    border: 1px solid #8B4513;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+}
+
+.combat-info {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.info-box {
+    padding: 10px;
+}
+
+.info-box label {
+    display: block;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.info-box span {
+    font-size: 1.5rem;
+}
+
+.features-traits {
+    text-align: center;
+}
+
+.features-traits h3 {
+    color: #5D4037;
+    border-bottom: 1px solid #C8B5A6;
+    padding-bottom: 5px;
+}
+
+.features-traits textarea {
+    width: 100%;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px dashed #C8B5A6;
+    padding: 10px;
+    font-family: 'Georgia', serif;
+    resize: vertical;
+}

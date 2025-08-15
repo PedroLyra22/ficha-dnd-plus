@@ -83,7 +83,8 @@ def update_user(user_id):
 @bp.route('/users/<int:user_id>')
 def show_user(user_id):
     user = User.query.get_or_404(user_id)
-    return render_template('user/show.html', user=user)
+    character_sheets = CharacterSheet.query.filter_by(user_id=user.id).all()
+    return render_template('user/show.html', user=user, character_sheets=character_sheets)
 
 @bp.route('/config_sheets/new', methods=['GET', 'POST'])
 def create_config_sheet():
@@ -137,6 +138,13 @@ def select_class():
 
     return render_template('select_class_template.html', title='Selecionar Classe', form=form)
 
+
+@bp.route('/character/<int:sheet_id>')
+def show_character_sheet(sheet_id):
+    sheet = CharacterSheet.query.get_or_404(sheet_id)
+
+
+    return render_template('character_sheet/show.html', sheet=sheet)
 
 @bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
 def create_character_sheet(config_sheet_id):
