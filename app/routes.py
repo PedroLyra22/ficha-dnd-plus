@@ -146,6 +146,25 @@ def show_character_sheet(sheet_id):
 
     return render_template('character_sheet/show.html', sheet=sheet)
 
+@bp.route('/character/<int:sheet_id>/edit', methods=['GET', 'POST'])
+def edit_character_sheet(sheet_id):
+    sheet = CharacterSheet.query.get_or_404(sheet_id)
+    if request.method == 'POST':
+        sheet.name = request.form.get('character_name')
+        sheet.level = request.form.get('level', type=int)
+        sheet.attributes.strength = request.form.get('strength', type=int)
+        sheet.attributes.dexterity = request.form.get('dexterity', type=int)
+        sheet.attributes.constitution = request.form.get('constitution', type=int)
+        sheet.attributes.intelligence = request.form.get('intelligence', type=int)
+        sheet.attributes.wisdom = request.form.get('wisdom', type=int)
+        sheet.attributes.charisma = request.form.get('charisma', type=int)
+
+        db.session.commit()
+        flash('Ficha de personagem atualizada com sucesso!', 'success')
+        return redirect(url_for('main.show_character_sheet', sheet_id=sheet.id))
+
+    return render_template('character_sheet/edit.html', sheet=sheet)
+
 @bp.route('/character_sheet/new/<int:config_sheet_id>', methods=['GET', 'POST'])
 def create_character_sheet(config_sheet_id):
     config_sheet = ConfigSheet.query.get_or_404(config_sheet_id)
