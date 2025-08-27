@@ -1,6 +1,6 @@
 import enum
 from email.policy import default
-
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy import CheckConstraint
 
 from . import db
@@ -40,14 +40,7 @@ class ClassType(db.Model):
     name = db.Column(db.String, nullable=False)
     icon = db.Column(db.String)
     description = db.Column(db.Text)
-    primary_ability = db.Column(db.String)
-    hit_point_die = db.Column(db.String)
-    saving_throw_proficiencies = db.Column(db.String)
-    skill_proficiencies = db.Column(db.Text)
-    weapon_proficiencies = db.Column(db.String)
-    tool_proficiencies = db.Column(db.String)
-    armor_training = db.Column(db.String)
-    starting_equipment = db.Column(db.Text)
+    #features = db.Column(JSONB)
 
 class CharacterSheet(db.Model):
     __tablename__ = 'character_sheets'
@@ -77,6 +70,7 @@ class ClassFeature(db.Model):
     name = db.Column(db.Text)
     level = db.Column(db.Text)
     description = db.Column(db.Text)
+    #choices = db.Column(JSONB)
 
 class CharacterSheetAttribute(db.Model):
     __tablename__ = 'character_sheet_attributes'
@@ -114,3 +108,54 @@ class CharacterSheetSkill(db.Model):
     stealth = db.Column(db.Integer, default=0)
     survival = db.Column(db.Integer, default=0)
 
+
+weapon_properties = db.Table(
+    'weapon_properties',
+    db.Column('weapon_id', db.Integer, db.ForeignKey('weapons.id'), primary_key=True),
+    db.Column('property_id', db.Integer, db.ForeignKey('properties.id'), primary_key=True)
+)
+
+class Property(db.Model):
+    __tablename__ = 'properties'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True, nullable=False)
+    slug = db.Column(db.String(80), unique=True, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+
+    weapons = db.relationship(
+        'Weapon',
+        secondary=weapon_properties,
+        back_populates='properties'
+    )
+
+class Weapon(db.Model):
+    __tablename__ = 'weapons'
+
+    id = db.Column(db.Integer, primary_key=True)
+    weapon_type = db.Column(db.String(80))
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text)
+    damage = db.Column(db.String(20))
+    damage_type = db.Column(db.String(50))
+    weight = db.Column(db.String(20))
+    cost = db.Column(db.String(20))
+
+    mastery_id = db.Column(db.Integer, db.ForeignKey('masteries.id'), nullable=True)
+    mastery = db.relationship('Mastery', back_populates='weapons')
+
+    properties = db.relationship(
+        'Property',
+        secondary=weapon_properties,
+        back_populates='weapons'
+    )
+
+class Mastery(db.Model):
+    __tablename__ = 'masteries'
+
+    id = db.Column(db.Integer, primary_key=True)
+    slug = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(100), unique=True, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+
+    weapons = db.relationship('Weapon', back_populates='mastery')
