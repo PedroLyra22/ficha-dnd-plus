@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressão de Classe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/class_feature.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <a href="#" class="top-right-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+
+    <div class="main-container">
+        <header class="card-header">
+            <h1>Progressão de Classe</h1>
+            <div class="level-badge">
+                <span>Level</span>
+                <span class="level-number">{{ dados.nivel }}</span>
+            </div>
+        </header>
+
+        <section class="class-identity">
+            <img src="{{ url_for('static', filename='img/class_icons/icon-cleric.png') }}" alt="Ícone da classe {{ dados.nome }}" class="class-icon">
+            <h2>{{ dados.nome }}</h2>
+        </section>
+
+        <nav class="tabs">
+            <button class="tab-button active">CLASS FEATURES</button>
+            <button class="tab-button">SPELLS</button>
+        </nav>
+
+        <main class="features-list">
+            {% for feature in dados.features %}
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="title-section">
+                        {% if feature.notificacao %}
+                        <div class="notification-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        {% endif %}
+                        <div class="title-text">
+                            <h3>{{ feature.titulo }}</h3>
+                            <p>{{ feature.subtitulo }}</p>
+                        </div>
+                    </div>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="accordion-content">
+
+                    {% if feature.id == 'core_traits' %}
+                        <form method="POST" action="{{ url_for('main.class_feature') }}" novalidate>
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.trait.label }}
+                                {{ form.trait(class="form-control") }}
+                                {% if form.trait.errors %}
+                                    <ul class="errors">
+                                        {% for error in form.trait.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.submit(class="submit-btn") }}
+                            </div>
+                        </form>
+                        {% else %}
+                        <p>
+                            Adevair Aqui
+                        </p>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

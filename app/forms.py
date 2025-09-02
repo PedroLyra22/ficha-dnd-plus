@@ -13,7 +13,15 @@ class CharacterClassForm(FlaskForm):
     submit = SubmitField('Selecionar')
 
 class ClassFeatureForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
-    level = StringField('Level', validators=[DataRequired()])
-    description = TextAreaField('Description', validators=[DataRequired()])
-    submit = SubmitField('Create')
+    trait_choices = [
+        ('healers_touch', 'Toque do Curandeiro'),
+        ('divine_shield', 'Escudo Divino'),
+        ('holy_smite', 'Golpe Sagrado')
+    ]
+
+    trait = SelectField(
+        'Escolha sua Característica',
+        choices=trait_choices,
+        validators=[DataRequired(message="É necessário selecionar uma característica.")]
+    )
+    submit = SubmitField('Confirmar Escolha')

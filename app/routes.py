@@ -6,7 +6,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
     send_from_directory, abort
 
 from app import db
-from app.forms import CharacterClassForm
+from app.forms import CharacterClassForm, ClassFeatureForm
 from app.models import User, AdvancementType, HitPointType, ConfigSheet, ClassType, CharacterSheet, \
     CharacterSheetAttribute, CharacterSheetSkill
 
@@ -207,3 +207,41 @@ def create_character_sheet(config_sheet_id):
     return render_template('character_sheet/new.html',
                            class_types=class_types,
                            config_sheet=config_sheet)
+
+@bp.route('/class_feature', methods=['GET', 'POST'])
+def class_feature():
+    form = ClassFeatureForm()
+
+    if form.validate_on_submit():
+        escolha_id = form.trait.data
+
+        flash(f'Característica "{dict(form.trait.choices).get(escolha_id)}" selecionada com sucesso!', 'success')
+
+
+        return redirect(url_for('class_feature'))
+
+    dados_classe = {
+        "nome": "Cleric",
+        "nivel": 1,
+        "features": [
+            {
+                "id": "core_traits",
+                "titulo": "Core Cleric Traits",
+                "subtitulo": "2 Choices 1st level",
+                "notificacao": True
+            },
+            {
+                "id": "spellcasting",
+                "titulo": "Spellcasting",
+                "subtitulo": "1st level",
+                "notificacao": False
+            },
+            {
+                "id": "divine_order",
+                "titulo": "Divine Order",
+                "subtitulo": "1 Choice 1st level",
+                "notificacao": True
+            }
+        ]
+    }
+    return render_template('character_sheet/class_feature.html', dados=dados_classe, form=form)
