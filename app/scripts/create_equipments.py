@@ -5,16 +5,36 @@ app = create_app()
 
 MASTERIES_DATA = [
     {
-        "slug": "nick", "name": "Nick",
-        "description": "Ao atacar com uma arma Leve, você pode usar uma Ação Bônus para fazer um ataque com outra arma Leve que esteja em sua outra mão."
+        "slug": "cleave", "name": "Abrir Caminho",
+        "description": "Se você atingir uma criatura com uma jogada de ataque corpo a corpo usando esta arma, você pode fazer uma jogada de ataque corpo a corpo com a arma contra uma segunda criatura a até 5ft da primeira que também esteja ao seu alcance. Em caso de acerto, a segunda criatura sofre o dano da arma, mas não adicione seu modificador de habilidade a esse dano, a menos que o modificador seja negativo. Você pode fazer este ataque extra apenas uma vez por turno."
     },
     {
-        "slug": "sap", "name": "Sap",
-        "description": "Se você acertar uma criatura com esta arma, ela tem Desvantagem na próxima jogada de ataque que fizer antes do início do seu próximo turno."
+        "slug": "graze", "name": "Arranhar",
+        "description": "Se sua jogada de ataque com esta arma errar uma criatura, você pode causar dano a essa criatura igual ao modificador de habilidade que você usou para fazer a jogada de ataque. Este dano é do mesmo tipo causado pela arma, e o dano só pode ser aumentado melhorando o modificador de habilidade."
     },
     {
-        "slug": "vex", "name": "Vex",
-        "description": "Se você acertar uma criatura com esta arma, você tem Vantagem nas jogadas de ataque contra ela até o final do seu próximo turno."
+        "slug": "nick", "name": "Incisão",
+        "description": "Ao realizar o ataque extra da propriedade Leve, você pode fazê-lo como parte da ação de ataque em vez de uma Ação Bônus. Você pode realizar este ataque extra apenas uma vez por turno."
+    },
+    {
+        "slug": "push", "name": "Empurrar",
+        "description": "Se você atingir uma criatura com esta arma, você pode empurrá-la até 10ft para longe de você, se ela for Grande ou menor."
+    },
+    {
+        "slug": "sap", "name": "Fluido Vital",
+        "description": "Se você atingir uma criatura com esta arma, ela terá Desvantagem em sua próxima jogada de ataque antes do início do seu próximo turno."
+    },
+    {
+        "slug": "slow", "name": "Lentidão",
+        "description": "Se você atingir uma criatura com esta arma e causar dano a ela, você pode reduzir sua Velocidade em 10ft até o início do seu próximo turno. Se a criatura for atingida mais de uma vez por armas que tenham esta propriedade, a redução de velocidade não excede 10ft."
+    },
+    {
+        "slug": "topple", "name": "Derrubar",
+        "description": "Se você atingir uma criatura com esta arma, você pode forçá-la a realizar um teste de resistência de Constituição (CD 8 mais o modificador de habilidade usado para realizar a jogada de ataque e seu Bônus de Proficiência). Em caso de falha, a criatura fica propensa à condição de Caída."
+    },
+    {
+        "slug": "vex", "name": "Irritante",
+        "description": "Se você atingir uma criatura com esta arma e causar dano a ela, você terá Vantagem na sua próxima jogada de ataque contra aquela criatura antes do final do seu próximo turno."
     }
 ]
 
@@ -36,9 +56,30 @@ PROPERTIES_DATA = [
         "description": "Ao realizar uma ação de ataque no seu turno e atacar com uma arma Leve, você pode realizar um ataque extra como Ação Bônus posteriormente no mesmo turno. Esse ataque extra deve ser realizado com uma arma Leve diferente, e você não adiciona seu modificador de habilidade ao dano do ataque extra, a menos que esse modificador seja negativo."
     },
     {
+        "slug": "loading", "name": "Carregamento",
+        "description": "Você pode disparar apenas uma munição de uma arma de Carregamento quando usa uma ação, uma Ação Bônus ou uma Reação para dispará-la, independentemente do número de ataques que você normalmente pode fazer."
+    },
+    {
+        "slug": "range", "name": "Alcance",
+        "description": "Uma arma de Alcance tem o alcance entre parênteses após a propriedade Munição ou Arremesso. O alcance lista dois números. O primeiro é o alcance normal da arma em pés, e o segundo é o alcance longo da arma. Ao atacar um alvo além do alcance normal, você tem Desvantagem na jogada de ataque. Você não pode atacar um alvo além do alcance longo."
+    },
+    {
+        "slug": "reach", "name": "Abrangente",
+        "description": "Uma arma Abrangente adiciona 5ft ao seu alcance quando você ataca com ela, bem como ao determinar seu alcance para Ataques de Oportunidade com ela."
+    },
+    {
         "slug": "thrown", "name": "Arremesso",
-        "description": "Pode ser arremessada para fazer um ataque à distância."
+        "description": "Se uma arma tiver a propriedade Arremesso, você pode arremessá-la para realizar um ataque à distância e sacá-la como parte do ataque. Se a arma for uma arma corpo a corpo, use o mesmo modificador de habilidade para as jogadas de ataque e dano que você usa para um ataque corpo a corpo com essa arma."
+    },
+    {
+        "slug": "two_handed", "name": "Duas Mãos",
+        "description": "Uma arma de Duas Mãos requer as duas mãos quando você ataca com ela."
+    },
+    {
+        "slug": "versatile", "name": "Versátil",
+        "description": "Uma arma versátil pode ser usada com uma ou duas mãos. Um valor de dano entre parênteses aparece junto com a propriedade. A arma causa o maior dano quando usada com as duas mãos para realizar um ataque corpo a corpo."
     }
+
 ]
 
 WEAPONS_DATA = [
