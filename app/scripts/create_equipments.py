@@ -20,15 +20,23 @@ MASTERIES_DATA = [
 
 PROPERTIES_DATA = [
     {
-        "slug": "acuidade", "name": "Acuidade",
-        "description": "Permite usar seu modificador de Destreza em vez de Força para as jogadas de ataque e dano."
+        "slug": "ammunition", "name": "Munição",
+        "description": "Você pode usar uma arma com a propriedade Munição para realizar um ataque à distância somente se tiver munição para disparar. O tipo de munição necessária é especificado com o alcance da arma. Cada ataque gasta uma peça de munição. Sacar a munição faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Após um combate, você pode gastar 1 minuto para recuperar metade da munição (arredondada para baixo) usada no combate, o restante é perdido."
     },
     {
-        "slug": "leve", "name": "Leve",
+        "slug": "finesse", "name": "Acuidade",
+        "description": "Ao realizar um ataque com uma arma de Acuidade, use o modificador de Força ou Destreza de sua escolha para as jogadas de ataque e dano. Você deve usar o mesmo modificador para ambas as jogadas."
+    },
+    {
+        "slug": "heavy", "name": "Pesado",
+        "description": "Você tem desvantagem em jogadas de ataque com uma arma Pesada se for uma arma corpo a corpo e seu valor de Força não for pelo menos 13 ou se for uma arma de longo alcance e seu valor de Destreza não for pelo menos 13."
+    },
+    {
+        "slug": "light", "name": "Leve",
         "description": "Pequena e fácil de manusear, ideal para combate com duas armas."
     },
     {
-        "slug": "arremesso", "name": "Arremesso",
+        "slug": "thrown", "name": "Arremesso",
         "description": "Pode ser arremessada para fazer um ataque à distância."
     }
 ]
