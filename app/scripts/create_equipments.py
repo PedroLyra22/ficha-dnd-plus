@@ -33,7 +33,7 @@ PROPERTIES_DATA = [
     },
     {
         "slug": "light", "name": "Leve",
-        "description": "Pequena e fácil de manusear, ideal para combate com duas armas."
+        "description": "Ao realizar uma ação de ataque no seu turno e atacar com uma arma Leve, você pode realizar um ataque extra como Ação Bônus posteriormente no mesmo turno. Esse ataque extra deve ser realizado com uma arma Leve diferente, e você não adiciona seu modificador de habilidade ao dano do ataque extra, a menos que esse modificador seja negativo."
     },
     {
         "slug": "thrown", "name": "Arremesso",
