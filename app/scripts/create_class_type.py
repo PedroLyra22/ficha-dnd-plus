@@ -76,48 +76,71 @@ classes_data = [
         "progression": {
             "1": [
                 {
+                    "type": "choice",
+                    "title": "Traços Base",
+                    "description": "",
+                    "choices": [
+                        {
+                            "name": "História",
+                            "slug": "history",
+                            "description": ""
+                        },
+                        {
+                            "name": "Intuição",
+                            "slug": "insight",
+                            "description": ""
+                        },
+                        {
+                            "name": "Medicina",
+                            "slug": "medicine",
+                            "description": ""
+                        },
+                        {
+                            "name": "Persuasão",
+                            "slug": "persuasion",
+                            "description": ""
+                        },
+                        {
+                            "name": "Persuasão",
+                            "slug": "persuasion",
+                            "description": ""
+                        },
+                        {
+                            "name": "Religião",
+                            "slug": "religion",
+                            "description": ""
+                        }
+                    ]
+                },
+                {
                     "type": "feature",
-                    "slug": "valor",
                     "name": "Conjuração",
-                    "description": "Como um canal de poder divino, você pode conjurar magias de clérigo. Você prepara a lista de magias de clérigo que estarão disponíveis para você conjurar, escolhendo um número de magias igual ao seu modificador de Sabedoria + seu nível de clérigo."
+                    "description": ""
                 },
                 {
                     "type": "choice",
-                    "slug": "valor",
-                    "title": "Domínio Divino",
-                    "description": "Escolha um domínio relacionado à sua divindade. Sua escolha lhe concede magias de domínio e outras características quando você a escolhe no 1° nível. Ela também lhe concede formas adicionais de usar o Canalizar Divindade quando você ganha essa característica no 2° nível.",
+                    "title": "Ordem Divina",
+                    "description": "",
                     "choices": [
-                      {
-                        "name": "Domínio da Vida",
-                        "description": "O domínio da Vida foca na vibrante energia positiva que sustenta toda a vida. As divindades deste domínio promovem a cura, a restauração e a proteção."
-                      },
-                      {
-                        "name": "Domínio do Conhecimento",
-                        "description": "Os deuses do conhecimento valorizam o aprendizado e o entendimento acima de tudo. Seus seguidores buscam desvendar segredos e compartilhar sabedoria."
-                      },
-                      {
-                        "name": "Domínio da Guerra",
-                        "description": "A guerra tem muitas manifestações. Os deuses da guerra inspiram coragem, promovem a excelência em batalha e recompensam atos de valor com poder."
-                      },
-                      {
-                        "name": "Domínio da Natureza",
-                        "description": "Deuses da natureza são tão variados quanto a própria natureza, desde deuses de florestas esquecidas até divindades de vastos desertos e oceanos."
-                      }
+                        {
+                            "name": "Protetor",
+                            "slug": "protector",
+                            "description": ""
+                        },
+                        {
+                            "name": "Taumaturgo",
+                            "slug": "thaumaturge",
+                            "description": ""
+                        },
                     ]
-                }
+                },
+
             ],
             "2": [
                 {
                     "type": "feature",
-                    "slug": "valor",
                     "name": "Canalizar Divindade",
-                    "description": "No 2° nível, você ganha a habilidade de canalizar energia divina diretamente de sua divindade, usando essa energia para abastecer efeitos mágicos. Você começa com duas dessas opções: Expulsar Mortos-Vivos e uma opção determinada pelo seu domínio."
-                },
-                {
-                    "type": "feature",
-                    "slug": "valor",
-                    "name": "Expulsar Mortos-Vivos",
-                    "description": "Com uma ação, você apresenta seu símbolo sagrado e pronuncia uma prece censurando os mortos-vivos. Cada morto-vivo que puder ver ou ouvir você a até 9 metros deve fazer um teste de resistência de Sabedoria."
+                    "description": ""
                 }
             ]
         }
