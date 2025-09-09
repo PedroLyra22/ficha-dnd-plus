@@ -40,7 +40,7 @@ class ClassType(db.Model):
     name = db.Column(db.String, nullable=False)
     icon = db.Column(db.String)
     description = db.Column(db.Text)
-    #features = db.Column(JSONB)
+    progression = db.Column(db.JSON, nullable=True)
 
 class CharacterSheet(db.Model):
     __tablename__ = 'character_sheets'

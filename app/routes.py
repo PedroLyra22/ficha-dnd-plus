@@ -230,6 +230,7 @@ def class_feature():
                 "subtitulo": "2 Choices 1st level",
                 "notificacao": True
             },
+
             {
                 "id": "spellcasting",
                 "titulo": "Spellcasting",
