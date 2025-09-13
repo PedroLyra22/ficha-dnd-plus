@@ -6,7 +6,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
     send_from_directory, abort
 
 from app import db
-from app.models import User, AdvancementType, HitPointType, ConfigSheet, CharacterSheet
+from app.models import User, AdvancementType, HitPointType, ConfigSheet, CharacterSheet, AttributeConfigType
 
 bp = Blueprint('main', __name__)
 
@@ -96,6 +96,7 @@ def create_config_sheet():
 
         advancement_type = AdvancementType(request.form.get('advancement_type'))
         hit_point_type = HitPointType(request.form.get('hit_point_type'))
+        attribute_config_type = AttributeConfigType(request.form.get('attribute_config_type'))
 
         new_config = ConfigSheet(
             homebrew=homebrew,
@@ -103,6 +104,7 @@ def create_config_sheet():
             dice_rolling=dice_rolling,
             advancement_type=advancement_type,
             hit_point_type=hit_point_type,
+            attribute_config_type=attribute_config_type,
             feat_prerequisites=feat_prerequisites,
             multiclass_prerequisites=multiclass_prerequisites,
             mark_level_scaled_spells=mark_level_scaled_spells
@@ -113,4 +115,4 @@ def create_config_sheet():
         flash('Configuração criada com sucesso!', 'success')
         #return redirect(url_for('main.create_character_sheet', config_sheet_id=new_config.id))
 
-    return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType)
+    return render_template('config_sheet/create.html', config={}, advancement_types=AdvancementType, hit_point_types=HitPointType, attribute_config_types=AttributeConfigType)

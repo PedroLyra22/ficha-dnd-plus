@@ -71,6 +71,16 @@
                             {% endfor %}
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="attribute_config_type" class="form-label">Tipo de Configuração de Atributos</label>
+                        <select class="form-select" id="attribute_config_type" name="attribute_config_type">
+                            {% for type in attribute_config_types %}
+                                <option value="{{ type.name }}" {% if type.name == 'POINT_BUY' %}selected{% endif %}>
+                                    {{ type.value }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
                 <div class="card-footer text-end">
                     <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancelar</a>

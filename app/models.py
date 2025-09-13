@@ -22,6 +22,10 @@ class HitPointType(enum.Enum):
     FIXO = 'FIXO'
     MANUAL = 'MANUAL'
 
+class AttributeConfigType(enum.Enum):
+    POINT_BUY = 'POINT BUY'
+    MANUAL = 'MANUAL'
+
 class ConfigSheet(db.Model):
     __tablename__ = 'config_sheets'
     id = db.Column(db.Integer, primary_key=True)
@@ -30,6 +34,7 @@ class ConfigSheet(db.Model):
     dice_rolling = db.Column(db.Boolean, nullable=False, default=False)
     advancement_type = db.Column(db.Enum(AdvancementType), nullable=False, default=AdvancementType.MILESTONE)
     hit_point_type = db.Column(db.Enum(HitPointType), nullable=False, default=HitPointType.MANUAL)
+    attribute_config_type = db.Column(db.Enum(AttributeConfigType), nullable=False, default=AttributeConfigType.POINT_BUY)
     feat_prerequisites = db.Column(db.Boolean, nullable=False, default=False)
     multiclass_prerequisites = db.Column(db.Boolean, nullable=False, default=False)
     mark_level_scaled_spells = db.Column(db.Boolean, nullable=False, default=False)
