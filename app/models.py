@@ -50,5 +50,6 @@ class CharacterSheet(db.Model):
     proficiency_bonus = db.Column(db.Integer, default=2)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     config_sheet_id = db.Column(db.Integer, db.ForeignKey('config_sheets.id'), nullable=False)
+    class_slug = db.Column(db.String, nullable=False)
     user = db.relationship('User', backref='character_sheets', lazy=True)
     config_sheet = db.relationship('ConfigSheet', backref='character_sheets', lazy=True)
