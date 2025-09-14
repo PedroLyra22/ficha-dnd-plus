@@ -39,7 +39,6 @@ class ConfigSheet(db.Model):
     multiclass_prerequisites = db.Column(db.Boolean, nullable=False, default=False)
     mark_level_scaled_spells = db.Column(db.Boolean, nullable=False, default=False)
 
-
 class CharacterSheet(db.Model):
     __tablename__ = 'character_sheets'
     id = db.Column(db.Integer, primary_key=True)

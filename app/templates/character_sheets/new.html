@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+        .class-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            cursor: pointer;
+            height: 100%;
+        }
+        .class-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .class-card.selected {
+            border-color: #0d6efd;
+            background-color: #e9f2ff;
+            box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Escolha a Classe do Personagem</h1>
+    <form method="POST" action="{{ url_for('main.create_character_sheet') }}" id="character-sheet-form">
+        {{ form.hidden_tag() }}
+        <div class="form-group" style="display: none;">
+            {{ form.class_slug.label(class="form-control-label") }}
+            {{ form.class_slug(class="form-control", id="class_slug_select") }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.name.label(class="form-control-label") }}
+            {{ form.name(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label mb-2">Classe</label>
+            <div class="row class-selection-container">
+                {% for class_slug, class_data in classes.items() %}
+                <div class="col-md-4 mb-3">
+                    <div class="class-card" data-slug="{{ class_slug }}" data-bs-toggle="modal" data-bs-target="#classModal-{{ class_slug }}">
+                        <img src="{{ url_for('static', filename=class_data.icon.replace('app/static/', '')) }}" alt="{{ class_data.name }}">
+                        <span>{{ class_data.name }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+
+    {% for class_slug, class_data in classes.items() %}
+    <div class="modal fade" id="classModal-{{ class_slug }}" tabindex="-1" aria-labelledby="classModalLabel-{{ class_slug }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classModalLabel-{{ class_slug }}">{{ class_data.name }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ class_data.description }}</p>
+                    <p><strong>Habilidade Principal:</strong> {{ class_data.primary_ability }}</p>
+                    <p><strong>Dado de Vida:</strong> {{ class_data.hit_point_die }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const classSelectionContainer = document.querySelector('.class-selection-container');
+    const classSlugSelect = document.getElementById('class_slug_select');
+
+    classSelectionContainer.addEventListener('click', function(e) {
+        const card = e.target.closest('.class-card');
+        if (!card) return;
+
+        const slug = card.dataset.slug;
+        classSlugSelect.value = slug;
+
+        document.querySelectorAll('.class-card').forEach(el => {
+            el.classList.remove('selected');
+        });
+        card.classList.add('selected');
+    });
+});
+</script>
+{% endblock %}

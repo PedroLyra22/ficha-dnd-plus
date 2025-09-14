@@ -127,6 +127,35 @@
             "name": "Canalizar Divindade",
             "description": ""
           }
+        ],
+        "3": [
+          {
+            "type": "choice",
+            "title": "Subclasse",
+            "description": "",
+            "choices": [
+              {
+                "name": "Domínio da Vida",
+                "slug": "life_domain",
+                "description": ""
+              },
+              {
+                "name": "Domínio da Luz",
+                "slug": "light_domain",
+                "description": ""
+              },
+              {
+                "name": "Domímio da Trapaça",
+                "slug": "trickery_domain",
+                "description": ""
+              },
+              {
+                "name": "Domínio da Guerra",
+                "slug": "war_domain",
+                "description": ""
+              }
+            ]
+          }
         ]
       }
     },

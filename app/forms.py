@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, DecimalField
-from wtforms.fields.simple import TextAreaField
+from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 
+
 class CharacterSheetForm(FlaskForm):
-    name = StringField()
-    image = FileField()
+    name = StringField('Nome do Personagem', validators=[DataRequired()])
+    class_slug = SelectField('Classe', validators=[DataRequired()])
+    submit = SubmitField('Criar Personagem')
