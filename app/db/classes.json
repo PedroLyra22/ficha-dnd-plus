@@ -156,6 +156,14 @@
               }
             ]
           }
+        ],
+        "4": [
+          {
+            "type": "choice",
+            "title": "Aumento de Habilidade",
+            "description": "",
+            "choices": []
+          }
         ]
       }
     },
