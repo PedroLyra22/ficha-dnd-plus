@@ -164,6 +164,18 @@
             "description": "",
             "choices": []
           }
+        ],
+        "5": [
+          {
+            "type": "feature",
+            "name": "Queimar Mortos-Vivos",
+            "description": ""
+          }
+        ],
+        "6": [
+          {
+
+          }
         ]
       }
     },
