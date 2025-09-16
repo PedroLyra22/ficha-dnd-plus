@@ -23,7 +23,7 @@ class HitPointType(enum.Enum):
     MANUAL = 'MANUAL'
 
 class AttributeConfigType(enum.Enum):
-    POINT_BUY = 'POINT BUY'
+    POINT_BUY = 'POINT_BUY'
     MANUAL = 'MANUAL'
 
 class ConfigSheet(db.Model):
