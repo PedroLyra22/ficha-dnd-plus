@@ -3,11 +3,27 @@
     "origin": {
       "alert": {
         "name": "Alerta",
-        "description": "Proficiência em Iniciativa: Ao rolar Iniciativa, você pode adicionar seu Bônus de Proficiência à rolagem. Troca de Iniciativa: Imediatamente após rolar Iniciativa, você pode trocar sua Iniciativa pela Iniciativa de um aliado disposto no mesmo combate. Você não pode fazer essa troca se você ou o aliado estiver na condição Incapacitado."
+        "description": "Proficiência em Iniciativa: Ao rolar Iniciativa, você pode adicionar seu Bônus de Proficiência à rolagem. \n\nTroca de Iniciativa: Imediatamente após rolar Iniciativa, você pode trocar sua Iniciativa pela Iniciativa de um aliado disposto no mesmo combate. Você não pode fazer essa troca se você ou o aliado estiver na condição Incapacitado."
       },
       "crafter": {
+        "name": "Artesão",
+        "description": "Proficiência em Ferramentas: Você ganha proficiência com três Ferramentas de Artesão diferentes à sua escolha. \n\nDesconto: Sempre que comprar um item não mágico, você recebe um desconto de 20%. \n\nCriação Rápida: Ao terminar um Descanso Longo, você pode criar um equipamento da tabela de Criação Rápida, desde que tenha as Ferramentas de Artesão associadas a esse item e seja proficiente com essas ferramentas. O item dura até você terminar outro Descanso Longo."
+      },
+      "healer": {
+        "name": "Curandeiro",
+        "description": "Médico de Batalha: Se você tiver um Kit Médico, poderá usá-lo uma vez e cuidar de uma criatura a até 1,5 metro de você como uma ação de Utilizar. Essa criatura pode gastar um de seus Dados de Pontos de Vida, e você então rola esse dado. A criatura recupera uma quantidade de Pontos de Vida igual à rolagem mais seu Bônus de Proficiência.\n\nRerolagens de Cura. Sempre que você rolar um dado para determinar o número de Pontos de Vida que você restaura com uma magia ou com o benefício Médico de Batalha deste talento, você pode rolar novamente o dado se ele rolar 1, e você deve usar a nova rolagem."
+      },
+      "": {
         "name": "",
-        "description":
+        "description": ""
+      },
+      "": {
+        "name": "",
+        "description": ""
+      },
+      "": {
+        "name": "",
+        "description": ""
       }
     },
     "general": {},

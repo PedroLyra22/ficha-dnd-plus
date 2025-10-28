@@ -1,0 +1,129 @@
+{
+  "clerigo": {
+      "name": "Clérigo",
+      "icon": "app/static/img/class_icons/icon-cleric.png",
+      "description": "Os clérigos podem recorrer à magia divina dos planos exteriores e canalizá-la para fortalecer pessoas e combater inimigos.",
+      "primary_ability": "Sabedoria",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Sabedoria, Carisma",
+      "skill_proficiencies": "Escolha duas entre: História, Intuição, Medicina, Persuasão, Religião",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Armaduras leves, armaduras médias, escudos",
+      "starting_equipment": "Camisão de malha, escudo, maça, símbolo sagrado, pacote de sacerdote e 7 PO; ou 110 PO",
+      "progression": {
+        "1": [
+          {
+            "type": "choice",
+            "title": "Traços Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Medicina",
+                "slug": "medicine",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "type": "feature",
+            "name": "Conjuração",
+            "description": ""
+          },
+          {
+            "type": "choice",
+            "title": "Ordem Divina",
+            "description": "",
+            "choices": [
+              {
+                "name": "Protetor",
+                "slug": "protector",
+                "description": ""
+              },
+              {
+                "name": "Taumaturgo",
+                "slug": "thaumaturge",
+                "description": ""
+              }
+            ]
+          }
+        ],
+        "2": [
+          {
+            "type": "feature",
+            "name": "Canalizar Divindade",
+            "description": ""
+          }
+        ],
+        "3": [
+          {
+            "type": "choice",
+            "title": "Subclasse",
+            "description": "",
+            "choices": [
+              {
+                "name": "Domínio da Vida",
+                "slug": "life_domain",
+                "description": ""
+              },
+              {
+                "name": "Domínio da Luz",
+                "slug": "light_domain",
+                "description": ""
+              },
+              {
+                "name": "Domímio da Trapaça",
+                "slug": "trickery_domain",
+                "description": ""
+              },
+              {
+                "name": "Domínio da Guerra",
+                "slug": "war_domain",
+                "description": ""
+              }
+            ]
+          }
+        ],
+        "4": [
+          {
+            "type": "choice",
+            "title": "Aumento de Habilidade",
+            "description": "",
+            "choices": []
+          }
+        ],
+        "5": [
+          {
+            "type": "feature",
+            "name": "Queimar Mortos-Vivos",
+            "description": ""
+          }
+        ],
+        "6": [
+          {
+
+          }
+        ]
+      }
+  }
+}
