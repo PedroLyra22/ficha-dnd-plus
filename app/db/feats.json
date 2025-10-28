@@ -11,15 +11,15 @@
       },
       "healer": {
         "name": "Curandeiro",
-        "description": "Médico de Batalha: Se você tiver um Kit Médico, poderá usá-lo uma vez e cuidar de uma criatura a até 1,5 metro de você como uma ação de Utilizar. Essa criatura pode gastar um de seus Dados de Pontos de Vida, e você então rola esse dado. A criatura recupera uma quantidade de Pontos de Vida igual à rolagem mais seu Bônus de Proficiência.\n\nRerolagens de Cura. Sempre que você rolar um dado para determinar o número de Pontos de Vida que você restaura com uma magia ou com o benefício Médico de Batalha deste talento, você pode rolar novamente o dado se ele rolar 1, e você deve usar a nova rolagem."
+        "description": "Médico de Batalha: Se você tiver um Kit Médico, poderá usá-lo uma vez e cuidar de uma criatura a até 5ft de você com uma ação. Essa criatura pode gastar um de seus Dados de Pontos de Vida, e você então rola esse dado. A criatura recupera uma quantidade de Pontos de Vida igual à rolagem mais seu Bônus de Proficiência.\n\nRerolagens de Cura: Sempre que você rolar um dado para determinar o número de Pontos de Vida que você restaura com uma magia ou com o benefício Médico de Batalha, você pode rolar novamente o dado se ele rolar 1, e você deve usar a nova rolagem."
       },
-      "": {
-        "name": "",
-        "description": ""
+      "lucky": {
+        "name": "Sortudo",
+        "description": "Pontos de Sorte: Você tem uma quantidade de Pontos de Sorte igual ao seu Bônus de Proficiência e pode gastá-los nos seguintes benefícios. Você recupera seus Pontos de Sorte gastos ao terminar um Descanso Longo.\n\nVantagem: Ao rolar um d20 em um teste, você pode gastar 1 Ponto de Sorte para obter Vantagem na jogada.\nDesvantagem: Quando uma criatura rola um d20 em uma jogada de ataque contra você, você pode gastar 1 Ponto de Sorte para impor Desvantagem nessa jogada."
       },
-      "": {
-        "name": "",
-        "description": ""
+      "magic_initiate": {
+        "name": "Iniciado Mágico",
+        "description": "Dois Truques Mágicos: Você aprende dois truques mágicos à sua escolha da lista de magias de Clérigo, Druida ou Mago. Inteligência, Sabedoria ou Carisma é a sua habilidade de conjuração para as magias deste talento.\n\nMagia de Nível 1: Escolha uma magia de nível 1 da mesma lista que você selecionou para os truques mágicos deste talento. Você sempre tem essa magia preparada. Você pode conjurá-la uma vez sem um espaço de magia e recupera a habilidade de conjurá-la dessa forma ao terminar um Descanso Longo. Você também pode conjurar a magia usando quaisquer espaços de magia que tiver.\n\nTroca de Magia: Sempre que você ganha um novo nível, pode substituir uma das magias que escolheu para este talento por uma magia diferente do mesmo nível da lista de magias escolhida.\n\nRepetível: Você pode escolher este talento mais de uma vez, mas deve escolher uma lista de magias diferente a cada vez."
       },
       "": {
         "name": "",
