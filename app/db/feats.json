@@ -1,0 +1,17 @@
+{
+  "feats_data": {
+    "origin": {
+      "alert": {
+        "name": "Alerta",
+        "description": "Proficiência em Iniciativa: Ao rolar Iniciativa, você pode adicionar seu Bônus de Proficiência à rolagem. Troca de Iniciativa: Imediatamente após rolar Iniciativa, você pode trocar sua Iniciativa pela Iniciativa de um aliado disposto no mesmo combate. Você não pode fazer essa troca se você ou o aliado estiver na condição Incapacitado."
+      },
+      "crafter": {
+        "name": "",
+        "description":
+      }
+    },
+    "general": {},
+    "fighting_style": {},
+    "epic_boon": {}
+  }
+}
