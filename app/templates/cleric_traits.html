@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}Escolha os Traços do Clérigo{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if cleric %}
+    <div class="row mb-4">
+        <div class="col-md-2 text-center">
+            <img src="{{ url_for('static', filename=cleric.icon.replace('app/static/', '')) }}" alt="Icone do Clérigo" class="img-fluid" width="150">
+        </div>
+        <div class="col-md-10">
+            <h1>{{ cleric.name }}</h1>
+            <p class="lead">{{ cleric.description }}</p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Habilidade Primária:</strong> {{ cleric.primary_ability }}</p>
+                    <p><strong>Dado de Vida:</strong> {{ cleric.hit_point_die }}</p>
+                    <p><strong>Proficiência em Teste de Resistência:</strong> {{ cleric.saving_throw_proficiencies }}</p>
+                    <p><strong>Proficiência em Perícias:</strong> {{ cleric.skill_proficiencies }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Proficiência com Armas:</strong> {{ cleric.weapon_proficiencies }}</p>
+                    <p><strong>Proficiência com Ferramentas:</strong> {{ cleric.tool_proficiencies }}</p>
+                    <p><strong>Treinamento de Armadura:</strong> {{ cleric.armor_training }}</p>
+                    <p><strong>Equipamento Inicial:</strong> {{ cleric.starting_equipment }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <h2 class="my-4">Escolha os Traços do Clérigo - Nível 1</h2>
+    <form method="post">
+        {% if base_traits %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>{{ base_traits.title }}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{ base_traits.description if base_traits.description else 'Escolha duas perícias.' }}</p>
+                {% for choice in base_traits.choices %}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="base_traits" value="{{ choice.slug }}" id="{{ choice.slug }}">
+                    <label class="form-check-label" for="{{ choice.slug }}">
+                        <strong>{{ choice.name }}</strong>
+                    </label>
+                    <p class="text-muted small">{{ choice.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if spellcasting %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>{{ spellcasting.name }}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{ spellcasting.description if spellcasting.description else 'Você pode conjurar magias divinas.' }}</p>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if divine_order %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>{{ divine_order.title }}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{ divine_order.description if divine_order.description else 'Escolha sua ordem divina.' }}</p>
+                {% for choice in divine_order.choices %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="divine_order" value="{{ choice.slug }}" id="{{ choice.slug }}">
+                    <label class="form-check-label" for="{{ choice.slug }}">
+                        <strong>{{ choice.name }}</strong>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Prosseguir</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('input[name="base_traits"]');
+        const maxAllowed = 2;
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('input[name="base_traits"]:checked').length;
+
+                if (checkedCount >= maxAllowed) {
+                    checkboxes.forEach(cb => {
+                        if (!cb.checked) {
+                            cb.disabled = true;
+                        }
+                    });
+                }
+                else {
+                    checkboxes.forEach(cb => {
+                        cb.disabled = false;
+                    });
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

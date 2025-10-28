@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Ficha de {{ sheet.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Ficha de Personagem</h1>
+        <a href="{{ url_for('main.show_user', user_id=sheet.user_id) }}" class="btn btn-secondary">Voltar para o Perfil</a>
+    </div>
+
+    {% if sheet and class_data %}
+    <div class="card">
+        <div class="card-header">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    {% if class_data.icon %}
+                    <img src="{{ url_for('static', filename=class_data.icon.replace('app/static/', '')) }}" alt="Icone da Classe" class="img-fluid rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    {% endif %}
+                </div>
+                <div class="col-md-10">
+                    <h2>{{ sheet.name }}</h2>
+                    <p class="text-muted mb-0">{{ class_data.name }} | Nível {{ sheet.level }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><em>{{ class_data.description }}</em></p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Habilidade Primária:</strong> {{ class_data.primary_ability }}</p>
+                    <p><strong>Dado de Vida:</strong> {{ class_data.hit_point_die }}</p>
+                    <p><strong>Proficiência em Teste de Resistência:</strong> {{ class_data.saving_throw_proficiencies }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Proficiência com Armas:</strong> {{ class_data.weapon_proficiencies }}</p>
+                    <p><strong>Proficiência com Ferramentas:</strong> {{ class_data.tool_proficiencies }}</p>
+                    <p><strong>Treinamento de Armadura:</strong> {{ class_data.armor_training }}</p>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                    <p><strong>Perícias:</strong> {{ class_data.skill_proficiencies }}</p>
+                    <p><strong>Equipamento Inicial:</strong> {{ class_data.starting_equipment }}</p>
+                </div>
+            </div>
+
+            {% if sheet.class_features %}
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Traços de Classe Escolhidos</h4>
+                    <ul class="list-group">
+                        {% if sheet.class_features.base_traits %}
+                        <li class="list-group-item">
+                            <strong>Perícias:</strong> {{ sheet.class_features.base_traits | join(', ') }}
+                        </li>
+                        {% endif %}
+                        {% if sheet.class_features.divine_order %}
+                        <li class="list-group-item">
+                            <strong>Ordem Divina:</strong> {{ sheet.class_features.divine_order }}
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert">
+        Não foi possível carregar a ficha do personagem.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

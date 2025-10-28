@@ -158,8 +158,86 @@ def create_character_sheet():
     db.session.commit()
 
     flash('Ficha de personagem criada com sucesso!', 'success')
+
+    if character_sheet.class_slug == 'clerigo':
+        return redirect(url_for('main.cleric_traits', sheet_id=character_sheet.id))
+
     return redirect(url_for('main.show_user', user_id=user.id))
 
   return render_template('character_sheets/new.html', form=form, classes=classes_data['classes_data'])
+
+
+@bp.route('/cleric/traits/<int:sheet_id>', methods=['GET', 'POST'])
+def cleric_traits(sheet_id):
+    sheet = CharacterSheet.query.get_or_404(sheet_id)
+
+    if request.method == 'POST':
+        base_traits_selection = request.form.getlist('base_traits')
+        divine_order_selection = request.form.get('divine_order')
+
+        if len(base_traits_selection) != 2:
+            flash('Você deve escolher exatamente duas perícias.', 'danger')
+            return redirect(url_for('main.cleric_traits', sheet_id=sheet_id))
+
+        sheet.class_features = {
+            'base_traits': base_traits_selection,
+            'divine_order': divine_order_selection
+        }
+        db.session.commit()
+
+        flash('Traços de Clérigo salvos com sucesso!', 'success')
+        return redirect(url_for('main.show_character_sheet', sheet_id=sheet_id))
+
+    with open('app/db/cleric.json', encoding='utf-8') as f:
+        cleric_data = json.load(f)
+
+    cleric_info = cleric_data['clerigo']
+    progression_level_1 = cleric_info['progression']['1']
+
+    base_traits = next((item for item in progression_level_1 if item.get('title') == 'Perícias Base'), None)
+    spellcasting = next((item for item in progression_level_1 if item.get('name') == 'Conjuração'), None)
+    divine_order = next((item for item in progression_level_1 if item.get('title') == 'Ordem Divina'), None)
+
+    return render_template('cleric_traits.html',
+                           sheet=sheet,
+                           cleric=cleric_info,
+                           base_traits=base_traits,
+                           spellcasting=spellcasting,
+                           divine_order=divine_order)
+
+
+@bp.route('/character_sheet/<int:sheet_id>')
+def show_character_sheet(sheet_id):
+    sheet = CharacterSheet.query.get_or_404(sheet_id)
+    class_slug = sheet.class_slug
+
+    json_file_name = f'{class_slug}.json' if class_slug != 'clerigo' else 'cleric.json'
+    if class_slug == 'barbaro':
+        json_file_name = 'barbarian.json'
+    elif class_slug == 'mago':
+        json_file_name = 'wizard.json'
+
+    if class_slug == 'clerigo':
+        json_file_name = 'cleric.json'
+    else:
+
+        try:
+            with open('app/db/classes.json', encoding='utf-8') as f:
+                all_classes_data = json.load(f)
+            class_data = all_classes_data['classes_data'].get(class_slug)
+            return render_template('character_sheets/show.html', sheet=sheet, class_data=class_data)
+        except (FileNotFoundError, KeyError):
+            abort(404)
+
+    try:
+        with open(os.path.join('app/db', json_file_name), encoding='utf-8') as f:
+            class_data_full = json.load(f)
+            class_data = class_data_full.get(class_slug, class_data_full)
+
+    except FileNotFoundError:
+        abort(404)
+
+    return render_template('character_sheets/show.html', sheet=sheet, class_data=class_data)
+
 
 

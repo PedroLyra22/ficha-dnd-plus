@@ -50,5 +50,6 @@ class CharacterSheet(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     config_sheet_id = db.Column(db.Integer, db.ForeignKey('config_sheets.id'), nullable=False)
     class_slug = db.Column(db.String, nullable=False)
+    class_features = db.Column(db.JSON, nullable=True)
     user = db.relationship('User', backref='character_sheets', lazy=True)
     config_sheet = db.relationship('ConfigSheet', backref='character_sheets', lazy=True)
