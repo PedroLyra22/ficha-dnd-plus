@@ -238,5 +238,14 @@ def show_character_sheet(sheet_id):
 
     return render_template('character_sheets/show.html', sheet=sheet, class_data=class_data)
 
+@bp.route('/character_sheet/<int:sheet_id>/delete', methods=['POST'])
+def delete_character_sheet(sheet_id):
+    sheet = CharacterSheet.query.get_or_404(sheet_id)
+    user_id = sheet.user_id
+    sheet_name = sheet.name
 
+    db.session.delete(sheet)
+    db.session.commit()
 
+    flash(f'Ficha de personagem "{sheet_name}" foi apagada com sucesso!', 'success')
+    return redirect(url_for('main.show_user', user_id=user_id))

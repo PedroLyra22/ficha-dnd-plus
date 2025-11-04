@@ -1,71 +1,73 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalhes de {{ user.nome }}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    </head>
-    <body>
-        <div class="container mt-5">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de {{ user.nome }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
 
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1 class="mb-0">Perfil de {{ user.nome }}</h1>
-                <a href="{{ url_for('main.index_user') }}" class="btn btn-secondary">Voltar para a Lista</a>
-            </div>
-
-            <div class="card mb-4">
-                <div class="card-header">
-                    Informações Básicas
-                </div>
-                <div class="card-body">
-                    <p><strong>ID:</strong> {{ user.id }}</p>
-                    <p><strong>Nome:</strong> {{ user.nome }}</p>
-                    <p><strong>E-mail:</strong> {{ user.email }}</p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2>Fichas de Personagem</h2>
-                <a href="{{ url_for('main.create_config_sheet') }}" class="btn btn-primary">Adicionar Nova Ficha</a>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    {% if character_sheets %}
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Nome do Personagem</th>
-                                    <th>Classe</th>
-                                    <th>Nível</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for sheet in character_sheets %}
-                                    <tr>
-                                        <td>{{ sheet.name }}</td>
-                                        <td>{{ sheet.class_slug }}</td>
-                                        <td>{{ sheet.level }}</td>
-                                        <td>
-                                            <a href="{{ url_for('main.show_character_sheet', sheet_id=sheet.id) }}" class="btn btn-sm btn-info">Visualizar</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Apagar</a>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    {% else %}
-                        <p class="text-center">Nenhuma ficha de personagem encontrada.</p>
-                    {% endif %}
-                </div>
-            </div>
-
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="mb-0">Perfil de {{ user.nome }}</h1>
+            <a href="{{ url_for('main.index_user') }}" class="btn btn-secondary">Voltar para a Lista</a>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+        <div class="card mb-4">
+            <div class="card-header">
+                Informações Básicas
+            </div>
+            <div class="card-body">
+                <p><strong>ID:</strong> {{ user.id }}</p>
+                <p><strong>Nome:</strong> {{ user.nome }}</p>
+                <p><strong>E-mail:</strong> {{ user.email }}</p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Fichas de Personagem</h2>
+            <a href="{{ url_for('main.create_config_sheet') }}" class="btn btn-primary">Adicionar Nova Ficha</a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                {% if character_sheets %}
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome do Personagem</th>
+                                <th>Nível</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for sheet in character_sheets %}
+                                <tr>
+                                    <td>{{ sheet.name }}</td>
+                                    <td>{{ sheet.level }}</td>
+                                    <td>
+                                        <a href="{{ url_for('main.show_character_sheet', sheet_id=sheet.id) }}" class="btn btn-sm btn-info">Visualizar</a>
+                                        <form method="POST" action="{{ url_for('main.delete_character_sheet', sheet_id=sheet.id) }}"
+                                              style="display: inline-block;"
+                                              onsubmit="return confirm('Tem certeza que deseja apagar a ficha de personagem \'{{ sheet.name }}\'?')">
+                                            <button type="submit" class="btn btn-sm btn-danger">Apagar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="text-center">Nenhuma ficha de personagem encontrada.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
