@@ -43,7 +43,48 @@
       }
     },
     "general": {},
-    "fighting_style": {},
+    "fighting_style": {
+      "archery": {
+        "name": "Tiro com Arco",
+        "description": "Você recebe um bônus de +2 nas jogadas de ataque que fizer com armas de longo alcance."
+      },
+      "blind_fighting": {
+        "name": "Luta Cega",
+        "description": "Você possui Visão Cega com um alcance de 3 metros."
+      },
+      "defence": {
+        "name": "Defensivo",
+        "description": "Enquanto estiver usando armadura leve, média ou pesada, você recebe um bônus de +1 na Classe de Armadura."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Quando você estiver segurando uma arma de combate corpo a corpo em uma das mãos e nenhuma outra arma, você ganha um bônus de +2 nas rolagens de dano com essa arma."
+      },
+      "great_weapon_fighting": {
+        "name": "Luta com Armas Grandes",
+        "description": "Ao rolar o dano de um ataque realizado com uma arma corpo a corpo que você esteja empunhando com as duas mãos, você pode considerar qualquer resultado 1 ou 2 em um dado de dano como 3. A arma deve possuir a propriedade Duas Mãos ou Versátil para que você tenha esse benefício."
+      },
+      "interception": {
+        "name": "Interceptação",
+        "description": "Quando uma criatura que você pode ver acerta outra criatura a até 5ft de você com uma jogada de ataque, você pode usar uma Reação para reduzir o dano causado ao alvo em 1d10 mais seu Bônus de Proficiência. Você precisa estar empunhando um Escudo ou uma arma Simples ou Marcial para usar esta Reação."
+      },
+      "protection": {
+        "name": "Protetor",
+        "description": "Quando uma criatura que você possa ver atacar um alvo que não seja você e que esteja a 5ft de você, você pode usar uma Reação para interpor seu Escudo, caso esteja usando um. Você impõe Desvantagem na jogada de ataque que desencadeou a reação e em todas as outras jogadas de ataque contra o alvo até o início do seu próximo turno, desde que permaneça a 5ft do alvo."
+      },
+      "throw_weapon_fighting": {
+        "name": "Luta com Armas de Arremesso",
+        "description": "Ao acertar um ataque à distância usando uma arma com a propriedade Arremessável, você recebe um bônus de +2 no teste de dano."
+      },
+      "two_weapon_fighting": {
+        "name": "Luta com Armas Duplas",
+        "description": "Ao realizar um ataque extra como resultado do uso de uma arma com a propriedade Leve, você pode adicionar seu modificador de habilidade ao dano desse ataque, caso ainda não o esteja adicionando."
+      },
+      "unarmed_fighting": {
+        "name": "Desarmado",
+        "description": "Quando você acerta um ataque desarmado e causa dano, você pode causar dano de concussão igual a 1d6 mais seu modificador de Força em vez do dano normal de um ataque desarmado. Se você não estiver empunhando nenhuma arma ou escudo ao fazer a jogada de ataque, o d6 se torna um d8.\n\nNo início de cada um dos seus turnos, você pode causar 1d4 de dano de concussão a uma criatura agarrada por você."
+      }
+    },
     "epic_boon": {}
   }
 }
