@@ -216,7 +216,6 @@ def show_character_sheet(sheet_id):
         json_file_name = 'barbarian.json'
     elif class_slug == 'mago':
         json_file_name = 'wizard.json'
-
     if class_slug == 'clerigo':
         json_file_name = 'cleric.json'
     else:

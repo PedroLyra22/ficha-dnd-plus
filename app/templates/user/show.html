@@ -47,8 +47,7 @@
                                         <td>{{ sheet.name }}</td>
                                         <td>{{ sheet.level }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-info">Visualizar</a>
-                                            <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                                            <a href="{{ url_for('main.show_character_sheet', sheet_id=sheet.id) }}" class="btn btn-sm btn-info">Visualizar</a>
                                             <a href="#" class="btn btn-sm btn-danger">Apagar</a>
                                         </td>
                                     </tr>
