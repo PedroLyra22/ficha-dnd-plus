@@ -21,9 +21,25 @@
         "name": "Iniciado Mágico",
         "description": "Dois Truques Mágicos: Você aprende dois truques mágicos à sua escolha da lista de magias de Clérigo, Druida ou Mago. Inteligência, Sabedoria ou Carisma é a sua habilidade de conjuração para as magias deste talento.\n\nMagia de Nível 1: Escolha uma magia de nível 1 da mesma lista que você selecionou para os truques mágicos deste talento. Você sempre tem essa magia preparada. Você pode conjurá-la uma vez sem um espaço de magia e recupera a habilidade de conjurá-la dessa forma ao terminar um Descanso Longo. Você também pode conjurar a magia usando quaisquer espaços de magia que tiver.\n\nTroca de Magia: Sempre que você ganha um novo nível, pode substituir uma das magias que escolheu para este talento por uma magia diferente do mesmo nível da lista de magias escolhida.\n\nRepetível: Você pode escolher este talento mais de uma vez, mas deve escolher uma lista de magias diferente a cada vez."
       },
-      "": {
-        "name": "",
-        "description": ""
+      "musician": {
+        "name": "Músico",
+        "description": "Treinamento com Instrumentos: Você adquire proficiência com três instrumentos musicais à sua escolha.\n\nCanção Inspiradora: Ao terminar um Descanso Curto ou Longo, você pode tocar uma canção em um instrumento musical com o qual você tenha proficiência e conceder Inspiração Heroica aos aliados que ouvirem a canção. O número de aliados que você pode afetar dessa forma é igual ao seu Bônus de Proficiência."
+      },
+      "savage_attacker": {
+        "name": "Atacante Selvagem",
+        "description": "Você treinou para desferir golpes particularmente devastadores. Uma vez por turno, ao atingir um alvo com uma arma, você pode rolar os dados de dano da arma duas vezes e usar qualquer um dos resultados contra o alvo."
+      },
+      "skilled": {
+        "name": "Habilidoso",
+        "description": "Você adquire proficiência em qualquer combinação de três habilidades ou ferramentas de sua escolha.\n\nRepetível: Você pode escolher este talento mais de uma vez."
+      },
+      "tavern_brawler": {
+        "name": "Brigão de Taverna",
+        "description": "Ataque Desarmado Aprimorado: Quando você acerta um ataque desarmado e causa dano, você pode causar dano de concussão igual a 1d4 mais seu modificador de Força em vez do dano normal de um ataque desarmado.\n\nRelançamento de Dano: Sempre que você rolar um dado de dano para seu ataque desarmado, você pode rerrolar o dado se o resultado for 1, e você deve usar o novo resultado.\n\nArmas Improvisadas: Você tem proficiência com armas improvisadas.\n\nEmpurrão: Quando você acerta uma criatura com um ataque desarmado como parte da ação Atacar no seu turno, você pode causar dano ao alvo e também empurrá-lo 1,5 metro para longe de você. Você pode usar este benefício apenas uma vez por turno."
+      },
+      "tough": {
+        "name": "Durão",
+        "description": "Ao adquirir este talento, seu máximo de Pontos de Vida aumenta em um valor igual ao dobro do seu nível de personagem. Sempre que você subir de nível posteriormente, seu máximo de Pontos de Vida aumenta em mais 2 Pontos de Vida."
       }
     },
     "general": {},
