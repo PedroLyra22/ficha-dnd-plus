@@ -37,6 +37,7 @@
                             <thead>
                                 <tr>
                                     <th>Nome do Personagem</th>
+                                    <th>Classe</th>
                                     <th>Nível</th>
                                     <th>Ações</th>
                                 </tr>
@@ -45,6 +46,7 @@
                                 {% for sheet in character_sheets %}
                                     <tr>
                                         <td>{{ sheet.name }}</td>
+                                        <td>{{ sheet.class_slug }}</td>
                                         <td>{{ sheet.level }}</td>
                                         <td>
                                             <a href="{{ url_for('main.show_character_sheet', sheet_id=sheet.id) }}" class="btn btn-sm btn-info">Visualizar</a>
