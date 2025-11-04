@@ -3,7 +3,7 @@
 {% block title %}Escolha os Traços do Clérigo{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container pt-4">
     {% if cleric %}
     <div class="row mb-4">
         <div class="col-md-2 text-center">
@@ -50,7 +50,7 @@
                     <label class="form-check-label" for="{{ choice.slug }}">
                         <strong>{{ choice.name }}</strong>
                     </label>
-                    <p class="text-muted small">{{ choice.description }}</p>
+                    <p class="text-muted small">{{ choice.description|safe }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -63,7 +63,7 @@
                 <h2>{{ spellcasting.name }}</h2>
             </div>
             <div class="card-body">
-                <p>{{ spellcasting.description if spellcasting.description else 'Você pode conjurar magias divinas.' }}</p>
+                <p>{{ spellcasting.description|safe if spellcasting.description else 'Você pode conjurar magias divinas.' }}</p>
             </div>
         </div>
         {% endif %}
@@ -74,7 +74,7 @@
                 <h2>{{ divine_order.title }}</h2>
             </div>
             <div class="card-body">
-                <p>{{ divine_order.description if divine_order.description else 'Escolha sua ordem divina.' }}</p>
+                <p>{{ divine_order.description|safe if divine_order.description else 'Escolha sua ordem divina.' }}</p>
                 {% for choice in divine_order.choices %}
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="divine_order" value="{{ choice.slug }}" id="{{ choice.slug }}">
@@ -87,7 +87,9 @@
         </div>
         {% endif %}
 
-        <button type="submit" class="btn btn-primary">Prosseguir</button>
+        <div class="py-4">
+            <button type="submit" class="btn btn-primary px-4 py-2">Prosseguir</button>
+        </div>
     </form>
 </div>
 
