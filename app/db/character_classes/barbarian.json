@@ -1,0 +1,18 @@
+{
+  "barbaro": {
+      "name": "Bárbaro",
+      "icon": "app/static/img/class_icons/icon-barbarian.png",
+      "description": "Um guerreiro feroz de origem primitiva que pode entrar em fúria em combate.",
+      "primary_ability": "Força",
+      "hit_point_die": "d12",
+      "saving_throw_proficiencies": "Força, Constituição",
+      "skill_proficiencies": "Escolha duas entre: Atletismo, Intimidação, Natureza, Percepção, Sobrevivência",
+      "weapon_proficiencies": "Armas simples, armas marciais",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Armaduras leves, armaduras médias, escudos",
+      "starting_equipment": "Machado grande, 4 machados, pacote de explorador e 15 PO ou 75 PO.",
+      "progression": {
+
+      }
+    }
+}

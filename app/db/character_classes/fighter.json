@@ -1,0 +1,18 @@
+{
+  "guerreiro": {
+      "name": "Guerreiro",
+      "icon": "app/static/img/class_icons/icon-figther.png",
+      "description": "Todos os guerreiros compartilham uma habilidade inigualável com armas e armaduras, e estão bem familiarizados com a morte, tanto enfrentando-a quanto desafiando-a.",
+      "primary_ability": "Força ou Destreza",
+      "hit_point_die": "d10",
+      "saving_throw_proficiencies": "Força, Constituição",
+      "skill_proficiencies": "Escolha duas entre: Acrobacia, Lidar com Animais, Atletismo, História, Intuição, Intimidação, Persuasão, Percepção, Sobrevivência",
+      "weapon_proficiencies": "Armas simples, armas marciais",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
+      "starting_equipment": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO",
+      "progression": {
+
+      }
+    }
+}

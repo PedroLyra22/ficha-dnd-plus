@@ -188,7 +188,7 @@ def cleric_traits(sheet_id):
         flash('Traços de Clérigo salvos com sucesso!', 'success')
         return redirect(url_for('main.show_character_sheet', sheet_id=sheet_id))
 
-    with open('app/db/cleric.json', encoding='utf-8') as f:
+    with open('app/db/character_classes/cleric.json', encoding='utf-8') as f:
         cleric_data = json.load(f)
 
     cleric_info = cleric_data['clerigo']
@@ -211,7 +211,7 @@ def show_character_sheet(sheet_id):
     sheet = CharacterSheet.query.get_or_404(sheet_id)
     class_slug = sheet.class_slug
 
-    json_file_name = f'{class_slug}.json' if class_slug != 'clerigo' else 'cleric.json'
+    json_file_name = f'/character_classes/{class_slug}.json' if class_slug != 'clerigo' else 'cleric.json'
     if class_slug == 'barbaro':
         json_file_name = 'barbarian.json'
     elif class_slug == 'mago':

@@ -1,0 +1,18 @@
+{
+  "monge": {
+      "name": "Monge",
+      "icon": "app/static/img/class_icons/icon-monk.png",
+      "description": "Os monges concentram seu poder interior para criar efeitos extraordinários, até mesmo sobrenaturais.",
+      "primary_ability": "Destreza ou Sabedoria",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Força, Constituição",
+      "skill_proficiencies": "Escolha duas entre: Acrobacia, Atletismo, História, Intuição, Religião, Furtividade",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Escolha uma entre: Ferramenta de artesão ou instrumento musical",
+      "armor_training": "Nenhuma",
+      "starting_equipment": "Lança, 5 adagas, ferramenta de artesão ou instrumento musical, pacote de explorador e 11 PO; ou 50 PO",
+      "progression": {
+
+      }
+    }
+}

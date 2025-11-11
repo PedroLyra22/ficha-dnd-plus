@@ -1,0 +1,18 @@
+{
+  "bruxo": {
+      "name": "Bruxo",
+      "icon": "app/static/img/class_icons/icon-warlock.png",
+      "description": "Os bruxos buscam o conhecimento escondido na estrutura do multiverso, juntando segredos arcanos para reforçar seu próprio poder.",
+      "primary_ability": "Carisma",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Sabedoria, Carisma",
+      "skill_proficiencies": "Escolha duas entre: Arcanismo, Enganação, História, Intimidação, Investigaçãon, Natureza, Religião",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Armaduras leves",
+      "starting_equipment": "Armadura de couro, foice, 2 adagas, foco arcano(orbe), livro(ocultismo), pacote de estudioso e 15 PO ou 100 PO",
+      "progression": {
+
+      }
+    }
+}

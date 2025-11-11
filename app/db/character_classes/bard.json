@@ -1,0 +1,18 @@
+{
+  "bardo": {
+      "name": "Bardo",
+      "icon": "app/static/img/class_icons/icon-bard.png",
+      "description": "Bardos são especialistas em inspirar os outros, acalmar mágoas, desanimar inimigos e criar ilusões.",
+      "primary_ability": "Carisma",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Destreza, Carisma",
+      "skill_proficiencies": "Escolha quaisquer 3 perícias",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Escolha 3 instrumentos musicais",
+      "armor_training": "Armaduras leves",
+      "starting_equipment": "Armadura de couro, 2 adagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO",
+      "progression": {
+
+      }
+    }
+}

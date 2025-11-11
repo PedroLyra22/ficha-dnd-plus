@@ -1,0 +1,18 @@
+{
+  "feiticeiro": {
+      "name": "Feiticeiro",
+      "icon": "app/static/img/class_icons/icon-sorcerer.png",
+      "description": "Os feiticeiros aproveitam e canalizam o poder bruto e turbulento da magia inata que está gravada em seu próprio ser.",
+      "primary_ability": "Carisma",
+      "hit_point_die": "d6",
+      "saving_throw_proficiencies": "Constituição, Carisma",
+      "skill_proficiencies": "Escolha duas entre: Arcanismo, Enganação, Intuição, Intimidação, Persuasão, Religião",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Nenhuma",
+      "starting_equipment": "Lança, 2 adagas, foco arcano(cristal), pacote de masmorra e 28 PO ou 50 PO",
+      "progression": {
+
+      }
+    }
+}

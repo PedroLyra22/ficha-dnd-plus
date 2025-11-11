@@ -1,0 +1,18 @@
+{
+      "ladino": {
+      "name": "Ladino",
+      "icon": "app/static/img/class_icons/icon-rogue.png",
+      "description": "Um batedor, ladrão ou espião que prospera nas sombras.",
+      "primary_ability": "Destreza",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Destreza, Inteligência",
+      "skill_proficiencies": "Escolha quatro entre: Acrobacia, Atletismo, Enganação, Intuição, Intimidação, Investigação, Percepção, Persuasão, Prestidigitação, Furtividade",
+      "weapon_proficiencies": "Armas simples, armas marciais com propriedades sofisticada ou leve",
+      "tool_proficiencies": "Ferramentas de ladrão",
+      "armor_training": "Armaduras leves",
+      "starting_equipment": "Armadura de couro, 2 adagas, espada curta, arco curto, aljava com 20 flechas, ferramentas de ladrão, pacote de ladino e 8 PO ou 100 PO",
+      "progression": {
+
+      }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "patrulheiro": {
+      "name": "Patrulheiro",
+      "icon": "app/static/img/class_icons/icon-ranger.png",
+      "description": "Os patrulheiros são afiados com foco mortal e controlam poderes primitivos para proteger o mundo da devastação de monstros e tiranos.",
+      "primary_ability": "Destreza e Sabedoria",
+      "hit_point_die": "d10",
+      "saving_throw_proficiencies": "Força, Destreza",
+      "skill_proficiencies": "Escolha três entre: Lidar com Animais, Atletismo, Intuição, Investigação, Natureza, Percepção, Furtividade, Sobrevivência",
+      "weapon_proficiencies": "Armas simples, armas marciais",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Armaduras leves, armaduras médias, escudos",
+      "starting_equipment": "Armadura de couro batido, cimitarra, espada curta, arco longo, aljava com 20 flechas, foco druídico(flecha de visco), pacote de explorador e 7 PO ou 150 PO",
+      "progression": {
+
+      }
+    }
+}

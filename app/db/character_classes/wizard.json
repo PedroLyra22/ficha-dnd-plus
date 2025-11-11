@@ -1,0 +1,18 @@
+{
+  "mago": {
+      "name": "Mago",
+      "icon": "app/static/img/class_icons/icon-wizard.png",
+      "description": "Um usuário de magia erudito capaz de manipular as estruturas da realidade.",
+      "primary_ability": "Inteligência",
+      "hit_point_die": "d6",
+      "saving_throw_proficiencies": "Inteligência, Sabedoria",
+      "skill_proficiencies": "Escolha duas entre: Arcanismo, História, Intuição, Investigação, Medicina, Natureza, Religião",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Nenhuma",
+      "armor_training": "Nenhuma",
+      "starting_equipment": "2 adagas, foco arcano(cajado), robe, livro de magias, pacote de estudioso e 5 PO ou 55 PO",
+      "progression": {
+
+      }
+    }
+}

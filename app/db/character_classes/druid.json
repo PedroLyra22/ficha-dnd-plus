@@ -1,0 +1,18 @@
+{
+  "druida": {
+      "name": "Druida",
+      "icon": "app/static/img/class_icons/icon-druid.png",
+      "description": "Os druidas invocam as forças da natureza, utilizando magia para curar, transformar-se em animais e exercer destruição elemental.",
+      "primary_ability": "Sabedoria",
+      "hit_point_die": "d8",
+      "saving_throw_proficiencies": "Inteligência, Sabedoria",
+      "skill_proficiencies": "Escolha duas entre: Arcanismo, Lidar com Animais, Intuição, Medicina, Natureza, Persuasão, Religião, Sobrevivência",
+      "weapon_proficiencies": "Armas simples",
+      "tool_proficiencies": "Kit de herbalismo",
+      "armor_training": "Armaduras leves, escudos",
+      "starting_equipment": "Armadura de couro, escudo, foice, foco druídico(cajado), pacote de explorador, kit de herbalismo e 9 PO; ou 50 PO",
+      "progression": {
+
+      }
+    }
+}
