@@ -42,7 +42,180 @@
         "description": "Ao adquirir este talento, seu máximo de Pontos de Vida aumenta em um valor igual ao dobro do seu nível de personagem. Sempre que você subir de nível posteriormente, seu máximo de Pontos de Vida aumenta em mais 2 Pontos de Vida."
       }
     },
-    "general": {},
+    "general": {
+      "ability_score_improvement": {
+        "name": "Melhoria de Habilidade",
+        "description": "Você pode aumentar em 2 pontos um único valor de habilidade à sua escolha ou aumentar dois valores de habilidade em 1 ponto cada. Você não pode aumentar um valor de habilidade acima de 20."
+      },
+      "actor": {
+        "name": "Ator",
+        "description": "Aumente seu Carisma em 1, até o máximo de 20.\n\nVocê tem vantagem em testes de Enganação e Interpretação quando tenta se passar por outra pessoa.\n\nVocê pode imitar a voz de outra pessoa ou sons de criaturas que tenha ouvido por pelo menos 1 minuto. Uma criatura pode reconhecer a imitação com um teste de Intuição contestado pelo seu teste de Enganação."
+      },
+      "athlete": {
+        "name": "Atleta",
+        "description": "Aumente sua Força ou Destreza em 1, até o máximo de 20.\n\nLevantar-se de Prono consome apenas 1,5 m (5 ft) de movimento.\n\nEscalar não requer movimento extra.\n\nQuando faz um salto em corrida, você só precisa se mover 1,5 m (5 ft) antes do salto, em vez de 3 m (10 ft)."
+      },
+      "charger": {
+        "name": "Carregador",
+        "description": "Quando você usa sua ação para Correr, pode usar uma Ação Bônus para fazer um ataque corpo-a-corpo ou empurrar uma criatura.\n\nSe você se mover pelo menos 3 m (10 ft) em linha reta imediatamente antes de usar essa Ação Bônus, você recebe +5 no dano do ataque (se acertar) ou empurra o alvo até 3 m (10 ft) se o teste de empurrão for bem-sucedido."
+      },
+      "chef": {
+        "name": "Chef",
+        "description": "Aumente sua Sabedoria ou Constituição em 1, até o máximo de 20.\n\nVocê ganha proficiência com ferramentas de cozinheiro.\n\nAo terminar um Descanso Curto, você pode preparar uma refeição para até um número de criaturas igual ao seu Bônus de Proficiência. Cada criatura que comer ganha Pontos de Vida temporários iguais ao seu modificador de Proficiência.\n\nDurante um Descanso Longo, você pode preparar refeições que concedem +1 em testes de resistência até o próximo Descanso Longo."
+      },
+      "crossbow_expert": {
+        "name": "Perito em Besta",
+        "description": "Ignora a propriedade de recarga em bestas com as quais você tenha proficiência.\n\nQuando você realizar o ataque com uma arma de uma mão, pode usar uma Ação Bônus para fazer um ataque com uma besta de mão carregada.\n\nEstar a 1,5 m (5 ft) de uma criatura hostil não impõe desvantagem em ataques à distância feitos com bestas."
+      },
+      "crusher": {
+        "name": "Esmagador",
+        "description": "Aumente sua Força ou Constituição em 1, até o máximo de 20.\n\nUma vez por turno, quando você acerta um ataque com dano de concussão, pode mover o alvo 1,5 m (5 ft) para uma posição desocupada.\n\nQuando você causar um acerto crítico com dano de concussão, ataques contra essa criatura têm vantagem até o início do seu próximo turno."
+      },
+      "defensive_duelist": {
+        "name": "Duelista Defensivo",
+        "description": "Pré-requisito: Proficiência com armas marciais.\n\nQuando uma criatura o atingir com um ataque corpo-a-corpo, você pode usar sua Reação para adicionar seu Bônus de Proficiência à sua CA, possivelmente fazendo o ataque errar. Você deve estar empunhando uma arma de finesse."
+      },
+      "dual_wielder": {
+        "name": "Combatedor Duplo",
+        "description": "Você pode usar armas de uma mão que não sejam leves ao lutar com duas armas.\n\nVocê ganha +1 na CA enquanto empunhar uma arma em cada mão.\n\nVocê pode sacar ou guardar duas armas de uma mão ao mesmo tempo quando normalmente poderia sacar ou guardar apenas uma."
+      },
+      "durable": {
+        "name": "Resistente",
+        "description": "Aumente sua Constituição em 1, até o máximo de 20.\n\nQuando você rolar um Dado de Vida para recuperar Pontos de Vida, o mínimo que você pode recuperar é o dobro do seu modificador de Constituição."
+      },
+      "elemental_adept": {
+        "name": "Adepto Elemental",
+        "description": "Pré-requisito: Capacidade de conjurar magias.\n\nEscolha um tipo de dano: ácido, frio, fogo, relâmpago ou trovão.\n\nMagias que você conjura ignoram resistência a esse tipo de dano.\n\nAlém disso, quando você rolar um 1 em um dado de dano desse tipo, trate o resultado como 2.\n\nRepetível: Você pode escolher este talento novamente, escolhendo outro tipo de dano."
+      },
+      "fey_touched": {
+        "name": "Tocado pelas Fadas",
+        "description": "Aumente sua Inteligência, Sabedoria ou Carisma em 1, até o máximo de 20.\n\nVocê aprende a magia Passo Nebuloso e uma magia de 1º nível de Encantamento ou Adivinhação à sua escolha.\n\nVocê pode conjurar cada uma dessas magias uma vez sem gastar um espaço de magia e as recupera ao terminar um Descanso Longo.\n\nVocê também pode conjurá-las usando seus espaços de magia."
+      },
+      "grappler": {
+        "name": "Agarrador",
+        "description": "Pré-requisito: Força 13 ou superior.\n\nVocê tem vantagem em testes de ataque corpo-a-corpo contra uma criatura que esteja sendo agarrada por você.\n\nVocê pode usar uma ação para tentar imobilizar uma criatura que você esteja agarrando. Faça outro teste de Agarrar; se vencer, a criatura fica impedida até que o agarrão termine."
+      },
+      "great_weapon_master": {
+        "name": "Mestre das Armas Pesadas",
+        "description": "Quando você acerta um acerto crítico ou reduz uma criatura a 0 PV com uma arma corpo-a-corpo, pode usar uma Ação Bônus para fazer outro ataque corpo-a-corpo.\n\nAntes de realizar um ataque com uma arma corpo-a-corpo pesada, você pode optar por sofrer –5 na jogada de ataque para adicionar +10 ao dano se acertar."
+      },
+      "heavily_armored": {
+        "name": "Pesadamente Blindado",
+        "description": "Pré-requisito: Proficiência com armaduras médias.\n\nAumente sua Força em 1, até o máximo de 20.\n\nVocê ganha proficiência com armaduras pesadas."
+      },
+      "heavy_armor_master": {
+        "name": "Mestre da Armadura Pesada",
+        "description": "Pré-requisito: Proficiência com armaduras pesadas.\n\nAumente sua Força em 1, até o máximo de 20.\n\nEnquanto você estiver vestindo armadura pesada, o dano de ataques não mágicos é reduzido em 3."
+      },
+      "inspiring_leader": {
+        "name": "Líder Inspirador",
+        "description": "Pré-requisito: Carisma 13 ou superior.\n\nVocê pode gastar 10 minutos motivando aliados. Escolha até seis criaturas (incluindo você) que possam ouvir ou entender você. Cada criatura ganha Pontos de Vida temporários iguais ao seu nível + seu modificador de Carisma. Uma criatura não pode ganhar este benefício novamente até terminar um Descanso Curto ou Longo."
+      },
+      "keen_mind": {
+        "name": "Mente Aguçada",
+        "description": "Aumente sua Inteligência em 1, até o máximo de 20.\n\nVocê sempre sabe em que direção fica o norte.\n\nVocê sempre sabe a hora exata.\n\nVocê pode recordar com precisão qualquer coisa que tenha visto ou ouvido no último mês."
+      },
+      "lightly_armored": {
+        "name": "Levemente Blindado",
+        "description": "Aumente sua Força ou Destreza em 1, até o máximo de 20.\n\nVocê ganha proficiência com armaduras leves."
+      },
+      "mage_slayer": {
+        "name": "Caçador de Magos",
+        "description": "Quando uma criatura conjura uma magia a até 1,5 m (5 ft) de você, você pode usar sua Reação para fazer um ataque corpo-a-corpo contra ela.\n\nQuando você acerta uma criatura que está concentrando em uma magia, ela tem desvantagem no teste de resistência de Constituição para manter a concentração.\n\nVocê tem vantagem em testes de resistência contra magias conjuradas por criaturas a até 1,5 m (5 ft) de você."
+      },
+      "martial_weapon_training": {
+        "name": "Treinamento em Armas Marciais",
+        "description": "Você ganha proficiência com armas marciais e escudos.\n\nAumente sua Força ou Destreza em 1, até o máximo de 20."
+      },
+      "medium_armor_master": {
+        "name": "Mestre da Armadura Média",
+        "description": "Pré-requisito: Proficiência com armaduras médias.\n\nUsando armadura média, você adiciona +3 (em vez de +2) do seu modificador de Destreza à sua CA.\n\nVocê não sofre desvantagem em testes de Furtividade enquanto estiver usando armaduras médias."
+      },
+      "moderately_armored": {
+        "name": "Moderadamente Blindado",
+        "description": "Pré-requisito: Proficiência com armaduras leves.\n\nAumente sua Força ou Destreza em 1, até o máximo de 20.\n\nVocê ganha proficiência com armaduras médias e escudos."
+      },
+      "mounted_combatant": {
+        "name": "Combatente Montado",
+        "description": "Você tem vantagem em jogadas de ataque corpo-a-corpo contra criaturas menores que sua montaria.\n\nVocê pode forçar um ataque direcionado à sua montaria a ter você como alvo.\n\nSe sua montaria for alvo de um efeito que exige teste de resistência para receber metade do dano, ela sofre nenhum dano se passar no teste e metade apenas se falhar."
+      },
+      "observant": {
+        "name": "Observador",
+        "description": "Aumente sua Inteligência ou Sabedoria em 1, até o máximo de 20.\n\nSe você puder ver os lábios de uma criatura enquanto ela fala em um idioma que você compreende, você pode ler seus lábios.\n\nVocê tem +5 no seu valor de Percepção Passiva e Investigação Passiva."
+      },
+      "piercer": {
+        "name": "Perfurador",
+        "description": "Aumente sua Força ou Destreza em 1, até o máximo de 20.\n\nUma vez por turno, quando você acerta um ataque que causa dano perfurante, pode rolar novamente um dado de dano e usar o novo resultado.\n\nQuando você causa um acerto crítico com dano perfurante, você rola um dado de dano adicional da arma."
+      },
+      "poisoner": {
+        "name": "Envenenador",
+        "description": "Você adquire proficiência com ferramentas de alquimista.\n\nVocê pode aplicar veneno em uma arma ou munição como uma Ação Bônus, em vez de uma Ação.\n\nVocê pode criar um veneno especial após um Descanso Longo. O veneno permanece viável até o próximo Descanso Longo. Uma criatura atingida pela arma envenenada deve fazer um teste de resistência de Constituição (CD igual a 8 + seu Bônus de Proficiência + seu modificador de Destreza) ou sofre 2d8 de dano de veneno e fica Envenenada até o final do seu próximo turno."
+      },
+      "polearm_master": {
+        "name": "Mestre das Armas de Haste",
+        "description": "Quando você usa a Ação de Ataque e ataca com uma arma de haste (como alabarda, glaive, lança ou bastão), pode usar uma Ação Bônus para fazer um ataque corpo-a-corpo com a outra extremidade da arma, que causa 1d4 de dano contundente.\n\nEnquanto estiver empunhando uma arma de haste, você pode usar sua Reação para fazer um ataque contra uma criatura que entra no seu alcance."
+      },
+      "resilient": {
+        "name": "Resiliente",
+        "description": "Aumente uma pontuação de habilidade à sua escolha em 1, até o máximo de 20.\n\nVocê ganha proficiência em testes de resistência associados à habilidade escolhida."
+      },
+      "ritual_caster": {
+        "name": "Conjurador de Rituais",
+        "description": "Pré-requisito: Inteligência ou Sabedoria 13 ou superior.\n\nEscolha uma classe de conjurador: Bardo, Clérigo, Druida, Feiticeiro, Bruxo ou Mago.\n\nVocê adquire um livro de rituais contendo duas magias de 1º nível que tenham o descritor Ritual da lista da classe escolhida.\n\nVocê pode adicionar mais magias de Ritual à medida que as encontra, desde que sejam da mesma lista de magias e nível que você possa conjurar."
+      },
+      "sentinel": {
+        "name": "Sentinela",
+        "description": "Quando você acerta uma criatura com um ataque de oportunidade, o deslocamento dela se torna 0 nesse turno.\n\nCriaturas não provocam ataques de oportunidade, mesmo usando a ação Disengajar.\n\nQuando uma criatura dentro do seu alcance faz um ataque contra um alvo diferente de você, você pode usar sua Reação para fazer um ataque corpo-a-corpo contra ela."
+      },
+      "shadow_touched": {
+        "name": "Tocado pelas Sombras",
+        "description": "Aumente sua Inteligência, Sabedoria ou Carisma em 1, até o máximo de 20.\n\nVocê aprende a magia Passo das Sombras (Invisibilidade) e uma magia de 1º nível da escola de Ilusão ou Necromancia à sua escolha.\n\nVocê pode conjurar cada uma dessas magias uma vez sem gastar um espaço de magia e as recupera ao terminar um Descanso Longo.\n\nVocê também pode conjurá-las usando seus espaços de magia."
+      },
+      "sharpshooter": {
+        "name": "Atirador Preciso",
+        "description": "Ataques à distância que você faz ignoram cobertura leve e média.\n\nVocê não sofre desvantagem em ataques à distância realizados a longo alcance.\n\nAntes de realizar um ataque com uma arma à distância, você pode optar por sofrer –5 na jogada de ataque para adicionar +10 ao dano se acertar."
+      },
+      "shield_master": {
+        "name": "Mestre do Escudo",
+        "description": "Se você fizer a Ação de Ataque no seu turno, pode usar uma Ação Bônus para tentar empurrar uma criatura a até 1,5 m (5 ft) de você com o seu escudo.\n\nSe você não estiver incapacitado, pode adicionar o bônus do seu escudo a qualquer teste de resistência de Destreza que faça contra um efeito que vise apenas você.\n\nSe for forçado a fazer um teste de resistência de Destreza para sofrer metade do dano, você pode usar sua Reação para não sofrer dano algum se passar no teste, usando o escudo para se proteger."
+      },
+      "skill_expert": {
+        "name": "Perito em Perícia",
+        "description": "Aumente uma pontuação de habilidade em 1, até o máximo de 20.\n\nVocê ganha proficiência em uma perícia de sua escolha.\n\nEscolha uma perícia em que você seja proficiente; seu bônus de proficiência é dobrado para testes feitos com ela."
+      },
+      "skulker": {
+        "name": "Furtivo",
+        "description": "Pré-requisito: Destreza 13 ou superior.\n\nVocê pode se esconder quando estiver levemente obscurecido.\n\nQuando erra um ataque à distância, o disparo não revela sua posição.\n\nVocê tem visão normal em escuridão leve."
+      },
+      "slasher": {
+        "name": "Dilacerador",
+        "description": "Aumente sua Força ou Destreza em 1, até o máximo de 20.\n\nUma vez por turno, quando você acerta um ataque que causa dano cortante, você reduz o deslocamento do alvo em 3 m (10 ft) até o início do seu próximo turno.\n\nQuando você causa um acerto crítico com dano cortante, o alvo tem desvantagem em todas as jogadas de ataque até o início do seu próximo turno."
+      },
+      "speedy": {
+        "name": "Veloz",
+        "description": "Aumente sua Destreza em 1, até o máximo de 20.\n\nSeu deslocamento aumenta em 3 m (10 ft).\n\nQuando você usar a ação Desengajar, pode mover-se metade do seu deslocamento como parte da mesma Ação Bônus."
+      },
+      "spell_sniper": {
+        "name": "Sniper Mágico",
+        "description": "Pré-requisito: Capacidade de conjurar magias.\n\nQuando você faz um ataque à distância com uma magia, o alcance é dobrado.\n\nSe o ataque à distância mágico exigir uma jogada de ataque, ele ignora cobertura leve e média.\n\nVocê aprende um truque que exige uma jogada de ataque. O atributo de conjuração para ele é o mesmo de uma das classes de mago, clérigo, druida, bruxo, feiticeiro ou bardo à sua escolha."
+      },
+      "telekinetic": {
+        "name": "Telecinético",
+        "description": "Aumente sua Inteligência, Sabedoria ou Carisma em 1, até o máximo de 20.\n\nVocê aprende o truque Mão Mágica. A mão é invisível e tem alcance de 9 m (30 ft).\n\nComo uma Ação Bônus, você pode tentar empurrar uma criatura a até 9 m (30 ft) de você. O alvo deve fazer um teste de resistência de Força (CD = 8 + seu Bônus de Proficiência + seu modificador da habilidade usada neste talento) ou ser empurrado 1,5 m (5 ft)."
+      },
+      "telepathic": {
+        "name": "Telepático",
+        "description": "Aumente sua Inteligência, Sabedoria ou Carisma em 1, até o máximo de 20.\n\nVocê pode se comunicar telepaticamente com qualquer criatura a até 9 m (30 ft) de você. A criatura deve compreender pelo menos um idioma.\n\nVocê aprende a magia Detectar Pensamentos e pode conjurá-la uma vez sem gastar um espaço de magia, recuperando esse uso após um Descanso Longo. Você também pode conjurá-la usando seus espaços de magia."
+      },
+      "war_caster": {
+        "name": "Conjurador de Guerra",
+        "description": "Pré-requisito: Capacidade de conjurar magias.\n\nVocê tem vantagem em testes de resistência de Constituição para manter a concentração em uma magia quando sofre dano.\n\nVocê pode realizar gestos somáticos de magias mesmo quando estiver empunhando armas ou escudos em uma ou ambas as mãos.\n\nQuando uma criatura provoca um ataque de oportunidade, você pode usar sua Reação para conjurar uma magia de alvo único contra ela, em vez de realizar o ataque."
+      },
+      "weapon_master": {
+        "name": "Mestre em Armas",
+        "description": "Aumente sua Força ou Destreza em 1, até o máximo de 20.\n\nVocê ganha proficiência com quatro armas de sua escolha."
+      }
+    },
     "fighting_style": {
       "archery": {
         "name": "Tiro com Arco",
