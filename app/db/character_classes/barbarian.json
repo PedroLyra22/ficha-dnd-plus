@@ -12,7 +12,43 @@
       "armor_training": "Armaduras leves, armaduras médias, escudos",
       "starting_equipment": "Machado grande, 4 machados, pacote de explorador e 15 PO ou 75 PO.",
       "progression": {
+        "1": [
+            {
+                "type": "choice",
+                "title": "Perícias Base",
+                "description": "",
+                "choices": [
+                  {
+                    "name": "História",
+                    "slug": "history",
+                    "description": ""
+                  },
+                  {
+                    "name": "Intuição",
+                    "slug": "insight",
+                    "description": ""
+                  },
+                  {
+                    "name": "Medicina",
+                    "slug": "medicine",
+                    "description": ""
+                  },
+                  {
+                    "name": "Persuasão",
+                    "slug": "persuasion",
+                    "description": ""
+                  },
+                  {
+                    "name": "Religião",
+                    "slug": "religion",
+                    "description": ""
+                  }
+                ]
+            },
+            {
 
+            }
+        ]
       }
     }
 }
