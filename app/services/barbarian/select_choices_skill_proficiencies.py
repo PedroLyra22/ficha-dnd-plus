@@ -1,14 +1,13 @@
-
 import json
 import os
 from config import basedir
 
 
-class ClericSelectChoicesSkillProficiencies:
+class BarbarianSelectChoicesSkillProficiencies:
     def __init__(self, level, json_path=None):
         self.level = level
         if json_path is None:
-            self.json_path = os.path.join(basedir, 'app', 'db', 'character_classes', 'cleric.json')
+            self.json_path = os.path.join(basedir, 'app', 'db', 'character_classes', 'barbarian.json')
         else:
             self.json_path = json_path
         self.data = self._load_json()
@@ -28,7 +27,7 @@ class ClericSelectChoicesSkillProficiencies:
         if not self.data:
             return None
 
-        data = self.data.get('clerigo', {})
+        data = self.data.get('barbaro', {})
         progression = data.get('progression', {})
 
         level_key = str(self.level)
@@ -44,7 +43,7 @@ class ClericSelectChoicesSkillProficiencies:
 
         return {
             'level': self.level,
-            'class_name': data.get('name', 'Clérigo'),
+            'class_name': data.get('name', 'Barbaro'),
             'options': level_options
         }
 
