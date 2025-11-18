@@ -6,48 +6,53 @@
       "primary_ability": "Força",
       "hit_point_die": "d12",
       "saving_throw_proficiencies": "Força, Constituição",
-      "skill_proficiencies": "Escolha duas entre: Atletismo, Intimidação, Natureza, Percepção, Sobrevivência",
+      "skill_proficiencies": "Escolha duas entre: Lidar com Animais, Atletismo, Intimidação, Natureza, Percepção, Sobrevivência",
       "weapon_proficiencies": "Armas simples, armas marciais",
       "tool_proficiencies": "Nenhuma",
       "armor_training": "Armaduras leves, armaduras médias, escudos",
       "starting_equipment": "Machado grande, 4 machados, pacote de explorador e 15 PO ou 75 PO.",
       "progression": {
         "1": [
-            {
-                "type": "choice",
-                "title": "Perícias Base",
-                "description": "",
-                "choices": [
-                  {
-                    "name": "História",
-                    "slug": "history",
-                    "description": ""
-                  },
-                  {
-                    "name": "Intuição",
-                    "slug": "insight",
-                    "description": ""
-                  },
-                  {
-                    "name": "Medicina",
-                    "slug": "medicine",
-                    "description": ""
-                  },
-                  {
-                    "name": "Persuasão",
-                    "slug": "persuasion",
-                    "description": ""
-                  },
-                  {
-                    "name": "Religião",
-                    "slug": "religion",
-                    "description": ""
-                  }
-                ]
-            },
-            {
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Lidar com Animais",
+                "slug": "animal_handling",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Sobrevivência",
+                "slug": "survival",
+                "description": ""
+              }
+            ]
+          },
+          {
 
-            }
+          }
         ]
       }
     }

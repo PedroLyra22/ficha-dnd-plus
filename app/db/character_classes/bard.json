@@ -12,7 +12,103 @@
       "armor_training": "Armaduras leves",
       "starting_equipment": "Armadura de couro, 2 adagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO",
       "progression": {
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Acrobacia",
+                "slug": "acrobatics",
+                "description": ""
+              },
+              {
+                "name": "Lidar com Animais",
+                "slug": "animal_handling",
+                "description": ""
+              },
+              {
+                "name": "Arcanismo",
+                "slug": "arcana",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "Enganação",
+                "slug": "deception",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Investigação",
+                "slug": "investigation",
+                "description": ""
+              },
+              {
+                "name": "Medicina",
+                "slug": "medicine",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              },
+              {
+                "name": "Prestidigitação",
+                "slug": "sleight_of_hand",
+                "description": ""
+              },
+              {
+                "name": "Furtividade",
+                "slug": "stealth",
+                "description": ""
+              },
+              {
+                "name": "Sobrevivência",
+                "slug": "survival",
+                "description": ""
+              }
+            ]
+          },
+          {
 
+          }
+        ]
       }
     }
 }
