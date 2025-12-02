@@ -1,6 +1,6 @@
-from app.services.cleric.select_choices_skill_proficiencies import ClericSelectChoicesSkillProficiencies
+from app.services.barbarian.select_choices_skill_proficiencies import ClericSelectChoicesSkillProficiencies
 
-cleric = ClericSelectChoicesSkillProficiencies(level=3)
+cleric = BarbarianSelectChoicesSkillProficiencies(level=3)
 
 options = cleric.get_level_options()
 
