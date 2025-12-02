@@ -12,7 +12,60 @@
       "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
       "starting_equipment": "Camisão de malha, espada grande, mangual, 8 javelins, pacote de masmorra / Armadura de couro batido, cimitarra, espda curta, arco longo, aljava com 20 flechas, pacote de masmorra e 11 PO; ou 155 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices":[
+              {
+                "name": "Acrobacia",
+                "slug": "acrobatics",
+                "description": ""
+              },
+              {
+                "name": "Lidar com Animais",
+                "slug": "animal_handling",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Sobrevivência",
+                "slug": "survival",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

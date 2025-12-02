@@ -6,13 +6,61 @@
       "primary_ability": "Sabedoria",
       "hit_point_die": "d8",
       "saving_throw_proficiencies": "Inteligência, Sabedoria",
-      "skill_proficiencies": "Escolha duas entre: Arcanismo, Lidar com Animais, Intuição, Medicina, Natureza, Persuasão, Religião, Sobrevivência",
+      "skill_proficiencies": "Escolha duas entre: Arcanismo, Lidar com Animais, Intuição, Medicina, Natureza, Percepção, Religião, Sobrevivência",
       "weapon_proficiencies": "Armas simples",
       "tool_proficiencies": "Kit de herbalismo",
       "armor_training": "Armaduras leves, escudos",
       "starting_equipment": "Armadura de couro, escudo, foice, foco druídico(cajado), pacote de explorador, kit de herbalismo e 9 PO; ou 50 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Arcanismo",
+                "slug": "arcana",
+                "description": ""
+              },
+              {
+                "name": "Lidar com Animais",
+                "slug": "animal_handling",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Medicina",
+                "slug": "medicine",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              },
+              {
+                "name": "Sobrevivência",
+                "slug": "survival",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

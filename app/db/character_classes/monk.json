@@ -12,7 +12,45 @@
       "armor_training": "Nenhuma",
       "starting_equipment": "Lança, 5 adagas, ferramenta de artesão ou instrumento musical, pacote de explorador e 11 PO; ou 50 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Acrobacia",
+                "slug": "acrobatics",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              },
+              {
+                "name": "Furtividade",
+                "slug": "stealth",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }
