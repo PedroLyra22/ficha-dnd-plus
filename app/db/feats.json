@@ -258,6 +258,55 @@
         "description": "Quando você acerta um ataque desarmado e causa dano, você pode causar dano de concussão igual a 1d6 mais seu modificador de Força em vez do dano normal de um ataque desarmado. Se você não estiver empunhando nenhuma arma ou escudo ao fazer a jogada de ataque, o d6 se torna um d8.\n\nNo início de cada um dos seus turnos, você pode causar 1d4 de dano de concussão a uma criatura agarrada por você."
       }
     },
-    "epic_boon": {}
+    "epic_boon": {
+      "boon_of_combat_prowess": {
+        "name": "Dádiva da Proeza de Combate",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nMira Inigualável: Quando você errar uma jogada de ataque, poderá acertar em vez disso. Depois de usar este benefício, você não poderá usá-lo novamente até o início do seu próximo turno."
+      },
+      "boon_of_dimensional_travel": {
+        "name": "Dádiva da Viagem Dimensional",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nBlink Step: Imediatamente após realizar a ação de Ataque ou a ação de Magia, você pode se teletransportar até 30ft para um espaço desocupado que você possa ver."
+      },
+      "boon_of_energy_resistance": {
+        "name": "Dádiva da Resistência Elemental",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nResistências a Energia: Você ganha resistência a dois dos seguintes tipos de dano à sua escolha: Ácido, Frio, Fogo, Relâmpago, Necrótico, Veneno, Psíquico, Radiante ou Trovão. Sempre que terminar um Descanso Longo, você pode alterar suas escolhas.\n\nRedirecionamento de Energia: Quando você sofre dano de um dos tipos escolhidos para o benefício de Resistências a Energia, você pode usar uma Reação para direcionar dano do mesmo tipo a outra criatura que você possa ver a até 60ft de você e que não esteja atrás de Cobertura Total. Se fizer isso, essa criatura deve ser bem-sucedida em um teste de resistência de Destreza (CD 8 mais seu modificador de Constituição e Bônus de Proficiência) ou sofrer dano igual a 2d12 mais seu modificador de Constituição."
+      },
+      "boon_of_fate": {
+        "name": "Dádiva do Destino",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nAprimoramento do Destino: Quando você ou outra criatura a até 60ft de você obtiver sucesso ou falhar em um Teste de D20, você pode rolar 2d4 e aplicar o total rolado como bônus ou penalidade à rolagem de d20. Depois de usar este benefício, você não poderá usá-lo novamente até rolar a Iniciativa ou terminar um Descanso Curto ou Longo."
+      },
+      "boon_of_fortitude": {
+        "name": "Dádiva da Fortitude",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nSaúde Reforçada: Seu máximo de Pontos de Vida aumenta em 40. Além disso, sempre que você recuperar Pontos de Vida, poderá recuperar Pontos de Vida adicionais iguais ao seu modificador de Constituição. Depois de recuperar esses Pontos de Vida adicionais, você não poderá fazê-lo novamente até o início do seu próximo turno."
+      },
+      "boon_of_irresistible_offense": {
+        "name": "Dádiva do Ataque Irresistível",
+        "description": "Aumento de Atributo: Aumente seu valor de Força ou Destreza em 1, até um máximo de 30.\n\nSuperar Defesas: O dano de concussão, perfuração e corte que você causar sempre ignora a Resistência.\n\nGolpe Avassalador: Quando você rolar um 20 no d20 para uma jogada de ataque, você pode causar dano extra ao alvo igual ao valor do atributo aumentado por este talento. O tipo do dano extra é o mesmo do ataque."
+      },
+      "boon_of_recovery": {
+        "name": "Dádiva da Recuperação",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nÚltimo Suspiro: Quando seus Pontos de Vida estiverem prestes a chegar a 0, você pode, em vez disso, cair para 1 Ponto de Vida e recuperar uma quantidade de Pontos de Vida igual à metade do seu máximo. Após usar este benefício, você não poderá usá-lo novamente até terminar um Descanso Longo.\n\nRecuperar Vitalidade: Você possui uma reserva de dez d10. Como uma Ação Bônus, você pode gastar dados da reserva, rolar esses dados e recuperar uma quantidade de Pontos de Vida igual ao total da rolagem. Você recupera todos os dados gastos ao terminar um Descanso Longo."
+      },
+      "boon_of_skill": {
+        "name": "Dádiva das Habilidades",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nProficiência em Todas as Habilidades: Você ganha proficiência em todas as perícias.\n\nEspecialização: Escolha uma perícia na qual você não possui Especialização. Você ganha Especialização nessa perícia."
+      },
+      "boon_of_speed": {
+        "name": "Dádiva da Velocidade",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nArte da Fuga: Como uma Ação Bônus, você pode realizar a ação Desengajar, que também encerra a condição Agarrado.\n\nAgilidade: Sua Velocidade aumenta em 30ft."
+      },
+      "boon_of_spell_recall": {
+        "name": "Dádiva da Recuperação de Feitiços",
+        "description": "Aumento de Atributo: Aumente seu valor de Inteligência, Sabedoria ou Carisma em 1, até um máximo de 30.\n\nConjuração Gratuita: Sempre que você conjurar uma magia com um espaço de magia de nível 1 a 4, role 1d4. Se o número que você rolar for igual ao nível do espaço de magia, o espaço não será gasto."
+      },
+      "boon_of_the_night_spirit": {
+        "name": "Dádiva do Espírito da Noite",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nFundir-se com as Sombras: Enquanto estiver em Penumbra ou Escuridão, você pode se tornar Invisível como uma Ação Bônus. A condição termina imediatamente após você realizar uma ação, uma Ação Bônus ou uma Reação.\n\nForma Sombria: Enquanto estiver em Penumbra ou Escuridão, você tem Resistência a todos os tipos de dano, exceto Psíquico e Radiante."
+      },
+      "boon_of_truesight": {
+        "name": "Dádiva da Visão Verdadeira",
+        "description": "Aumento de Atributo: Aumente um atributo à sua escolha em 1, até um máximo de 30.\n\nVisão Verdadeira: Você possui Visão Verdadeira com alcance de 60ft"
+      }
+    }
   }
 }
