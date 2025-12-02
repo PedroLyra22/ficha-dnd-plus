@@ -12,7 +12,45 @@
       "armor_training": "Armaduras leves, armaduras médias, armaduras pesadas, escudos",
       "starting_equipment": "Camisão de malha, escudo, espada grande, 6 javelins, símbolo sagrado, pacote de sacerdote e 9 PO ou 150 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Medicina",
+                "slug": "medicine",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

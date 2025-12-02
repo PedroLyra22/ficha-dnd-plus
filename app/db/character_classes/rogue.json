@@ -1,5 +1,5 @@
 {
-      "ladino": {
+  "ladino": {
       "name": "Ladino",
       "icon": "app/static/img/class_icons/icon-rogue.png",
       "description": "Um batedor, ladrão ou espião que prospera nas sombras.",
@@ -12,7 +12,70 @@
       "armor_training": "Armaduras leves",
       "starting_equipment": "Armadura de couro, 2 adagas, espada curta, arco curto, aljava com 20 flechas, ferramentas de ladrão, pacote de ladino e 8 PO ou 100 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Acrobacia",
+                "slug": "acrobatics",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "Enganação",
+                "slug": "deception",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Investigação",
+                "slug": "investigation",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Prestidigitação",
+                "slug": "sleight_of_hand",
+                "description": ""
+              },
+              {
+                "name": "Furtividade",
+                "slug": "stealth",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

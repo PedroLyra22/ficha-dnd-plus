@@ -12,7 +12,55 @@
       "armor_training": "Armaduras leves, armaduras médias, escudos",
       "starting_equipment": "Armadura de couro batido, cimitarra, espada curta, arco longo, aljava com 20 flechas, foco druídico(flecha de visco), pacote de explorador e 7 PO ou 150 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Lidar com Animais",
+                "slug": "animal_handling",
+                "description": ""
+              },
+              {
+                "name": "Atletismo",
+                "slug": "athletics",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Investigação",
+                "slug": "investigation",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Percepção",
+                "slug": "perception",
+                "description": ""
+              },
+              {
+                "name": "Furtividade",
+                "slug": "stealth",
+                "description": ""
+              },
+              {
+                "name": "Sobrevivência",
+                "slug": "survival",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }
