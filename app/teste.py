@@ -1,11 +1,11 @@
-from app.services.barbarian.select_choices_skill_proficiencies import ClericSelectChoicesSkillProficiencies
+from app.services.barbarian.select_choices_skill_proficiencies import BarbarianSelectChoicesSkillProficiencies
+from app.services.bard.select_choices_skill_proficiencies import BardSelectChoicesSkillProficiencies
 
-cleric = BarbarianSelectChoicesSkillProficiencies(level=3)
+cleric = BardSelectChoicesSkillProficiencies(level=1)
 
 options = cleric.get_level_options()
 
 choices = cleric.get_choices_only()
 print(choices)
 
-print(cleric.get_features_only())
 
