@@ -12,7 +12,50 @@
       "armor_training": "Armaduras leves",
       "starting_equipment": "Armadura de couro, foice, 2 adagas, foco arcano(orbe), livro(ocultismo), pacote de estudioso e 15 PO ou 100 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Arcanismo",
+                "slug": "arcana",
+                "description": ""
+              },
+              {
+                "name": "Enganação",
+                "slug": "deception",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Investigação",
+                "slug": "investigation",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

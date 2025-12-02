@@ -12,7 +12,50 @@
       "armor_training": "Nenhuma",
       "starting_equipment": "2 adagas, foco arcano(cajado), robe, livro de magias, pacote de estudioso e 5 PO ou 55 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Arcanismo",
+                "slug": "arcana",
+                "description": ""
+              },
+              {
+                "name": "História",
+                "slug": "history",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Investigação",
+                "slug": "investigation",
+                "description": ""
+              },
+              {
+                "name": "Medicina",
+                "slug": "medicine",
+                "description": ""
+              },
+              {
+                "name": "Natureza",
+                "slug": "nature",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }

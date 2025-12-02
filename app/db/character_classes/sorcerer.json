@@ -12,7 +12,45 @@
       "armor_training": "Nenhuma",
       "starting_equipment": "Lança, 2 adagas, foco arcano(cristal), pacote de masmorra e 28 PO ou 50 PO",
       "progression": {
-
+        "1": [
+          {
+            "type": "choice",
+            "title": "Perícias Base",
+            "description": "",
+            "choices": [
+              {
+                "name": "Arcanismo",
+                "slug": "arcana",
+                "description": ""
+              },
+              {
+                "name": "Enganação",
+                "slug": "deception",
+                "description": ""
+              },
+              {
+                "name": "Intuição",
+                "slug": "insight",
+                "description": ""
+              },
+              {
+                "name": "Intimidação",
+                "slug": "intimidation",
+                "description": ""
+              },
+              {
+                "name": "Persuasão",
+                "slug": "persuasion",
+                "description": ""
+              },
+              {
+                "name": "Religião",
+                "slug": "religion",
+                "description": ""
+              }
+            ]
+          }
+        ]
       }
-    }
+  }
 }
