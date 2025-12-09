@@ -12,6 +12,21 @@ from app.models import User, AdvancementType, HitPointType, ConfigSheet, Charact
 
 bp = Blueprint('main', __name__)
 
+SLUG_TO_FILENAME = {
+    'barbaro': 'barbarian',
+    'bardo': 'bard',
+    'clerigo': 'cleric',
+    'druida': 'druid',
+    'guerreiro': 'fighter',
+    'monge': 'monk',
+    'paladino': 'paladin',
+    'patrulheiro': 'ranger',
+    'ladino': 'rogue',
+    'feiticeiro': 'sorcerer',
+    'bruxo': 'warlock',
+    'mago': 'wizard',
+}
+
 
 @bp.route('/')
 def index():
@@ -157,53 +172,46 @@ def create_character_sheet():
     db.session.add(character_sheet)
     db.session.commit()
 
-    flash('Ficha de personagem criada com sucesso!', 'success')
+    flash('Ficha de personagem criada com sucesso! Agora, escolha as características da sua classe.', 'success')
 
-    if character_sheet.class_slug == 'clerigo':
-        return redirect(url_for('main.cleric_traits', sheet_id=character_sheet.id))
-
-    return redirect(url_for('main.show_user', user_id=user.id))
+    return redirect(url_for('main.class_traits', sheet_id=character_sheet.id))
 
   return render_template('character_sheets/new.html', form=form, classes=classes_data['classes_data'])
 
 
-@bp.route('/cleric/traits/<int:sheet_id>', methods=['GET', 'POST'])
-def cleric_traits(sheet_id):
+@bp.route('/class_traits/<int:sheet_id>', methods=['GET', 'POST'])
+def class_traits(sheet_id):
     sheet = CharacterSheet.query.get_or_404(sheet_id)
+    class_slug = sheet.class_slug
+
+    filename = SLUG_TO_FILENAME.get(class_slug)
+    if not filename:
+        abort(404, description=f"Mapeamento para o slug de classe '{class_slug}' não encontrado.")
+
+    try:
+        with open(f'app/db/character_classes/{filename}.json', encoding='utf-8') as f:
+            class_data = json.load(f)
+    except FileNotFoundError:
+        abort(404, description=f"Arquivo JSON para a classe '{class_slug}' ('{filename}.json') não encontrado.")
+
+    class_info = class_data.get(class_slug, {})
+    progression_level_1 = class_info.get('progression', {}).get('1', [])
 
     if request.method == 'POST':
-        base_traits_selection = request.form.getlist('base_traits')
-        divine_order_selection = request.form.get('divine_order')
-
-        if len(base_traits_selection) != 2:
-            flash('Você deve escolher exatamente duas perícias.', 'danger')
-            return redirect(url_for('main.cleric_traits', sheet_id=sheet_id))
-
-        sheet.class_features = {
-            'base_traits': base_traits_selection,
-            'divine_order': divine_order_selection
-        }
+        sheet.class_features = request.form.to_dict(flat=False)
         db.session.commit()
 
-        flash('Traços de Clérigo salvos com sucesso!', 'success')
+        flash(f'Características de {class_info.get("name", class_slug)} salvas com sucesso!', 'success')
         return redirect(url_for('main.show_character_sheet', sheet_id=sheet_id))
 
-    with open('app/db/character_classes/cleric.json', encoding='utf-8') as f:
-        cleric_data = json.load(f)
+    features_with_choices = [
+        item for item in progression_level_1 if 'choices' in item
+    ]
 
-    cleric_info = cleric_data['clerigo']
-    progression_level_1 = cleric_info['progression']['1']
-
-    base_traits = next((item for item in progression_level_1 if item.get('title') == 'Perícias Base'), None)
-    spellcasting = next((item for item in progression_level_1 if item.get('name') == 'Conjuração'), None)
-    divine_order = next((item for item in progression_level_1 if item.get('title') == 'Ordem Divina'), None)
-
-    return render_template('cleric_traits.html',
+    return render_template('class_traits.html',
                            sheet=sheet,
-                           cleric=cleric_info,
-                           base_traits=base_traits,
-                           spellcasting=spellcasting,
-                           divine_order=divine_order)
+                           class_info=class_info,
+                           features_with_choices=features_with_choices)
 
 
 @bp.route('/character_sheet/<int:sheet_id>')
@@ -211,30 +219,24 @@ def show_character_sheet(sheet_id):
     sheet = CharacterSheet.query.get_or_404(sheet_id)
     class_slug = sheet.class_slug
 
-    json_file_name = f'/character_classes/{class_slug}.json' if class_slug != 'clerigo' else 'cleric.json'
-    if class_slug == 'barbaro':
-        json_file_name = 'barbarian.json'
-    elif class_slug == 'mago':
-        json_file_name = 'wizard.json'
-    if class_slug == 'clerigo':
-        json_file_name = 'cleric.json'
-    else:
-
+    filename = SLUG_TO_FILENAME.get(class_slug)
+    if not filename:
         try:
             with open('app/db/classes.json', encoding='utf-8') as f:
                 all_classes_data = json.load(f)
             class_data = all_classes_data['classes_data'].get(class_slug)
+            if not class_data:
+                abort(404, description=f"Classe '{class_slug}' não encontrada.")
             return render_template('character_sheets/show.html', sheet=sheet, class_data=class_data)
         except (FileNotFoundError, KeyError):
             abort(404)
 
     try:
-        with open(os.path.join('app/db', json_file_name), encoding='utf-8') as f:
+        with open(f'app/db/character_classes/{filename}.json', encoding='utf-8') as f:
             class_data_full = json.load(f)
-            class_data = class_data_full.get(class_slug, class_data_full)
-
+            class_data = class_data_full.get(class_slug, {})
     except FileNotFoundError:
-        abort(404)
+        abort(404, description=f"Arquivo JSON para a classe '{class_slug}' ('{filename}.json') não encontrado.")
 
     return render_template('character_sheets/show.html', sheet=sheet, class_data=class_data)
 

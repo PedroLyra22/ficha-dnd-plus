@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}Escolha os Traços de {{ class_info.name }}{% endblock %}
+
+{% block content %}
+<div class="container pt-4">
+    {% if class_info %}
+    <div class="row mb-4">
+        <div class="col-md-2 text-center">
+            <img src="{{ url_for('static', filename=class_info.icon.replace('app/static/', '')) }}" alt="Icone de {{ class_info.name }}" class="img-fluid" width="150">
+        </div>
+        <div class="col-md-10">
+            <h1>{{ class_info.name }}</h1>
+            <p class="lead">{{ class_info.description }}</p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Habilidade Primária:</strong> {{ class_info.primary_ability }}</p>
+                    <p><strong>Dado de Vida:</strong> {{ class_info.hit_point_die }}</p>
+                    <p><strong>Proficiência em Teste de Resistência:</strong> {{ class_info.saving_throw_proficiencies }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Proficiência com Armas:</strong> {{ class_info.weapon_proficiencies }}</p>
+                    <p><strong>Proficiência com Ferramentas:</strong> {{ class_info.tool_proficiencies }}</p>
+                    <p><strong>Treinamento de Armadura:</strong> {{ class_info.armor_training }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <h2 class="my-4">Escolha as Características de Nível 1</h2>
+    <form method="post">
+        {% for feature in features_with_choices %}
+        <div class="card mb-4 choice-group" data-choices-count="{{ feature.choices_count }}" data-input-name="{{ feature.title|lower|replace(' ', '_') }}">
+            <div class="card-header">
+                <h2>{{ feature.title }}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{ feature.description }}</p>
+                <hr>
+                {% for choice in feature.choices %}
+                <div class="form-check">
+                    <input class="form-check-input" type="{{ feature.type }}" name="{{ feature.title|lower|replace(' ', '_') }}" value="{{ choice.slug }}" id="{{ choice.slug }}">
+                    <label class="form-check-label" for="{{ choice.slug }}">
+                        <strong>{{ choice.name }}</strong>
+                    </label>
+                    {% if choice.description %}
+                    <p class="text-muted small">{{ choice.description|safe }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="py-4">
+            <button type="submit" class="btn btn-primary px-4 py-2">Salvar e Prosseguir</button>
+        </div>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const choiceGroups = document.querySelectorAll('.choice-group');
+
+    choiceGroups.forEach(group => {
+        const inputType = group.querySelector('.form-check-input').type;
+        if (inputType !== 'checkbox') {
+            return;
+        }
+
+        const maxAllowed = parseInt(group.getAttribute('data-choices-count'), 10);
+        const inputName = group.getAttribute('data-input-name');
+        const checkboxes = group.querySelectorAll(`input[name="${inputName}"]`);
+
+        if (!maxAllowed || checkboxes.length === 0) {
+            return;
+        }
+
+        group.addEventListener('change', () => {
+            const checkedCount = group.querySelectorAll(`input[name="${inputName}"]:checked`).length;
+
+            if (checkedCount >= maxAllowed) {
+                checkboxes.forEach(cb => {
+                    if (!cb.checked) {
+                        cb.disabled = true;
+                    }
+                });
+            } else {
+                checkboxes.forEach(cb => {
+                    cb.disabled = false;
+                });
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
