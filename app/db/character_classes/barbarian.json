@@ -51,7 +51,22 @@
             ]
           },
           {
+            "type": "feature",
+            "name": "Fúria",
+            "description": "Você pode imbuir-se de um poder primordial chamado Fúria, uma força que lhe concede poder e resistência extraordinários. Você pode ativá-la como uma Ação Bônus se não estiver usando armadura pesada.<br><br> Você pode ativar sua Fúria um número de vezes indicado para o seu nível de Bárbaro na coluna Fúrias da tabela de Características de Bárbaro. Você recupera um uso gasto ao terminar um Descanso Curto e recupera todos os usos gastos ao terminar um Descanso Longo.<br><br> Enquanto ativa, sua Fúria segue as regras abaixo.<br><br> <strong>Resistência a Dano:</strong> Você tem resistência a dano de concussão, perfuração e corte.<br><br> <strong>Dano de Fúria:</strong> Quando você realiza um ataque usando Força (seja com uma arma ou um ataque desarmado) e causa dano ao alvo, você recebe um bônus de dano que aumenta conforme você sobe de nível como Bárbaro, conforme mostrado na coluna Dano de Fúria da tabela de Características do Bárbaro.<br><br> <strong>Vantagem em Força:</strong> Você tem vantagem em testes de Força e em testes de resistência de Força.<br><br> <strong>Sem Concentração em Magias:</strong> Você não pode manter a Concentração e não pode conjurar magias.<br><br> <strong>Duração:</strong> A Fúria dura até o final do seu próximo turno e termina mais cedo se você vestir uma armadura pesada ou estiver incapacitado. Se sua Fúria ainda estiver ativa no seu próximo turno, você pode estendê-la por mais uma rodada fazendo uma das seguintes ações:<br><br><ul>Realizar uma jogada de ataque contra um inimigo.</ul><br><ul>Forçar um inimigo a fazer um teste de resistência.</ul> <br><ul>Usar uma Ação Bônus para estender sua Fúria.</ul> <br><br>Cada vez que a Fúria é estendida, ela dura até o final do seu próximo turno. Você pode manter a Fúria por até 10 minutos."
+          },
+          {
+            "type": "feature",
+            "name": "Defesa sem Armadura",
+            "description": "Enquanto você não estiver usando armadura, sua Classe de Armadura base será igual a 10 mais seus modificadores de Destreza e Constituição. Você pode usar um escudo e ainda assim obter esse benefício."
+          },
+          {
+            "type": "choice",
+            "name": "Weapon Mastery",
+            "description": "Seu treinamento com armas permite que você use as propriedades de maestria de dois tipos de armas de combate corpo a corpo simples ou marciais à sua escolha, como machados grandes e machados de mão. Sempre que você terminar um descanso longo, poderá praticar exercícios com armas e trocar uma dessas opções de arma.<br><br> Ao atingir certos níveis de Bárbaro, você adquire a habilidade de usar as propriedades de maestria de mais tipos de armas, conforme mostrado na coluna Maestria em Armas da tabela de Características de Bárbaro.",
+            "choices": [
 
+            ]
           }
         ]
       }
