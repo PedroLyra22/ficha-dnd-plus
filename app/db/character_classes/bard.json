@@ -11,6 +11,410 @@
       "tool_proficiencies": "Escolha 3 instrumentos musicais",
       "armor_training": "Armaduras leves",
       "starting_equipment": "Armadura de couro, 2 adagas, instrumento musical de sua escolha, kit do artista e 19 PO; ou 90 PO",
+      "features_table_a": {
+        "1": {
+          "proficiencyBonus": "+2",
+          "features": ["Inspiração Bárdica", "Conjuração"],
+          "bardicDie": "D6"
+        },
+        "2": {
+          "proficiencyBonus": "+2",
+          "features": ["Expertise", "Jack of all Trades"],
+          "bardicDie": "D6"
+        },
+        "3": {
+          "proficiencyBonus": "+2",
+          "features": ["Subclasse"],
+          "bardicDie": "D6"
+        },
+        "4": {
+          "proficiencyBonus": "+2",
+          "features": ["Aumento de Habilidade"],
+          "bardicDie": "D6"
+        },
+        "5": {
+          "proficiencyBonus": "+3",
+          "features": ["Fonte de Inspiração"],
+          "bardicDie": "D8"
+        },
+        "6": {
+          "proficiencyBonus": "+3",
+          "features": ["Característica de Subclasse"],
+          "bardicDie": "D8"
+        },
+        "7": {
+          "proficiencyBonus": "+3",
+          "features": ["Contra-Encato"],
+          "bardicDie": "D8"
+        },
+        "8": {
+          "proficiencyBonus": "+3",
+          "features": ["Aumento de Habilidade"],
+          "bardicDie": "D8"
+        },
+        "9": {
+          "proficiencyBonus": "+4",
+          "features": ["Expertise"],
+          "bardicDie": "D8"
+        },
+        "10": {
+          "proficiencyBonus": "+4",
+          "features": ["Segredos Mágicos"],
+          "bardicDie": "D10"
+        },
+        "11": {
+          "proficiencyBonus": "+4",
+          "features": [],
+          "bardicDie": "D10"
+        },
+        "12": {
+          "proficiencyBonus": "+4",
+          "features": ["Aumento de Habilidade"],
+          "bardicDie": "D10"
+        },
+        "13": {
+          "proficiencyBonus": "+5",
+          "features": [],
+          "bardicDie": "D10"
+        },
+        "14": {
+          "proficiencyBonus": "+5",
+          "features": ["Característica de Subclasse"],
+          "bardicDie": "D10"
+        },
+        "15": {
+          "proficiencyBonus": "+5",
+          "features": [],
+          "bardicDie": "D12"
+        },
+        "16": {
+          "proficiencyBonus": "+5",
+          "features": ["Aumento de HabilidadeAumento de Habilidade"],
+          "bardicDie": "D12"
+        },
+        "17": {
+          "proficiencyBonus": "+6",
+          "features": [],
+          "bardicDie": "D12"
+        },
+        "18": {
+          "proficiencyBonus": "+6",
+          "features": ["Inspiração Superior"],
+          "bardicDie": "D12"
+        },
+        "19": {
+          "proficiencyBonus": "+6",
+          "features": ["Epic Boon"],
+          "bardicDie": "D12"
+        },
+        "20": {
+          "proficiencyBonus": "+6",
+          "features": ["Palavras da Criação"],
+          "bardicDie": "D12"
+        }
+      },
+      "features_table_b": {
+        "1": {
+          "cantrips": 2,
+          "preparedSpells": 4,
+          "spellSlots": {
+            "1st": 2,
+            "2nd": 0,
+            "3rd": 0,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "2": {
+          "cantrips": 2,
+          "preparedSpells": 5,
+          "spellSlots": {
+            "1st": 3,
+            "2nd": 0,
+            "3rd": 0,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "3": {
+          "cantrips": 2,
+          "preparedSpells": 6,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 2,
+            "3rd": 0,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "4": {
+          "cantrips": 3,
+          "preparedSpells": 7,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 0,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "5": {
+          "cantrips": 3,
+          "preparedSpells": 9,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 2,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "6": {
+          "cantrips": 3,
+          "preparedSpells": 10,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 0,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "7": {
+          "cantrips": 3,
+          "preparedSpells": 11,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 1,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "8": {
+          "cantrips": 3,
+          "preparedSpells": 12,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 2,
+            "5th": 0,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "9": {
+          "cantrips": 3,
+          "preparedSpells": 14,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 1,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "10": {
+          "cantrips": 4,
+          "preparedSpells": 15,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 0,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "11": {
+          "cantrips": 4,
+          "preparedSpells": 16,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "12": {
+          "cantrips": 4,
+          "preparedSpells": 16,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 0,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "13": {
+          "cantrips": 4,
+          "preparedSpells": 17,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 1,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "14": {
+          "cantrips": 4,
+          "preparedSpells": 17,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 1,
+            "8th": 0,
+            "9th": 0
+          }
+        },
+        "15": {
+          "cantrips": 4,
+          "preparedSpells": 18,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 1,
+            "8th": 1,
+            "9th": 0
+          }
+        },
+        "16": {
+          "cantrips": 4,
+          "preparedSpells": 18,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 1,
+            "8th": 1,
+            "9th": 0
+          }
+        },
+        "17": {
+          "cantrips": 4,
+          "preparedSpells": 19,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 2,
+            "6th": 1,
+            "7th": 1,
+            "8th": 1,
+            "9th": 1
+          }
+        },
+        "18": {
+          "cantrips": 4,
+          "preparedSpells": 20,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 3,
+            "6th": 1,
+            "7th": 1,
+            "8th": 1,
+            "9th": 1
+          }
+        },
+        "19": {
+          "cantrips": 4,
+          "preparedSpells": 21,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 3,
+            "6th": 2,
+            "7th": 1,
+            "8th": 1,
+            "9th": 1
+          }
+        },
+        "20": {
+          "cantrips": 4,
+          "preparedSpells": 22,
+          "spellSlots": {
+            "1st": 4,
+            "2nd": 3,
+            "3rd": 3,
+            "4th": 3,
+            "5th": 3,
+            "6th": 2,
+            "7th": 2,
+            "8th": 1,
+            "9th": 1
+          }
+        }
+      },
       "progression": {
         "1": [
           {
@@ -106,7 +510,14 @@
             ]
           },
           {
-
+            "type": "feature",
+            "name": "Inspiração Bárdica",
+            "description": "Você pode inspirar outros sobrenaturalmente através de palavras, música ou dança. Essa inspiração é representada pelo seu dado de Inspiração Bárdica, um d6.<br><br><strong>Usando Inspiração Bárdica:</strong> Como uma Ação Bônus, você pode inspirar outra criatura em até 60ft de você que possa vê-lo ou ouvi-lo. Essa criatura ganha um dos seus dados de Inspiração Bárdica. Uma criatura só pode ter um dado de Inspiração Bárdica por vez.<br>Uma vez dentro da próxima hora, quando a criatura falhar em um Teste de d20, ela pode rolar o dado de Inspiração Bárdica e adicionar o número rolado ao d20, potencialmente transformando a falha em um sucesso. Um dado de Inspiração Bárdica é gasto quando rolado.<br><br><strong>Número de Usos:</strong> Você pode conceder um dado de Inspiração Bárdica um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez), e você recupera todos os usos gastos ao terminar um Descanso Longo.<br><br><strong>Em Níveis Superiores:</strong> Seu dado de Inspiração Bárdica muda quando você atinge certos níveis de Bardo, conforme mostrado na coluna Dado Bárdico da tabela de Características de Bardo. O dado se torna um d8 no nível 5, um d10 no nível 10 e um d12 no nível 15."
+          },
+          {
+            "type": "feature",
+            "name": "Conjuração",
+            "description": "Você aprendeu a conjurar magias por meio de suas artes bárdicas. As informações abaixo detalham como usar essas regras com magias de Bardo.<br><br><strong>Truques:</strong> Você conhece dois truques à sua escolha da lista de magias de Bardo. Luzes Dançantes e Zombaria Viciosa são recomendados.<br>Sempre que você ganha um nível de Bardo, pode substituir um de seus truques por outro à sua escolha da lista de magias de Bardo.<br>Ao atingir os níveis 4 e 10 de Bardo, você aprende outro truque à sua escolha da lista de magias de Bardo, conforme mostrado na coluna Truques da tabela Progressão Mágica do Bardo.<br><br><strong>Espaços de Magia:</strong> A tabela de Progressão Mágica do Bardo mostra quantos espaços de magia você tem para conjurar suas magias de nível 1+. Você recupera todos os espaços gastos ao terminar um Descanso Longo.<br><br><strong>Magias Preparadas de Nível 1+:</strong> Prepare a lista de magias de nível 1+ disponíveis para você conjurar com esta habilidade. Para começar, escolha quatro magias de nível 1 da lista de magias de Bardo. Encantar Pessoa, Jato de Cores, Sussurros Dissonantes e Palavra de Cura são recomendadas.<br>O número de magias na sua lista aumenta à medida que você ganha níveis de Bardo, conforme mostrado na coluna Magias Preparadas da tabela de Progressão Mágica do Bardo. Sempre que esse número aumentar, escolha magias adicionais da lista de magias de Bardo até que o número de magias na sua lista corresponda ao número na tabela. As magias escolhidas devem ser de um nível para o qual você tenha espaços de magia. Por exemplo, se você for um Bardo de nível 3, sua lista de magias preparadas pode incluir seis magias de níveis 1 e 2 em qualquer combinação.<br>Se outra característica de Bardo lhe der magias que você sempre preparou, essas magias não contam para o número de magias que você pode preparar com essa característica, mas essas magias, de outra forma, contam como magias de Bardo para você.<br><br><strong>Alterando Suas Magias Preparadas:</strong> Sempre que você terminar um Descanso Longo, você pode alterar sua lista de magias preparadas, substituindo qualquer uma das magias ali por outras magias de Bardo para as quais você tenha espaços de magia.<br><br><strong>Habilidade de Conjuração:</strong> Carisma é sua habilidade de conjuração para suas magias de Bardo.<br><br><strong>Foco de Conjuração:</strong> Você pode usar um instrumento musical como foco de conjuração para suas magias de Bardo."
           }
         ]
       }
