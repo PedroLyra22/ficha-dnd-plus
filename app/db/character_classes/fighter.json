@@ -64,6 +64,22 @@
                 "description": ""
               }
             ]
+          },
+          {
+            "type": "choice",
+            "name": "Fighting Style",
+            "description": "Você ganha um talento de Estilo de Luta à sua escolha (veja o capítulo 5). Defesa é recomendada.\n\nSempre que você subir de nível como Guerreiro, poderá substituir o talento escolhido por um talento de Estilo de Luta diferente. ",
+            "choices": [
+
+            ]
+          },
+          {
+            "type": "choice",
+            "name": "Weapon Mastery",
+            "description": "Seu treinamento com armas permite que você use as propriedades de maestria de três tipos de armas de combate corpo a corpo simples ou marciais à sua escolha. Sempre que você terminar um descanso longo, poderá praticar exercícios com armas e trocar uma dessas opções de arma.<br><br>Ao atingir certos níveis de Guerreiro, você adquire a habilidade de usar as propriedades de maestria de mais tipos de armas, conforme mostrado na coluna Maestria em Armas da tabela de Características de Guerreiro.",
+            "choices": [
+
+            ]
           }
         ]
       }

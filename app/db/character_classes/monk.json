@@ -49,6 +49,16 @@
                 "description": ""
               }
             ]
+          },
+          {
+            "type": "feature",
+            "name": "Artes Marciais",
+            "description": "Sua prática de artes marciais lhe concede domínio sobre estilos de combate que utilizam seu Ataque Desarmado e armas de Monge, que são as seguintes:<br><br><ul>Armas simples corpo a corpo</ul><ul>Armas marciais corpo a corpo com a propriedade Leve</ul><br>Você recebe os seguintes benefícios enquanto estiver desarmado ou empunhando apenas armas de Monge e não estiver usando armadura ou escudo:<br><br><strong>Ataque Desarmado Bônus:</strong> Você pode realizar um Ataque Desarmado como uma Ação Bônus.<br><br><strong>Dado de Artes Marciais:</strong> Você pode rolar 1d6 em vez do dano normal do seu Ataque Desarmado ou das suas armas de Monge. Este dado muda conforme você sobe de nível como Monge, conforme mostrado na coluna Artes Marciais da tabela de Características de Monge.<br><br><strong>Ataques Destros:</strong> Você pode usar seu modificador de Destreza em vez do seu modificador de Força para as jogadas de ataque e dano dos seus Ataques Desarmados e armas de Monge. Além disso, quando você usa a opção Agarrar ou Empurrar do seu Ataque Desarmado, você pode usar seu modificador de Destreza em vez do seu modificador de Força para determinar a CD do teste de resistência."
+          },
+          {
+           "type": "feature",
+            "name": "Defesa sem Armadura",
+            "description": "Enquanto você não estiver usando armadura, sua Classe de Armadura base será igual a 10 mais seus modificadores de Destreza e Sabedoria."
           }
         ]
       }
