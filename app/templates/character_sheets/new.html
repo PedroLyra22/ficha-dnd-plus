@@ -24,6 +24,9 @@
             background-color: #e9f2ff;
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
         }
+        .nav-tabs .nav-link {
+            cursor: pointer;
+        }
     </style>
 {% endblock %}
 
@@ -61,21 +64,162 @@
         </div>
     </form>
 
+    {% set column_translations = {
+        'rages': 'Fúria',
+        'rage_damage': 'Dano de Fúria',
+        'weapon_mastery': 'Maestria em Armas',
+        'wild_shape': 'Forma Selvagem',
+        'cantrips_known': 'Truques Conhecidos',
+        'spells_known': 'Magias Conhecidas',
+        'sorcery_points': 'Pontos de Feitiçaria',
+        'invocations_known': 'Invocações Conhecidas',
+        'ki_points': 'Pontos de Ki',
+        'unarmored_movement': 'Movimento sem Armadura',
+        'sneak_attack': 'Ataque Furtivo',
+        'martial_arts': 'Artes Marciais',
+        'bardic_die': 'Dado Bardico',
+    } %}
+
     {% for class_slug, class_data in classes.items() %}
     <div class="modal fade" id="classModal-{{ class_slug }}" tabindex="-1" aria-labelledby="classModalLabel-{{ class_slug }}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="classModalLabel-{{ class_slug }}">{{ class_data.name }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>{{ class_data.description }}</p>
-                    <p><strong>Habilidade Principal:</strong> {{ class_data.primary_ability }}</p>
-                    <p><strong>Dado de Vida:</strong> {{ class_data.hit_point_die }}</p>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <p>{{ class_data.description }}</p>
+                            <p><strong>Habilidade Principal:</strong> {{ class_data.primary_ability }}</p>
+                            <p><strong>Dado de Vida:</strong> {{ class_data.hit_point_die }}</p>
+                        </div>
+                    </div>
+
+                    {% if class_data.progressao_de_classe or class_data.progressao_de_magia %}
+                        {% if class_data.progressao_de_classe and class_data.progressao_de_magia %}
+                        <ul class="nav nav-tabs mb-3" id="tabs-{{ class_slug }}" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="class-tab-{{ class_slug }}" data-bs-toggle="tab" data-bs-target="#class-content-{{ class_slug }}" type="button" role="tab" aria-controls="class-content-{{ class_slug }}" aria-selected="true">Características de Classe</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="magic-tab-{{ class_slug }}" data-bs-toggle="tab" data-bs-target="#magic-content-{{ class_slug }}" type="button" role="tab" aria-controls="magic-content-{{ class_slug }}" aria-selected="false">Magia</button>
+                            </li>
+                        </ul>
+                        {% endif %}
+
+                        <div class="tab-content" id="tabContent-{{ class_slug }}">
+                            {% if class_data.progressao_de_classe %}
+                            <div class="tab-pane fade {% if not (class_data.progressao_de_classe and class_data.progressao_de_magia) or (class_data.progressao_de_classe) %}show active{% endif %}" id="class-content-{{ class_slug }}" role="tabpanel" aria-labelledby="class-tab-{{ class_slug }}">
+                                {% if not (class_data.progressao_de_classe and class_data.progressao_de_magia) %}
+                                <h6 class="mt-3">Progressão de Classe</h6>
+                                {% endif %}
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-striped table-bordered" style="font-size: 0.8rem;">
+                                        <thead>
+                                            <tr>
+                                                <th>Nível</th>
+                                                <th>Bônus de Prof.</th>
+                                                <th>Características</th>
+                                                {% if class_data.progressao_de_classe|length > 0 %}
+                                                    {% set first_level = class_data.progressao_de_classe[0] %}
+                                                    {% if first_level %}
+                                                        {% for key in first_level.keys() %}
+                                                            {% if key not in ['nivel', 'proficiency_bonus', 'features'] %}
+                                                                <th>{{ column_translations.get(key, key|replace('_', ' ')|title) }}</th>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for level_data in class_data.progressao_de_classe %}
+                                            <tr>
+                                                <td>{{ level_data.get('nivel', '-') }}</td>
+                                                <td>{{ level_data.get('proficiency_bonus', '-') }}</td>
+                                                <td>
+                                                    {% set features = level_data.get('features', []) %}
+                                                    {% if features is iterable and features is not string %}
+                                                        {{ features|join(', ') }}
+                                                    {% else %}
+                                                        {{ features }}
+                                                    {% endif %}
+                                                </td>
+                                                {% if class_data.progressao_de_classe|length > 0 %}
+                                                    {% set first_level = class_data.progressao_de_classe[0] %}
+                                                    {% if first_level %}
+                                                        {% for key in first_level.keys() %}
+                                                            {% if key not in ['nivel', 'proficiency_bonus', 'features'] %}
+                                                                <td>{{ level_data.get(key, '-') }}</td>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if class_data.progressao_de_magia %}
+                            <div class="tab-pane fade {% if not class_data.progressao_de_classe %}show active{% endif %}" id="magic-content-{{ class_slug }}" role="tabpanel" aria-labelledby="magic-tab-{{ class_slug }}">
+                                {% if not (class_data.progressao_de_classe and class_data.progressao_de_magia) %}
+                                <h6 class="mt-3">Progressão de Magia</h6>
+                                {% endif %}
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-striped table-bordered" style="font-size: 0.8rem;">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="align-middle">Nível</th>
+                                                <th rowspan="2" class="align-middle">Truques</th>
+                                                <th rowspan="2" class="align-middle">Magias Preparadas</th>
+                                                <th colspan="9" class="text-center">Espaços de Magia por Círculo</th>
+                                            </tr>
+                                            <tr>
+                                                <th>1º</th>
+                                                <th>2º</th>
+                                                <th>3º</th>
+                                                <th>4º</th>
+                                                <th>5º</th>
+                                                <th>6º</th>
+                                                <th>7º</th>
+                                                <th>8º</th>
+                                                <th>9º</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for level_data in class_data.progressao_de_magia %}
+                                            {% set slots = level_data.get('spell_slots', {}) %}
+                                            <tr>
+                                                <td>{{ level_data.get('nivel', '-') }}</td>
+                                                <td>{{ level_data.get('cantrips', '-') }}</td>
+                                                <td>{{ level_data.get('prepared_spells', '-') }}</td>
+                                                <td>{{ slots.get('1st', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('2nd', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('3rd', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('4th', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('5th', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('6th', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('7th', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('8th', '-') if slots else '-' }}</td>
+                                                <td>{{ slots.get('9th', '-') if slots else '-' }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary select-class-btn" data-slug="{{ class_slug }}" data-bs-dismiss="modal">Selecionar {{ class_data.name }}</button>
                 </div>
             </div>
         </div>
@@ -92,13 +236,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const card = e.target.closest('.class-card');
         if (!card) return;
 
-        const slug = card.dataset.slug;
-        classSlugSelect.value = slug;
 
         document.querySelectorAll('.class-card').forEach(el => {
             el.classList.remove('selected');
         });
         card.classList.add('selected');
+    });
+
+    document.querySelectorAll('.select-class-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const slug = this.dataset.slug;
+            classSlugSelect.value = slug;
+
+            document.querySelectorAll('.class-card').forEach(el => {
+                el.classList.remove('selected');
+            });
+            const card = document.querySelector(`.class-card[data-slug="${slug}"]`);
+            if (card) card.classList.add('selected');
+        });
     });
 });
 </script>
