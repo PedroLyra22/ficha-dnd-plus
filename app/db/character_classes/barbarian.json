@@ -62,7 +62,7 @@
           },
           {
             "type": "choice",
-            "name": "Weapon Mastery",
+            "name": "Maestria em Arma",
             "description": "Seu treinamento com armas permite que você use as propriedades de maestria de dois tipos de armas de combate corpo a corpo simples ou marciais à sua escolha, como machados grandes e machados de mão. Sempre que você terminar um descanso longo, poderá praticar exercícios com armas e trocar uma dessas opções de arma.<br><br>Ao atingir certos níveis de Bárbaro, você adquire a habilidade de usar as propriedades de maestria de mais tipos de armas, conforme mostrado na coluna Maestria em Armas da tabela de Características de Bárbaro.",
             "choices": [
 
