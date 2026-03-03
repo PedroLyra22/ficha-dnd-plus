@@ -67,15 +67,20 @@
           },
           {
             "type": "choice",
-            "name": "Fighting Style",
+            "name": "Estilo de Combate",
             "description": "Você ganha um talento de Estilo de Luta à sua escolha (veja o capítulo 5). Defesa é recomendada.\n\nSempre que você subir de nível como Guerreiro, poderá substituir o talento escolhido por um talento de Estilo de Luta diferente. ",
             "choices": [
 
             ]
           },
           {
+            "type": "feature",
+            "name": "Segundo Fôlego",
+            "description": "Você possui uma reserva limitada de vigor físico e mental da qual pode se valer. Como uma Ação Bônus, você pode usá-la para recuperar Pontos de Vida iguais a 1d10 mais o seu nível de Guerreiro.<br><br> Você pode usar esta habilidade duas vezes. Você recupera um uso gasto ao terminar um Descanso Curto e recupera todos os usos gastos ao terminar um Descanso Longo.<br><br> Ao atingir certos níveis de Guerreiro, você ganha mais usos desta habilidade, conforme mostrado na Tabela de Progressão de Guerreiro."
+          },
+          {
             "type": "choice",
-            "name": "Weapon Mastery",
+            "name": "Maestria em Arma",
             "description": "Seu treinamento com armas permite que você use as propriedades de maestria de três tipos de armas de combate corpo a corpo simples ou marciais à sua escolha. Sempre que você terminar um descanso longo, poderá praticar exercícios com armas e trocar uma dessas opções de arma.<br><br>Ao atingir certos níveis de Guerreiro, você adquire a habilidade de usar as propriedades de maestria de mais tipos de armas, conforme mostrado na coluna Maestria em Armas da tabela de Características de Guerreiro.",
             "choices": [
 

@@ -49,6 +49,24 @@
                 "description": ""
               }
             ]
+          },
+          {
+            "type": "feature",
+            "title": "Pousar as Mãos",
+            "description": "Seu toque abençoado pode curar ferimentos. Você possui uma reserva de poder de cura que se recarrega ao final de um Descanso Longo. Com essa reserva, você pode restaurar um total de Pontos de Vida igual a cinco vezes o seu nível de Paladino.<br><br> Como uma Ação Bônus, você pode tocar uma criatura (que pode ser você mesmo) e extrair poder da reserva de cura para restaurar uma quantidade de Pontos de Vida para essa criatura, até o máximo restante na reserva.<br><br> Você também pode gastar 5 Pontos de Vida da reserva de poder de cura para remover a condição Envenenado da criatura, esses pontos não restauram Pontos de Vida para a criatura."
+          },
+          {
+            "type": "feature",
+            "title": "Conjuração",
+            "description": "Você aprendeu a conjurar magias por meio de preces e meditação. As informações abaixo detalham como usar essas regras com magias de Paladino.<br><br><strong>Espaços de Magia:</strong> A tabela de Progressão Mágica do Paladino mostra quantos espaços de magia você tem para conjurar suas magias de nível 1+. Você recupera todos os espaços gastos ao terminar um Descanso Longo.<br><br><strong>Magias Preparadas de Nível 1+:</strong> Prepare a lista de magias de nível 1+ disponíveis para você conjurar com esta habilidade. Para começar, escolha duas magias de nível 1 da lista de magias de Paladino. Heroísmo e Smite Abrasador são recomendadas.<br><br>O número de magias na sua lista aumenta à medida que você ganha níveis de Paladino, conforme mostrado na coluna Magias Preparadas da tabela de Progressão Mágica do paladino. Sempre que esse número aumentar, escolha magias adicionais da lista de magias de Paladino até que o número de magias na sua lista corresponda ao número na tabela. As magias escolhidas devem ser de um nível para o qual você tenha espaços de magia. Por exemplo, se você for um Paladino de nível 5, sua lista de magias preparadas pode incluir seis magias de níveis 1 e 2 em qualquer combinação.<br><br>Se outra característica de Paladino lhe der magias que você sempre preparou, essas magias não contam para o número de magias que você pode preparar com essa característica, mas essas magias, de outra forma, contam como magias de Paladino para você.<br><br><strong>Alterando Suas Magias Preparadas:</strong> Sempre que você terminar um Descanso Longo, você pode alterar sua lista de magias preparadas, substituindo qualquer uma das magias ali por outras magias de Paladino para as quais você tenha espaços de magia.<br><br><strong>Habilidade de Conjuração:</strong> Sabedoria é sua habilidade de conjuração para suas magias de Paladino.<br><br><strong>Foco de Conjuração:</strong> Você pode usar um Símbolo Sagrado como Foco de Conjuração para suas magias de Paladino."
+          },
+          {
+            "type": "choice",
+            "name": "Maestria em Arma",
+            "description": "Seu treinamento com armas permite que você use as propriedades de maestria de dois tipos de armas à sua escolha, como espadas longas e javelins. Sempre que você terminar um Descanso Longo, poderá trocar o tipo de arma que escolheu. Por exemplo, você pode optar por usar as propriedades de maestria de alabardas e manguais.",
+            "choices": [
+
+            ]
           }
         ]
       }
