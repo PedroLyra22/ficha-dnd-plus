@@ -33,35 +33,62 @@
     </div>
     {% endif %}
 
-    <h2 class="my-4">Escolha as Características de Nível 1</h2>
-    <form method="post">
-        {% for feature in features_with_choices %}
-        <div class="card mb-4 choice-group" data-choices-count="{{ feature.choices_count }}" data-input-name="{{ feature.title|lower|replace(' ', '_') }}">
-            <div class="card-header">
-                <h2>{{ feature.title }}</h2>
-            </div>
-            <div class="card-body">
-                <p>{{ feature.description }}</p>
-                <hr>
-                {% for choice in feature.choices %}
-                <div class="form-check">
-                    <input class="form-check-input" type="{{ feature.type }}" name="{{ feature.title|lower|replace(' ', '_') }}" value="{{ choice.slug }}" id="{{ choice.slug }}">
-                    <label class="form-check-label" for="{{ choice.slug }}">
-                        <strong>{{ choice.name }}</strong>
-                    </label>
-                    {% if choice.description %}
-                    <p class="text-muted small">{{ choice.description|safe }}</p>
-                    {% endif %}
+    <div class="row">
+        <div class="col-lg-9">
+            <h2 class="mb-4">Características de Nível 1</h2>
+
+            <form method="post">
+                {% for feature in features_with_choices %}
+                {% set outer_loop = loop %}
+                {% set feature_name = (feature.title or feature.name)|lower|replace(' ', '_') %}
+                <div class="card mb-4 choice-group" data-choices-count="{{ feature.choices_count|default(1) }}" data-input-name="{{ feature_name }}">
+                    <div class="card-header">
+                        <h2>{{ feature.title or feature.name }}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ feature.description }}</p>
+                        <hr>
+                        {% for choice in feature.choices %}
+                        <div class="form-check mb-2">
+                            {% set unique_id = 'feature_' ~ outer_loop.index ~ '_choice_' ~ loop.index %}
+
+                            <input class="form-check-input" type="checkbox" name="{{ feature_name }}" value="{{ choice.slug }}" id="{{ unique_id }}">
+
+                            <label class="form-check-label" for="{{ unique_id }}" style="cursor: pointer;">
+                                <strong>{{ choice.name }}</strong>
+                            </label>
+
+                            {% if choice.description %}
+                            <p class="text-muted small ms-4">{{ choice.description|safe }}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
                 {% endfor %}
+
+                <div class="py-4">
+                    <button type="submit" class="btn btn-primary px-4 py-2">Salvar e Prosseguir</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card sticky-top" style="top: 20px;">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Nível</h5>
+                </div>
+                <div class="card-body">
+                    <label for="levelSelect" class="form-label">Selecione o Nível:</label>
+                    <select class="form-select" id="levelSelect" aria-label="Selecionar Nível">
+                        {% for i in range(1, 21) %}
+                        <option value="{{ i }}" {% if i == 1 %}selected{% endif %}>Nível {{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
         </div>
-        {% endfor %}
-
-        <div class="py-4">
-            <button type="submit" class="btn btn-primary px-4 py-2">Salvar e Prosseguir</button>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script>
@@ -69,21 +96,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const choiceGroups = document.querySelectorAll('.choice-group');
 
     choiceGroups.forEach(group => {
-        const inputType = group.querySelector('.form-check-input').type;
-        if (inputType !== 'checkbox') {
-            return;
-        }
-
         const maxAllowed = parseInt(group.getAttribute('data-choices-count'), 10);
         const inputName = group.getAttribute('data-input-name');
-        const checkboxes = group.querySelectorAll(`input[name="${inputName}"]`);
+        const safeInputName = CSS.escape ? CSS.escape(inputName) : inputName;
+        const checkboxes = group.querySelectorAll(`input[name="${safeInputName}"]`);
 
         if (!maxAllowed || checkboxes.length === 0) {
             return;
         }
 
-        group.addEventListener('change', () => {
-            const checkedCount = group.querySelectorAll(`input[name="${inputName}"]:checked`).length;
+        const updateState = () => {
+            const checkedCount = group.querySelectorAll(`input[name="${safeInputName}"]:checked`).length;
 
             if (checkedCount >= maxAllowed) {
                 checkboxes.forEach(cb => {
@@ -96,7 +119,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     cb.disabled = false;
                 });
             }
+        };
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateState);
         });
+
+        updateState();
     });
 });
 </script>

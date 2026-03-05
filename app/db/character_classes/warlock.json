@@ -15,7 +15,8 @@
         "1": [
           {
             "type": "choice",
-            "title": "Perícias Base",
+            "name": "Proficiências Base",
+            "chooses": 2,
             "description": "",
             "choices": [
               {
