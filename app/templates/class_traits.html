@@ -2,6 +2,23 @@
 
 {% block title %}Escolha os Traços de {{ class_info.name }}{% endblock %}
 
+{% block head %}
+{{ super() }}
+<style>
+    .toggle-icon {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+    .card-header[aria-expanded="true"] .toggle-icon {
+        transform: rotate(180deg);
+    }
+    .card-header {
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container pt-4">
     {% if class_info %}
@@ -35,35 +52,65 @@
 
     <div class="row">
         <div class="col-lg-9">
-            <h2 class="mb-4">Características de Nível 1</h2>
+            <h2 class="mb-4" id="level-title">Características de Classe</h2>
 
             <form method="post">
-                {% for feature in features_with_choices %}
-                {% set outer_loop = loop %}
-                {% set feature_name = (feature.title or feature.name)|lower|replace(' ', '_') %}
-                <div class="card mb-4 choice-group" data-choices-count="{{ feature.choices_count|default(1) }}" data-input-name="{{ feature_name }}">
-                    <div class="card-header">
-                        <h2>{{ feature.title or feature.name }}</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>{{ feature.description }}</p>
-                        <hr>
-                        {% for choice in feature.choices %}
-                        <div class="form-check mb-2">
-                            {% set unique_id = 'feature_' ~ outer_loop.index ~ '_choice_' ~ loop.index %}
+                {% for i in range(1, 21) %}
+                {% set level_str = i|string %}
+                {% set features = class_info.progression.get(level_str, []) %}
 
-                            <input class="form-check-input" type="checkbox" name="{{ feature_name }}" value="{{ choice.slug }}" id="{{ unique_id }}">
+                {% set ns = namespace(has_choices=false) %}
+                {% for feature in features %}
+                    {% if 'choices' in feature %}
+                        {% set ns.has_choices = true %}
+                    {% endif %}
+                {% endfor %}
 
-                            <label class="form-check-label" for="{{ unique_id }}" style="cursor: pointer;">
-                                <strong>{{ choice.name }}</strong>
-                            </label>
+                <div class="level-container" data-level="{{ i }}" style="{% if i != 1 %}display:none;{% endif %}">
+                    {% if ns.has_choices %}
+                        {% for feature in features %}
+                            {% if 'choices' in feature %}
+                                {% set feature_name = (feature.title or feature.name)|lower|replace(' ', '_') %}
+                                {% set limit = feature.chooses or feature.choices_count or 1 %}
+                                {% set collapse_id = 'collapse_lvl_' ~ i ~ '_feat_' ~ loop.index %}
 
-                            {% if choice.description %}
-                            <p class="text-muted small ms-4">{{ choice.description|safe }}</p>
+                                <div class="card mb-4 choice-group" data-choices-count="{{ limit }}" data-input-name="{{ feature_name }}">
+                                    <div class="card-header d-flex justify-content-between align-items-center"
+                                         data-bs-toggle="collapse"
+                                         data-bs-target="#{{ collapse_id }}"
+                                         aria-expanded="true"
+                                         aria-controls="{{ collapse_id }}">
+                                        <h5 class="mb-0">
+                                            {{ feature.title or feature.name }}
+                                            <small class="text-muted ms-2" style="font-size: 0.8em;">( <span class="remaining-count">{{ limit }}</span>)</small>
+                                        </h5>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div id="{{ collapse_id }}" class="collapse show">
+                                        <div class="card-body">
+                                            <p>{{ feature.description }}</p>
+                                            <hr>
+                                            {% for choice in feature.choices %}
+                                            <div class="form-check mb-2">
+                                                {% set unique_id = 'lvl_' ~ i ~ '_' ~ feature_name ~ '_' ~ choice.slug %}
+
+                                                <input class="form-check-input" type="checkbox" name="{{ feature_name }}" value="{{ choice.slug }}" id="{{ unique_id }}">
+
+                                                <label class="form-check-label" for="{{ unique_id }}" style="cursor: pointer;">
+                                                    <strong>{{ choice.name }}</strong>
+                                                </label>
+
+                                                {% if choice.description %}
+                                                <p class="text-muted small ms-4">{{ choice.description|safe }}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
                             {% endif %}
-                        </div>
                         {% endfor %}
-                    </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
 
@@ -93,6 +140,25 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    const levelSelect = document.getElementById('levelSelect');
+    const levelTitle = document.getElementById('level-title');
+    const levelContainers = document.querySelectorAll('.level-container');
+
+    levelSelect.addEventListener('change', function() {
+        const selectedLevel = parseInt(this.value, 10);
+
+        levelTitle.textContent = `Escolha as Características até o Nível ${selectedLevel}`;
+
+        levelContainers.forEach(container => {
+            const containerLevel = parseInt(container.dataset.level, 10);
+            if (containerLevel <= selectedLevel) {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        });
+    });
+
     const choiceGroups = document.querySelectorAll('.choice-group');
 
     choiceGroups.forEach(group => {
@@ -100,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputName = group.getAttribute('data-input-name');
         const safeInputName = CSS.escape ? CSS.escape(inputName) : inputName;
         const checkboxes = group.querySelectorAll(`input[name="${safeInputName}"]`);
+        const remainingCountSpan = group.querySelector('.remaining-count');
 
         if (!maxAllowed || checkboxes.length === 0) {
             return;
@@ -107,6 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const updateState = () => {
             const checkedCount = group.querySelectorAll(`input[name="${safeInputName}"]:checked`).length;
+
+            if (remainingCountSpan) {
+                remainingCountSpan.textContent = Math.max(0, maxAllowed - checkedCount);
+            }
 
             if (checkedCount >= maxAllowed) {
                 checkboxes.forEach(cb => {
