@@ -86,12 +86,12 @@
           },
           {
             "type": "feature",
-            "title": "Ataque Furtivo",
+            "name": "Ataque Furtivo",
             "description": "Você sabe como atacar sutilmente e explorar a distração de um inimigo. Uma vez por turno, você pode causar 1d6 de dano extra a uma criatura que você acertar com uma jogada de ataque, se você tiver Vantagem na jogada e o ataque usar uma arma de Acuidade ou de Ataque à Distância. O tipo do dano extra é o mesmo da arma.<br><br> Você não precisa de Vantagem na jogada de ataque se pelo menos um de seus aliados estiver a 1,5 metro do alvo, o aliado não estiver incapacitado e você não tiver Desvantagem na jogada de ataque.<br><br> O dano extra aumenta conforme você sobe de nível como Ladino, conforme mostrado na Tabela de Progressão de Ladino."
           },
           {
             "type": "feature",
-            "title": "Gíria dos Ladrões",
+            "name": "Gíria dos Ladrões",
             "description": "Você aprendeu vários idiomas nas comunidades onde exerceu seus talentos de malandro. Você conhece a Gíria dos Ladrões e mais um idioma à sua escolha."
           },
           {

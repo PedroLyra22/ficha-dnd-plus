@@ -73,7 +73,7 @@
           },
           {
             "type": "choice",
-            "title": "Ordem Primordial",
+            "name": "Ordem Primordial",
             "description": "Você se dedicou a uma das seguintes funções sagradas de sua escolha.",
             "choices": [
               {

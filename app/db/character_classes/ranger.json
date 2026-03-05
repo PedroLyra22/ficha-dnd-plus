@@ -63,12 +63,12 @@
           },
           {
             "type": "feature",
-            "title": "Conjuração",
+            "name": "Conjuração",
             "description": "Você aprendeu a canalizar a essência mágica da natureza para conjura magias. As informações abaixo detalham como usar essas regras com magias de Patrulheiro.<br><br><strong>Espaços de Magia:</strong> A tabela de Progressão Mágica do Patrulheiro mostra quantos espaços de magia você tem para conjurar suas magias de nível 1+. Você recupera todos os espaços gastos ao terminar um Descanso Longo.<br><br><strong>Magias Preparadas de Nível 1+:</strong> Prepare a lista de magias de nível 1+ disponíveis para você conjurar com esta habilidade. Para começar, escolha duas magias de nível 1 da lista de magias de Patrulheiro, Curar Ferimentos e Tiro Enraizador são recomendadas.<br><br>O número de magias na sua lista aumenta à medida que você ganha níveis de Patrulheiro, conforme mostrado na coluna Magias Preparadas da tabela de Progressão Mágica do paladino. Sempre que esse número aumentar, escolha magias adicionais da lista de magias de Patrulheiro até que o número de magias na sua lista corresponda ao número na tabela. As magias escolhidas devem ser de um nível para o qual você tenha espaços de magia. Por exemplo, se você for um Patrulheiro de nível 5, sua lista de magias preparadas pode incluir seis magias de níveis 1 e 2 em qualquer combinação.<br><br>Se outra característica de Patrulheiro lhe der magias que você sempre preparou, essas magias não contam para o número de magias que você pode preparar com essa característica, mas essas magias, de outra forma, contam como magias de Patrulheiro para você.<br><br><strong>Alterando Suas Magias Preparadas:</strong> Sempre que você terminar um Descanso Longo, você pode alterar sua lista de magias preparadas, substituindo qualquer uma das magias ali por outras magias de Patrulheiro para as quais você tenha espaços de magia.<br><br><strong>Habilidade de Conjuração:</strong> Sabedoria é sua habilidade de conjuração para suas magias de Patrulheiro.<br><br><strong>Foco de Conjuração:</strong> Você pode usar um Símbolo SagradoFoco Druidico como Foco de Conjuração para suas magias de Patrulheiro."
           },
           {
             "type": "feature",
-            "title": "Inimigo Predileto",
+            "name": "Inimigo Predileto",
             "description": "Você sempre tem a magia Marca do Caçador preparada.<br> Você pode conjurá-la duas vezes sem gastar um espaço de magia e recupera todos os usos gastos dessa habilidade ao terminar um Descanso Longo.<br><br> O número de vezes que você pode conjurar a magia sem um espaço de magia aumenta quando você atinge certos Níveis de Patrulheiro, conforme mostrado na tabela de Progressão de Patrulheiro."
           },
           {

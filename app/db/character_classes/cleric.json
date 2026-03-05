@@ -53,7 +53,7 @@
           },
           {
             "type": "choice",
-            "title": "Ordem Divina",
+            "name": "Ordem Divina",
             "description": "Você se dedicou a uma das seguintes funções sagradas de sua escolha.",
             "choices": [
               {
@@ -79,7 +79,7 @@
         "3": [
           {
             "type": "choice",
-            "title": "Subclasse - Clérigo",
+            "name": "Domínio do Clérigo",
             "description": "",
             "choices": [
               {
@@ -108,7 +108,7 @@
         "4": [
           {
             "type": "choice",
-            "title": "Aumento de Habilidade",
+            "name": "Aumento de Habilidade",
             "description": "",
             "choices": []
           }
